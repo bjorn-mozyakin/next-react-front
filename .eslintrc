@@ -1,3 +1,58 @@
+//{
+//  "extends": ["next", "next/core-web-vitals"]
+//}
+//
+
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "import-helpers"
+  ],
+  "extends": [
+    "standard",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-var": "error",
+    "no-new": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-case-declarations": "off",
+    "no-prototype-builtins": "off",
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "groups": [
+          "module",
+          [
+            "parent",
+            "/utils/"
+          ],
+          [
+            "/store/"
+          ],
+          [
+            "/components/"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        },
+        "newlinesBetween": "always"
+      }
+    ]
+  }
 }

@@ -1,0 +1,139 @@
+@import '../../styles/_vars';
+@import '../../styles/desktop/_vars';
+
+.btn-flat {
+
+  // Модификаторы цвета - по алфавиту
+  $colors: (
+          'bahamas-500': $cBahamas500,
+          'black-500': $cBlack500,
+          'caprice-500': $cCaprice500,
+          'caribbean-500': $cCaribbean500,
+          'crimson-50': $cCrimson50,
+          'crimson-500': $cCrimson500,
+          'havelock-500': $cHavelock500,
+          'white-300': $cWhite300,
+          'white-400': $cWhite400,
+          'white-500': $cWhite500
+  );
+
+  // Модификаторы фона - по алфавиту.
+  // Лучше избегать фонов-градиентов (т.к. градиенты плавно НЕ анимируются).
+  $backgrounds: (
+          'bahamas-50': $cBahamas50,
+          'bahamas-100': $cBahamas100,
+          'bahamas-500': $cBahamas500,
+          'caprice-500': $cCaprice500,
+          'caribbean-500': $cCaribbean500,
+          'crimson-50': $cCrimson50,
+          'crimson-500': $cCrimson500,
+          'havelock-500': $cHavelock500,
+          'transparent': $cTransparent,
+          'white-500': $cWhite500,
+  );
+
+  // Модификаторы состояний active и hover - по алфавиту.
+  // Название дается по цвету для состояния active
+  // т.к. оно есть и на desktop, и на mobile.
+  $states: (
+                  ('bahamas-200', $cBahamas100, $cBahamas200),
+                  ('bahamas-300', $cBahamas200, $cBahamas300),
+                  ('bahamas-700', $cBahamas600, $cBahamas700),
+                  ('caprice-700', $cCaprice600, $cCaprice700),
+                  ('caribbean-200', $cCaribbean100, $cCaribbean200),
+                  ('caribbean-700', $cCaribbean600, $cCaribbean700),
+                  ('crimson-100', $cCrimson50, $cCrimson100),
+                  ('crimson-700', $cCrimson600, $cCrimson700),
+                  ('havelock-200', $cHavelock100, $cHavelock200),
+                  ('havelock-700', $cHavelock600, $cHavelock700),
+                  ('havelock-800', $cHavelock700, $cHavelock800),
+                  ('white-200', $cWhite100, $cWhite200),
+                  ('white-100', $cWhite50, $cWhite100),
+                  ('black-100', $cBlack50, $cBlack100),
+                  ('bahamas-100', $cBahamas50, $cBahamas100),
+                  ('white-500', $cWhite300, $cWhite500)
+  );
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 64px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  text-align: center;
+  color: inherit;
+  background: $cTransparent;
+  cursor: pointer;
+  transition: background linear .2s;
+  user-select: none;
+
+  &:disabled {
+    color: $cBlack100;
+  }
+
+  // Модификатор наличия иконки
+  &_icon_yes {
+    &::before {
+      margin-right: $bmu;
+    }
+  }
+
+  // Возможно, можно переписать ajax-loader и избавиться от этого класса
+  // усиливаем специфичность
+  &.btn-flat_loading {
+    pointer-events: none;
+    color: transparent;
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &_size_full {
+    min-width: 240px;
+    max-width: 300px;
+    padding: 1.5*$bmu 3*$bmu;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &_size_content {
+    padding: $bmu 2*$bmu;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &_size_tiny {
+    height: 24px;
+    padding: 0 $bmu/2;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  @each $cName, $cValue in $colors {
+    &_color_#{$cName} {
+      color: $cValue;
+    }
+  }
+
+  @each $bgName, $bgValue in $backgrounds {
+    &_bg_#{$bgName} {
+      background: $bgValue;
+    }
+  }
+
+  @each $state in $states {
+    &_states_#{nth($state, 1)} {
+      &:active {
+        background: nth($state, 3);
+      }
+      @media (hover: hover) {
+        &:hover {
+          background: nth($state, 2);
+        }
+      }
+    }
+  }
+}

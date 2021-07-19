@@ -1,0 +1,51 @@
+@import '../../styles/_vars';
+@import '../../styles/desktop/_vars';
+
+.header {
+  position: relative;
+  z-index: 95;
+  width: $wDesktop;
+  margin: auto;
+
+  &_scrolled {
+    margin-bottom: $hNav;
+  }
+
+  &__container {
+    //@extend %sTopLevelReverse;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: $wDesktop;
+    height: 140px;
+    margin: auto;
+    padding: $bmu 2.5*$bmu;
+    background: $cWhite500;
+  }
+
+  &__left {
+    width: ($wDesktop - 5*$bmu - 315px) / 2; // 5*$bmu - 2 боковых пэддинга у хэдера, 315px - ширина лого
+    padding-right: 2.5*$bmu;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: ($wDesktop - 5*$bmu - 315px) / 2;
+    padding-left: 2.5*$bmu;
+  }
+
+  // TODO пока переопределяем стандартную кнопку.
+  //  Надо будет либо дополнить имеющийся компонент, либо создать новый
+  &__articles-btn {
+    width: 100px;
+    min-width: 100px;
+  }
+
+  & .user__container {
+    padding: $bmu;
+    background-color: $cBahamas50;
+  }
+}

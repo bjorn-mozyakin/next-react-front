@@ -1,0 +1,117 @@
+@import '../../styles/_vars';
+@import '../../styles/desktop/_vars';
+
+.list-item {
+  position: relative;
+  z-index: 50;
+  display: block;
+  overflow-wrap: break-word;
+
+  &_animated-collapse {
+    animation: .2s ease-out 0s 1 normal forwards running collapse;
+  }
+
+  &:last-child {
+    & .list-item__container {
+      border-bottom: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: block;
+    margin: 0 $bmu;
+    padding: $bmu 0;
+    border-bottom: 1px solid $cHavelock100;
+  }
+
+  &__zero-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $bmu;
+  }
+
+  &__first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px; // соответствует высоте иконки, которая может быть вставлена внутри
+  }
+
+  &__second-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $bmu;
+    font-size: 12px;
+  }
+
+  &__link {
+    display: block;
+    color: $cBlack500;
+    cursor: pointer;
+
+    &:visited {
+      & .list-item__title_visited {
+        color: $cCrimson200;
+      }
+    }
+
+    &:active {
+      background-color: $cCrimson50;
+    }
+  }
+
+  &__link,
+  &__nolink {
+    background-color: $cWhite500;
+  }
+
+  &__title {
+    line-height: 1.25;
+  }
+
+  &__secondary {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2*$bmu;
+  }
+
+  &__other-text {
+    flex-shrink: 0;
+    margin-left: $bmu;
+    font-size: 12px;
+    font-weight: 400;
+    color: $cBahamas500;
+  }
+
+  &__date {
+    font-size: 12px;
+    font-weight: 400;
+    color: $cBahamas500;
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: 50%;
+    right: $bmu;
+    transform: translateY(-50%);
+  }
+
+  &__add-favorites {
+    margin-left: $bmu/2;
+  }
+}
+
+@keyframes collapse {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}

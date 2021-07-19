@@ -1,0 +1,159 @@
+// Сокращения
+// c - color
+// g - gradient
+// w - width
+// p - padding (любой отступ, в т.ч. margin/left/top/translate и др.)
+
+// ==========
+// COLOR PALETTE
+// ==========
+
+// Принцип формирования палитры:
+// Берется основной цвет (например, $cCrimsonBase = $cCrimson500 = #BE007F)
+// Для получения более светлых оттенков - он смешивается с белым (на сколько-то процентов)
+// Для получения более темных оттенков - он смешивается с черным (на сколько-то процентов)
+
+// Процент смешивания
+$mix18: 18%;
+$mix38: 38%;
+$mix60: 60%;
+$mix76: 76%;
+$mix87: 87%;
+
+// Базовые цвета, с которыми смешиваются основные цвета палитры
+$cWhiteBase: #fff;
+$cBlackBase: #000;
+
+// Crimson palette
+$cCrimsonOriginal: #be007f;
+$cCrimson50: mix($cWhiteBase, $cCrimsonOriginal, $mix87);
+$cCrimson100: mix($cWhiteBase, $cCrimsonOriginal, $mix76);
+$cCrimson200: mix($cWhiteBase, $cCrimsonOriginal, $mix60);
+$cCrimson300: mix($cWhiteBase, $cCrimsonOriginal, $mix38);
+$cCrimson400: mix($cWhiteBase, $cCrimsonOriginal, $mix18);
+$cCrimson500: $cCrimsonOriginal;
+$cCrimson600: mix($cBlackBase, $cCrimsonOriginal, $mix18);
+$cCrimson700: mix($cBlackBase, $cCrimsonOriginal, $mix38);
+$cCrimson800: mix($cBlackBase, $cCrimsonOriginal, $mix60);
+$cCrimson900: mix($cBlackBase, $cCrimsonOriginal, $mix76);
+
+// Bahamas palette
+$cBahamasOriginal: #7b92ad;
+$cBahamas50: mix($cWhiteBase, $cBahamasOriginal, $mix87);
+$cBahamas100: mix($cWhiteBase, $cBahamasOriginal, $mix76);
+$cBahamas200: mix($cWhiteBase, $cBahamasOriginal, $mix60);
+$cBahamas300: mix($cWhiteBase, $cBahamasOriginal, $mix38);
+$cBahamas400: mix($cWhiteBase, $cBahamasOriginal, $mix18);
+$cBahamas500: $cBahamasOriginal;
+$cBahamas600: mix($cBlackBase, $cBahamasOriginal, $mix18);
+$cBahamas700: mix($cBlackBase, $cBahamasOriginal, $mix38);
+$cBahamas800: mix($cBlackBase, $cBahamasOriginal, $mix60);
+$cBahamas900: mix($cBlackBase, $cBahamasOriginal, $mix76);
+
+// Havelock palette
+$cHavelockOriginal: #4a8ede;
+$cHavelock50: mix($cWhiteBase, $cHavelockOriginal, $mix87);
+$cHavelock100: mix($cWhiteBase, $cHavelockOriginal, $mix76);
+$cHavelock200: mix($cWhiteBase, $cHavelockOriginal, $mix60);
+$cHavelock300: mix($cWhiteBase, $cHavelockOriginal, $mix38);
+$cHavelock400: mix($cWhiteBase, $cHavelockOriginal, $mix18);
+$cHavelock500: $cHavelockOriginal;
+$cHavelock600: mix($cBlackBase, $cHavelockOriginal, $mix18);
+$cHavelock700: mix($cBlackBase, $cHavelockOriginal, $mix38);
+$cHavelock800: mix($cBlackBase, $cHavelockOriginal, $mix60);
+$cHavelock900: mix($cBlackBase, $cHavelockOriginal, $mix76);
+
+// Caribbean palette
+$cCaribbeanOriginal: #3fa372;
+$cCaribbean50: mix($cWhiteBase, $cCaribbeanOriginal, $mix87);
+$cCaribbean100: mix($cWhiteBase, $cCaribbeanOriginal, $mix76);
+$cCaribbean200: mix($cWhiteBase, $cCaribbeanOriginal, $mix60);
+$cCaribbean300: mix($cWhiteBase, $cCaribbeanOriginal, $mix38);
+$cCaribbean400: mix($cWhiteBase, $cCaribbeanOriginal, $mix18);
+$cCaribbean500: $cCaribbeanOriginal;
+$cCaribbean600: mix($cBlackBase, $cCaribbeanOriginal, $mix18);
+$cCaribbean700: mix($cBlackBase, $cCaribbeanOriginal, $mix38);
+$cCaribbean800: mix($cBlackBase, $cCaribbeanOriginal, $mix60);
+$cCaribbean900: mix($cBlackBase, $cCaribbeanOriginal, $mix76);
+
+// Maltese palette
+$cMalteseOriginal: #e3a839;
+$cMaltese50: mix($cWhiteBase, $cMalteseOriginal, $mix87);
+$cMaltese100: mix($cWhiteBase, $cMalteseOriginal, $mix76);
+$cMaltese200: mix($cWhiteBase, $cMalteseOriginal, $mix60);
+$cMaltese300: mix($cWhiteBase, $cMalteseOriginal, $mix38);
+$cMaltese400: mix($cWhiteBase, $cMalteseOriginal, $mix18);
+$cMaltese500: $cMalteseOriginal;
+$cMaltese600: mix($cBlackBase, $cMalteseOriginal, $mix18);
+$cMaltese700: mix($cBlackBase, $cMalteseOriginal, $mix38);
+$cMaltese800: mix($cBlackBase, $cMalteseOriginal, $mix60);
+$cMaltese900: mix($cBlackBase, $cMalteseOriginal, $mix76);
+
+// Caprice palette
+$cCapriceOriginal: #ed4a48;
+$cCaprice50: mix($cWhiteBase, $cCapriceOriginal, $mix87);
+$cCaprice100: mix($cWhiteBase, $cCapriceOriginal, $mix76);
+$cCaprice200: mix($cWhiteBase, $cCapriceOriginal, $mix60);
+$cCaprice300: mix($cWhiteBase, $cCapriceOriginal, $mix38);
+$cCaprice400: mix($cWhiteBase, $cCapriceOriginal, $mix18);
+$cCaprice500: $cCapriceOriginal;
+$cCaprice600: mix($cBlackBase, $cCapriceOriginal, $mix18);
+$cCaprice700: mix($cBlackBase, $cCapriceOriginal, $mix38);
+$cCaprice800: mix($cBlackBase, $cCapriceOriginal, $mix60);
+$cCaprice900: mix($cBlackBase, $cCapriceOriginal, $mix76);
+
+// Purple palette
+$cPurpleOriginal: #8f5bc9;
+$cPurple50: mix($cWhiteBase, $cPurpleOriginal, $mix87);
+$cPurple100: mix($cWhiteBase, $cPurpleOriginal, $mix76);
+$cPurple200: mix($cWhiteBase, $cPurpleOriginal, $mix60);
+$cPurple300: mix($cWhiteBase, $cPurpleOriginal, $mix38);
+$cPurple400: mix($cWhiteBase, $cPurpleOriginal, $mix18);
+$cPurple500: $cPurpleOriginal;
+$cPurple600: mix($cBlackBase, $cPurpleOriginal, $mix18);
+$cPurple700: mix($cBlackBase, $cPurpleOriginal, $mix38);
+$cPurple800: mix($cBlackBase, $cPurpleOriginal, $mix60);
+$cPurple900: mix($cBlackBase, $cPurpleOriginal, $mix76);
+
+// Black palette
+$cBlackOriginal: #333;
+$cBlack50: rgba($cBlackOriginal, $mix18 / 100%);
+$cBlack100: rgba($cBlackOriginal, $mix38 / 100%);
+$cBlack200: rgba($cBlackOriginal, $mix60 / 100%);
+$cBlack300: rgba($cBlackOriginal, $mix76 / 100%);
+$cBlack400: rgba($cBlackOriginal, $mix87 / 100%);
+$cBlack500: $cBlackOriginal;
+
+// White palette
+$cWhiteOriginal: #fff;
+$cWhite50: rgba($cWhiteOriginal, $mix18 / 100%);
+$cWhite100: rgba($cWhiteOriginal, $mix38 / 100%);
+$cWhite200: rgba($cWhiteOriginal, $mix60 / 100%);
+$cWhite300: rgba($cWhiteOriginal, $mix76 / 100%);
+$cWhite400: rgba($cWhiteOriginal, $mix87 / 100%);
+$cWhite500: $cWhiteOriginal;
+
+// Transparent
+$cTransparent: rgba(255, 255, 255, 0);
+
+// Gradients palette
+$gLightPurple: linear-gradient(240deg, #ffe2ea, #b0a0db);
+$gPurple: linear-gradient(240deg, #e274b3, #764ce8);
+$gDreams: linear-gradient(240deg, #8f5bc9, #412bb1);
+$gNight: linear-gradient(240deg, #2a0457, #0c0019);
+$gRed: linear-gradient(240deg, #ff5860, #ed4a48);
+$gGreen: linear-gradient(240deg, #25d8a1, #85b949);
+$gBlue: linear-gradient(240deg, #abdcff, #0396ff);
+$gCarbon: linear-gradient(240deg, #44576e, #333);
+$gPeach: linear-gradient(240deg, #ffd393, #ff974f);
+
+// ==========
+// SIZES
+// ==========
+$bmu: 8px; // базовый отступ
+$wMobileMax: 640px;
+$hStickyCloseBtn: 32px;
+$hProfileBackgroundSmall: 84px;
+$hProfileBackgroundBig: 200px;
+$userPicSizeSmall: 40px;
+$userPicSizeBig: 90px;
