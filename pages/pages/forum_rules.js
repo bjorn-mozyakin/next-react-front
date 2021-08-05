@@ -1,10 +1,17 @@
+import React from "react";
+
 import { initializeStore } from "../../srore/reducer";
+import { defineDeviceType } from "../../utils/helpers";
 
 import Layout from "../../components/Layout/Layout";
 
-function ForumRulesPage() {
+function ForumRulesPage({ deviceType }) {
   return (
-    <Layout>
+    <Layout
+      title="Правила пользования форумом Woman.ru."
+      deviceType={deviceType}
+      needAdScripts={false}
+    >
       <div className="service-page">
         <h1>Правила пользования форумом Woman.ru</h1>
         <p>
@@ -539,7 +546,7 @@ export default ForumRulesPage;
 // The date returned here will be different for every request that hits the page,
 // that is because the page becomes a serverless function instead of being statically
 // exported when you use `getServerSideProps` or `getInitialProps`
-export function getServerSideProps() {
+export function getServerSideProps({ req }) {
   const reduxStore = initializeStore();
   // const { dispatch } = reduxStore
   //
@@ -549,5 +556,12 @@ export function getServerSideProps() {
   //     lastUpdate: Date.now(),
   // })
 
-  return { props: { initialReduxState: reduxStore.getState() } };
+  return {
+    props: {
+      initialReduxState: reduxStore.getState(),
+      deviceType: defineDeviceType(req.headers["user-agent"])
+        ? "mobile"
+        : "desktop",
+    },
+  };
 }

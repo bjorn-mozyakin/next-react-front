@@ -52,7 +52,14 @@ function MainPage({ data, deviceType }) {
       );
   }
 
-  return <Layout deviceType={deviceType}>{template}</Layout>;
+  return (
+    <Layout
+      title="Женский форум Woman.ru: настоящая женщина, как она есть"
+      deviceType={deviceType}
+    >
+      {template}
+    </Layout>
+  );
 }
 
 export async function getServerSideProps({ query, req }) {
