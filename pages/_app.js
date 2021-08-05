@@ -9,7 +9,9 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { useStore, reducer } from "../srore/reducer";
+
 import BannerStore from "../components/BannerStore/BannerStore";
+
 function MyApp({ Component, pageProps }) {
   // const store = useStore(pageProps.initialReduxState);
 
