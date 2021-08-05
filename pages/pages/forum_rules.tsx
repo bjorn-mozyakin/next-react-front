@@ -1,10 +1,17 @@
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
 <<<<<<< Updated upstream:pages/pages/forum_rules.js
+=======
+import React from "react";
+
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
 import { initializeStore } from "../../srore/reducer";
+import { defineDeviceType } from "../../utils/helpers";
 
 import Layout from "../../components/Layout/Layout";
 
-function ForumRulesPage() {
+function ForumRulesPage({ deviceType }) {
   return (
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
     <Layout>
 =======
 import React from "react";
@@ -20,13 +27,18 @@ type Props = {
 
 function ForumRulesPage({ deviceType }: Props) {
   return (
+=======
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
     <Layout
       title="Правила пользования форумом Woman.ru."
       deviceType={deviceType}
       needAdScripts={false}
     >
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
       {/*
 >>>>>>> Stashed changes:pages/pages/forum_rules.tsx
+=======
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
       <div className="service-page">
         <h1>Правила пользования форумом Woman.ru</h1>
         <p>
@@ -562,8 +574,12 @@ export default ForumRulesPage;
 // The date returned here will be different for every request that hits the page,
 // that is because the page becomes a serverless function instead of being statically
 // exported when you use `getServerSideProps` or `getInitialProps`
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
 <<<<<<< Updated upstream:pages/pages/forum_rules.js
 export function getServerSideProps() {
+=======
+export function getServerSideProps({ req }) {
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
   const reduxStore = initializeStore();
 =======
 export function getServerSideProps({ req }) {
@@ -577,16 +593,25 @@ export function getServerSideProps({ req }) {
   //     lastUpdate: Date.now(),
   // })
 
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
 <<<<<<< Updated upstream:pages/pages/forum_rules.js
   return { props: { initialReduxState: reduxStore.getState() } };
 =======
   return {
     props: {
       // initialReduxState: reduxStore.getState(),
+=======
+  return {
+    props: {
+      initialReduxState: reduxStore.getState(),
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
       deviceType: defineDeviceType(req.headers["user-agent"])
         ? "mobile"
         : "desktop",
     },
   };
+<<<<<<< Updated upstream:pages/pages/forum_rules.tsx
 >>>>>>> Stashed changes:pages/pages/forum_rules.tsx
+=======
+>>>>>>> Stashed changes:pages/pages/forum_rules.js
 }

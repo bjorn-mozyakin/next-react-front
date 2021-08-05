@@ -2,7 +2,10 @@
 // import styles from './Search.module.scss';
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Head from "next/head";
+=======
+>>>>>>> Stashed changes
 import React, { FC } from "react";
 <<<<<<< Updated upstream
 import { useSelector } from "react-redux";
@@ -12,6 +15,7 @@ import React from "react";
 =======
 >>>>>>> Stashed changes
 
+import Head from "../Head/Head";
 import Page from "../Page/Page";
 
 import LayoutDesktop from "./LayoutDesktop";
@@ -19,6 +23,7 @@ import LayoutMobile from "./LayoutMobile";
 
 type LayoutProps = {
   children?: React.ReactNode;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 };
@@ -55,17 +60,33 @@ export const Layout = ({
 export const Layout: FC = ({ children, deviceType }: LayoutProps) => {
   const layout = deviceType === "mobile" ? <LayoutMobile /> : <LayoutDesktop />;
 >>>>>>> Stashed changes
+=======
+  title?: string;
+  needAdScripts?: boolean;
+  deviceType?: string;
+};
+
+export const Layout: FC = ({
+  children,
+  title,
+  needAdScripts = true,
+  deviceType = "mobile",
+}: LayoutProps) => {
+  const layout =
+    deviceType === "mobile" ? (
+      <LayoutMobile>{children}</LayoutMobile>
+    ) : (
+      <LayoutDesktop>{children}</LayoutDesktop>
+    );
+>>>>>>> Stashed changes
 
   return (
     <>
-      <Head>
-        <script>window._globalPublisherBanners = [];</script>
-        <script
-          async
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-        />
-        <script src="https://i42-cdn.woman.ru/static/publisherGlobal/js/_publisherGlobal.js?36-1607" />
-      </Head>
+      <Head
+        title={title}
+        needAdScripts={needAdScripts}
+        needAdfoxScript={needAdfoxScript}
+      />
       <Page type="service">{layout}</Page>
     </>
   );

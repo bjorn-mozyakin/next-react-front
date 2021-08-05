@@ -61,7 +61,14 @@ function MainPage({ data, deviceType }) {
       template = <MainPageTemplate title="Форум Woman.ru" data={data} />;
   }
 
-  return <Layout deviceType={deviceType}>{template}</Layout>;
+  return (
+    <Layout
+      title="Женский форум Woman.ru: настоящая женщина, как она есть"
+      deviceType={deviceType}
+    >
+      {template}
+    </Layout>
+  );
 }
 
 export async function getServerSideProps({ query, req }) {
