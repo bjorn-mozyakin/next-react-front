@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:pages/pages/forum_rules.js
 import { initializeStore } from "../../srore/reducer";
 
 import Layout from "../../components/Layout/Layout";
@@ -5,6 +6,27 @@ import Layout from "../../components/Layout/Layout";
 function ForumRulesPage() {
   return (
     <Layout>
+=======
+import React from "react";
+
+// import { initializeStore } from "../../srore/reducer";
+import { defineDeviceType } from "../../utils/helpers";
+
+import Layout from "../../components/Layout/Layout";
+
+type Props = {
+  deviceType: string;
+};
+
+function ForumRulesPage({ deviceType }: Props) {
+  return (
+    <Layout
+      title="Правила пользования форумом Woman.ru."
+      deviceType={deviceType}
+      needAdScripts={false}
+    >
+      {/*
+>>>>>>> Stashed changes:pages/pages/forum_rules.tsx
       <div className="service-page">
         <h1>Правила пользования форумом Woman.ru</h1>
         <p>
@@ -530,6 +552,7 @@ function ForumRulesPage() {
           <a href="#content_table">К содержанию</a>
         </p>
       </div>
+*/}
     </Layout>
   );
 }
@@ -539,8 +562,13 @@ export default ForumRulesPage;
 // The date returned here will be different for every request that hits the page,
 // that is because the page becomes a serverless function instead of being statically
 // exported when you use `getServerSideProps` or `getInitialProps`
+<<<<<<< Updated upstream:pages/pages/forum_rules.js
 export function getServerSideProps() {
   const reduxStore = initializeStore();
+=======
+export function getServerSideProps({ req }) {
+  // const reduxStore = initializeStore();
+>>>>>>> Stashed changes:pages/pages/forum_rules.tsx
   // const { dispatch } = reduxStore
   //
   // dispatch({
@@ -549,5 +577,16 @@ export function getServerSideProps() {
   //     lastUpdate: Date.now(),
   // })
 
+<<<<<<< Updated upstream:pages/pages/forum_rules.js
   return { props: { initialReduxState: reduxStore.getState() } };
+=======
+  return {
+    props: {
+      // initialReduxState: reduxStore.getState(),
+      deviceType: defineDeviceType(req.headers["user-agent"])
+        ? "mobile"
+        : "desktop",
+    },
+  };
+>>>>>>> Stashed changes:pages/pages/forum_rules.tsx
 }

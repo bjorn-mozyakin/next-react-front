@@ -1,12 +1,12 @@
 // Styles
 // import styles from './Topbar.module.scss';
 
-import React, { FC } from "react";
+import React from "react";
 
 import Nav from "../Nav/Nav";
 import Search from "../Search/Search";
 
-export const Topbar: FC = () => {
+export const Topbar = () => {
   return (
     <div className="topbar">
       <div className="topbar__container">

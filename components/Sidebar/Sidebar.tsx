@@ -1,12 +1,12 @@
 // Styles
 // import styles from './Sidebar.module.scss';
 
-import React, { FC } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 
 import { toggleSidebarVisibility } from "../../srore/actions";
 
-export const Sidebar: FC = () => {
+export const Sidebar = () => {
   const dispatch = useDispatch();
 
   const handleCloseBtnClick = () => {

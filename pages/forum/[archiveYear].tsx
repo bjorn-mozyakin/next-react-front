@@ -1,13 +1,18 @@
 import { useRouter } from "next/router";
+import React from "react";
 
 import axiosInstance from "../../utils/axios";
 
 import Layout from "../../components/Layout/Layout";
 import List from "../../components/List/List";
 
-function ArchivePage({ data }) {
+type Props = {
+  data: any;
+};
+
+function ArchivePage({ data }: Props) {
   const router = useRouter();
-  const { archiveYear } = router.query;
+  const archiveYear: any = router.query.archiveYear;
   const year = archiveYear.split("_")[1];
 
   console.log("crab", data);

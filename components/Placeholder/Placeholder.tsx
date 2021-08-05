@@ -1,9 +1,14 @@
 // Styles
 // import styles from './Nav.module.scss';
-import React, { FC, useRef, useEffect } from "react";
+import React from "react";
 
-export const Placeholder: FC = ({
-  children,
+type PlaceholderProps = {
+  name?: string;
+  html?: string;
+  script?: string;
+};
+
+export const Placeholder = ({
   name = "",
   html = "",
   script = "",
@@ -72,16 +77,8 @@ export const Placeholder: FC = ({
             "console.log('crabicus2');</script>",
         }}
       ></div>
-      {/*<div ref={scriptRef} />*/}
     </>
   );
-};
-
-type PlaceholderProps = {
-  children?: React.ReactNode;
-  name?: string;
-  html?: string;
-  script?: string;
 };
 
 export default Placeholder;

@@ -1,9 +1,13 @@
 // Styles
 // import styles from './Search.module.scss';
 
+<<<<<<< Updated upstream
 import Head from "next/head";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
+=======
+import React from "react";
+>>>>>>> Stashed changes
 
 import { State } from "../../entities/State";
 import Footer from "../Footer/Footer";
@@ -14,12 +18,34 @@ import Topbar from "../Topbar/Topbar";
 
 type LayoutProps = {
   children?: React.ReactNode;
+<<<<<<< Updated upstream
 };
 
 export const Layout: FC = ({ children }: LayoutProps) => {
   const isSidebarVisible = useSelector(
     (state: State) => state.isSidebarVisible
   );
+=======
+  title?: string;
+  needAdScripts?: boolean;
+  needAdfoxScript?: boolean;
+  deviceType?: string;
+};
+
+export const Layout = ({
+  children,
+  title,
+  needAdScripts = true,
+  needAdfoxScript = true,
+  deviceType = "mobile",
+}: LayoutProps) => {
+  const layout =
+    deviceType === "mobile" ? (
+      <LayoutMobile>{children}</LayoutMobile>
+    ) : (
+      <LayoutDesktop>{children}</LayoutDesktop>
+    );
+>>>>>>> Stashed changes
 
   return (
     <>

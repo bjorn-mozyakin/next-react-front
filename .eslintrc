@@ -31,6 +31,9 @@
     "prefer-promise-reject-errors": "off",
     "no-case-declarations": "off",
     "no-prototype-builtins": "off",
+    "react/jsx-no-target-blank": [
+      1
+    ],
     "import-helpers/order-imports": [
       "error",
       {

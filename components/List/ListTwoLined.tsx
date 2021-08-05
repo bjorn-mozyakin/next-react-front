@@ -8,7 +8,6 @@ import { State } from "../../entities/State";
 import { getThreadList } from "../../srore/actions";
 import ListTwoLinedItem from "../ListItem/ListTwoLinedItem";
 import Placeholder from "../Placeholder/Placeholder";
-import { devideArrays } from "../../utils/helpers";
 
 type ListTwoLinedProps = {
   data: any;

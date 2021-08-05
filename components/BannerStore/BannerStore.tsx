@@ -5,7 +5,11 @@ import { useDispatch } from "react-redux";
 
 import { getBannerList } from "../../srore/actions";
 
-export const BannerStore = ({ children }) => {
+type Props = {
+  children?: React.ReactNode;
+};
+
+export const BannerStore = ({ children }: Props) => {
   const dispatch = useDispatch();
   dispatch(getBannerList());
 

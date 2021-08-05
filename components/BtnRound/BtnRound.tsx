@@ -1,11 +1,11 @@
 // Styles
 // import styles from "./BtnRound.module.scss";
 
-import React, { FC } from "react";
+import React from "react";
 
 import { ButtonType, BtnRoundType } from "../../entities/Btn";
 
-export const BtnRound: FC = ({
+export const BtnRound = ({
   children,
   styles: {
     volume = "flat",

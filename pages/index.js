@@ -1,4 +1,5 @@
-import Head from "next/head";
+import React from "react";
+
 import BtnFlat from "../components/BtnFlat/BtnFlat";
 
 export default function Home(props) {
@@ -12,18 +13,6 @@ export default function Home(props) {
 
   return (
     <>
-      <Head>
-        <title>This page has a title 🤔</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link href="/static/main.css" rel="stylesheet" />
-        <link
-          rel="stylesheet"
-          href="https://i42-cdn.woman.ru/static/forum/desktop/css/_desktop.css?36-1601"
-          media="all"
-        />
-      </Head>
-
       <h1>This page has a title 🤔</h1>
       <p>{JSON.stringify(props)}</p>
       <BtnFlat {...btnFlatData}>Кнопка</BtnFlat>

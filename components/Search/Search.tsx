@@ -1,12 +1,12 @@
 // Styles
 // import styles from './Search.module.scss';
 
-import React, { FC } from "react";
+import React from "react";
 
 import { ButtonType, BtnRoundType } from "../../entities/Btn";
 import BtnRound from "../BtnRound/BtnRound";
 
-export const Search: FC = () => {
+export const Search = () => {
   const BtnSearchData: BtnRoundType = {
     styles: {
       volume: "flat",
