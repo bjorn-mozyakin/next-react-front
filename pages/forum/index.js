@@ -2,13 +2,14 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import axiosInstance from "../../utils/axios";
+import { defineDeviceType } from "../../utils/helpers";
 
 import Layout from "../../components/Layout/Layout";
 import ListingPage from "../../components/Pages/ListingPage/ListingPage";
 import MainPageTemplate from "../../components/Pages/MainPage/MainPage";
 import Placeholder from "../../components/Placeholder/Placeholder";
 
-function MainPage({ data }) {
+function MainPage({ data, deviceType }) {
   const router = useRouter();
   const { sort } = router.query;
 
@@ -51,10 +52,12 @@ function MainPage({ data }) {
       );
   }
 
-  return <Layout>{template}</Layout>;
+  return <Layout deviceType={deviceType}>{template}</Layout>;
 }
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, req }) {
+  const isMobile = defineDeviceType(req.headers["user-agent"]);
+
   const { sort } = query;
   let urls;
   switch (sort) {
@@ -103,6 +106,7 @@ export async function getServerSideProps({ query }) {
         return {
           props: {
             data: responses[0].data,
+            deviceType: isMobile ? "mobile" : "desktop",
           },
         };
       }
@@ -115,12 +119,14 @@ export async function getServerSideProps({ query }) {
               data: {
                 hashtags: data[0],
                 threads: data[1],
+                deviceType: isMobile ? "mobile" : "desktop",
               },
             },
           }
         : {
             props: {
               data: data[0],
+              deviceType: isMobile ? "mobile" : "desktop",
             },
           };
     } catch (err) {
@@ -128,7 +134,7 @@ export async function getServerSideProps({ query }) {
     }
   } else {
     return {
-      props: { data: null },
+      props: { data: null, deviceType: isMobile ? "mobile" : "desktop" },
     };
   }
 }
