@@ -1,12 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-import BtnFlat from "../../components/BtnFlat/BtnFlat";
-import CardTopic from "../../components/CardTopic/CardTopic";
-import Header from "../../components/Header/Header";
+import axiosInstance from "../../../../utils/axios";
 
-import axiosInstance from "../../utils/axios";
+import BtnFlat from "../../../../components/BtnFlat/BtnFlat";
+import CardTopic from "../../../../components/CardTopic/CardTopic";
+import Layout from "../../../../components/Layout/Layout";
 
-function Thread({ data }) {
+type Props = {
+  data: any;
+};
+
+function ThreadPage({ data }: Props) {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
 
@@ -26,7 +30,6 @@ function Thread({ data }) {
   };
 
   const btnFlatData = {
-    text: "Подгрузить",
     additionalClasses: [
       "user-info__action-btn",
       "user-info__edit-btn",
@@ -34,17 +37,16 @@ function Thread({ data }) {
     ],
     onClick: getThreads,
   };
-
   console.log("crab", data);
 
   return (
-    <>
-      <Header />
+    <Layout>
+      Страница темы
       <CardTopic {...data} />
-      <BtnFlat {...btnFlatData} />
+      <BtnFlat {...btnFlatData}>Подгрузить</BtnFlat>
       <div>{name}</div>
       <div>{content}</div>
-    </>
+    </Layout>
   );
 }
 
@@ -55,7 +57,7 @@ export async function getStaticPaths() {
   const threads = response.data["hydra:member"];
 
   const paths = threads.map((thread) => ({
-    params: { id: `${thread.id}` },
+    params: { id: `${thread.id}`, section: "test", subsection: "test" },
   }));
 
   return {
@@ -78,4 +80,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Thread;
+export default ThreadPage;

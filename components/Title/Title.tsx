@@ -3,7 +3,11 @@
 
 import React from "react";
 
-export const Title = ({ children }) => {
+type TitleProps = {
+  children?: React.ReactNode;
+};
+
+export const Title = ({ children }: TitleProps) => {
   return <h2 className="title text_widget-title">{children}</h2>;
 };
 

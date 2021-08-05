@@ -1,5 +1,8 @@
-import Layout from "../../components/Layout/Layout";
+import React from "react";
+
 import { initializeStore } from "../../srore/reducer";
+
+import Layout from "../../components/Layout/Layout";
 
 function LivePage() {
   return <Layout>Страница прямого эфира</Layout>;

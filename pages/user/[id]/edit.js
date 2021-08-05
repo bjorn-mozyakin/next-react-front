@@ -1,9 +1,11 @@
-import Layout from "../../../components/Layout/Layout";
 import { useRouter } from "next/router";
+import React from "react";
+
+import Layout from "../../../components/Layout/Layout";
 
 function ProfileEditPage() {
   const router = useRouter();
-  const { sort } = router.query;
+  const { contentType } = router.query;
 
   let template;
   switch (contentType) {

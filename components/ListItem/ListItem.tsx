@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 // Styles
 import styles from "./ListItem.module.scss";
@@ -9,7 +9,7 @@ type ListItemProps = {
   createdAt?: string;
 };
 
-export const ListItem: FC = ({ name, createdAt }: ListItemProps) => {
+export const ListItem = ({ name, createdAt }: ListItemProps) => {
   console.log("crab", name, createdAt);
 
   return (

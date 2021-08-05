@@ -1,7 +1,7 @@
 // Styles
 // import styles from './Search.module.scss';
 
-import React, { FC } from "react";
+import React from "react";
 
 import Head from "../Head/Head";
 import Page from "../Page/Page";
@@ -13,13 +13,15 @@ type LayoutProps = {
   children?: React.ReactNode;
   title?: string;
   needAdScripts?: boolean;
+  needAdfoxScript?: boolean;
   deviceType?: string;
 };
 
-export const Layout: FC = ({
+export const Layout = ({
   children,
   title,
   needAdScripts = true,
+  needAdfoxScript = true,
   deviceType = "mobile",
 }: LayoutProps) => {
   const layout =

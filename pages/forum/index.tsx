@@ -9,7 +9,12 @@ import ListingPage from "../../components/Pages/ListingPage/ListingPage";
 import MainPageTemplate from "../../components/Pages/MainPage/MainPage";
 import Placeholder from "../../components/Placeholder/Placeholder";
 
-function MainPage({ data, deviceType }) {
+type Props = {
+  data: any;
+  deviceType: string;
+};
+
+function MainPage({ data, deviceType }: Props) {
   const router = useRouter();
   const { sort } = router.query;
 
@@ -35,9 +40,7 @@ function MainPage({ data, deviceType }) {
         <Placeholder
           html={data.length ? data[0].layout : ""}
           script={data.length ? data[0].config : ""}
-        >
-          -
-        </Placeholder>
+        />
       );
       // template = (
       //   <>
@@ -47,9 +50,7 @@ function MainPage({ data, deviceType }) {
       // );
       break;
     default:
-      template = (
-        <MainPageTemplate title="Форум Woman.ru" activeTab={sort} data={data} />
-      );
+      template = <MainPageTemplate title="Форум Woman.ru" data={data} />;
   }
 
   return (
@@ -108,7 +109,11 @@ export async function getServerSideProps({ query, req }) {
   if (urls) {
     const requests = urls.map((url) => axiosInstance.get(url));
     try {
-      const responses = await Promise.all(requests);
+      type Res = {
+        data: any;
+      };
+
+      const responses: Res[] = await Promise.all(requests);
       if (sort === "test") {
         return {
           props: {

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 // Styles
 // import styles from "./ListItem.module.scss";
@@ -11,7 +11,7 @@ type ListTwoLinedItemProps = {
   repliesCount?: string;
 };
 
-export const ListTwoLinedItem: FC = ({
+export const ListTwoLinedItem = ({
   name,
   createdAt,
   repliesCount,

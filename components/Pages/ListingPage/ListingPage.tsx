@@ -1,11 +1,11 @@
 import React from "react";
 
+import { BtnFlatType } from "../../../entities/Btn";
+import BtnFlat from "../../BtnFlat/BtnFlat";
 import ContentNav from "../../ContentNav/ContentNav";
+import Link from "../../Link/Link";
 import ListTwoLined from "../../List/ListTwoLined";
 import Tabs from "../../Tabs/Tabs";
-import Link from "../../Link/Link";
-import BtnFlat from "../../BtnFlat/BtnFlat";
-import { BtnFlatType } from "../../../entities/Btn";
 
 type ListingPageProps = {
   data: any;
@@ -14,7 +14,13 @@ type ListingPageProps = {
 };
 
 export const ListingPage = ({ data, title, activeTab }: ListingPageProps) => {
-  const tabsPopularData = [
+  type TabsData = {
+    name: string;
+    href: string;
+    isActive?: boolean;
+  };
+
+  const tabsPopularData: TabsData[] = [
     {
       name: "сутки",
       href: "1d",
@@ -37,7 +43,7 @@ export const ListingPage = ({ data, title, activeTab }: ListingPageProps) => {
     },
   ];
 
-  const tabsNewData = [
+  const tabsNewData: TabsData[] = [
     {
       name: "все",
       href: "new",
@@ -78,7 +84,7 @@ export const ListingPage = ({ data, title, activeTab }: ListingPageProps) => {
 
   return (
     <>
-      <ContentNav title={title} isNewThreadsActive={isNewThreadsActive}>
+      <ContentNav title={title}>
         <Link href="/forum/?sort=new">
           <BtnFlat {...btnSortNewData}>По новизне</BtnFlat>
         </Link>

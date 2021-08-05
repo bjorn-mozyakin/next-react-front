@@ -1,17 +1,22 @@
 import React from "react";
 
-import { initializeStore } from "../../srore/reducer";
+// import { initializeStore } from "../../srore/reducer";
 import { defineDeviceType } from "../../utils/helpers";
 
 import Layout from "../../components/Layout/Layout";
 
-function ForumRulesPage({ deviceType }) {
+type Props = {
+  deviceType: string;
+};
+
+function ForumRulesPage({ deviceType }: Props) {
   return (
     <Layout
       title="Правила пользования форумом Woman.ru."
       deviceType={deviceType}
       needAdScripts={false}
     >
+      {/*
       <div className="service-page">
         <h1>Правила пользования форумом Woman.ru</h1>
         <p>
@@ -537,6 +542,7 @@ function ForumRulesPage({ deviceType }) {
           <a href="#content_table">К содержанию</a>
         </p>
       </div>
+*/}
     </Layout>
   );
 }
@@ -547,7 +553,7 @@ export default ForumRulesPage;
 // that is because the page becomes a serverless function instead of being statically
 // exported when you use `getServerSideProps` or `getInitialProps`
 export function getServerSideProps({ req }) {
-  const reduxStore = initializeStore();
+  // const reduxStore = initializeStore();
   // const { dispatch } = reduxStore
   //
   // dispatch({
@@ -558,7 +564,7 @@ export function getServerSideProps({ req }) {
 
   return {
     props: {
-      initialReduxState: reduxStore.getState(),
+      // initialReduxState: reduxStore.getState(),
       deviceType: defineDeviceType(req.headers["user-agent"])
         ? "mobile"
         : "desktop",

@@ -1,9 +1,10 @@
 // Styles
-import styles from "./List.module.scss";
 
 import React from "react";
 
 import ListItem from "../ListItem/ListItem";
+
+// import styles from "./List.module.scss";
 
 type ListProps = {
   data: any;
@@ -13,8 +14,8 @@ export const List = ({ data }: ListProps) => {
   console.log("crab", data);
 
   return (
-    <div className={styles.list}>
-      <ul className={styles.list__container}>
+    <div className="list">
+      <ul className="list__container">
         {data.map((thread, idx) => (
           <ListItem key={`list-item_${idx}`} {...thread} />
         ))}

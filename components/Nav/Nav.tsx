@@ -1,13 +1,14 @@
 // Styles
 // import styles from './Nav.module.scss';
-import React, { FC } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 
+import { BtnRoundType } from "../../entities/Btn";
 import { toggleSidebarVisibility } from "../../srore/actions";
-import BtnRound, { BtnRoundType } from "../BtnRound/BtnRound";
+import BtnRound from "../BtnRound/BtnRound";
 import Link from "../Link/Link";
 
-export const Nav: FC = () => {
+export const Nav = () => {
   const dispatch = useDispatch();
 
   const handleBurgerClick = () => {
@@ -62,7 +63,7 @@ export const Nav: FC = () => {
       <BtnRound {...btnData} />
       <div className="nav__menu">
         {items.map((item, idx) => {
-          const { name, href, scroll } = item;
+          const { name, href } = item;
           console.log("crab", name, href);
           return (
             <div key={`nav__item_${idx}`} className="nav__item">
