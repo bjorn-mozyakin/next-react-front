@@ -2,12 +2,14 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import axiosInstance from "../../utils/axios";
+import { defineDeviceType } from "../../utils/helpers";
 
 import Layout from "../../components/Layout/Layout";
 import ListingPage from "../../components/Pages/ListingPage/ListingPage";
 import MainPageTemplate from "../../components/Pages/MainPage/MainPage";
 import Placeholder from "../../components/Placeholder/Placeholder";
 
+<<<<<<< Updated upstream:pages/forum/index.tsx
 <<<<<<< Updated upstream:pages/forum/index.js
 function MainPage({ data }) {
 =======
@@ -18,6 +20,9 @@ type Props = {
 
 function MainPage({ data, deviceType }: Props) {
 >>>>>>> Stashed changes:pages/forum/index.tsx
+=======
+function MainPage({ data, deviceType }) {
+>>>>>>> Stashed changes:pages/forum/index.js
   const router = useRouter();
   const { sort } = router.query;
 
@@ -56,10 +61,12 @@ function MainPage({ data, deviceType }: Props) {
       template = <MainPageTemplate title="Форум Woman.ru" data={data} />;
   }
 
-  return <Layout>{template}</Layout>;
+  return <Layout deviceType={deviceType}>{template}</Layout>;
 }
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, req }) {
+  const isMobile = defineDeviceType(req.headers["user-agent"]);
+
   const { sort } = query;
   let urls;
   switch (sort) {
@@ -112,6 +119,7 @@ export async function getServerSideProps({ query }) {
         return {
           props: {
             data: responses[0].data,
+            deviceType: isMobile ? "mobile" : "desktop",
           },
         };
       }
@@ -124,12 +132,14 @@ export async function getServerSideProps({ query }) {
               data: {
                 hashtags: data[0],
                 threads: data[1],
+                deviceType: isMobile ? "mobile" : "desktop",
               },
             },
           }
         : {
             props: {
               data: data[0],
+              deviceType: isMobile ? "mobile" : "desktop",
             },
           };
     } catch (err) {
@@ -137,7 +147,7 @@ export async function getServerSideProps({ query }) {
     }
   } else {
     return {
-      props: { data: null },
+      props: { data: null, deviceType: isMobile ? "mobile" : "desktop" },
     };
   }
 }

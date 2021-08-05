@@ -10,7 +10,9 @@ import thunk from "redux-thunk";
 
 <<<<<<< Updated upstream:pages/_app.js
 import { useStore, reducer } from "../srore/reducer";
+
 import BannerStore from "../components/BannerStore/BannerStore";
+
 function MyApp({ Component, pageProps }) {
 =======
 import { reducer } from "../srore/reducer";
