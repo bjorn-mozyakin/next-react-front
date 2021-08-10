@@ -64,7 +64,7 @@ function MainPage({ data, deviceType }: Props) {
 }
 
 export async function getServerSideProps({ query, req }) {
-  const isMobile = defineDeviceType(req.headers["user-agent"]);
+  const isMobile = defineDeviceType(req.headers["user-agent"], req.cookies);
 
   const { sort } = query;
   let urls;

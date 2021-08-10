@@ -10,10 +10,10 @@ import Placeholder from "../Placeholder/Placeholder";
 
 export const Header = () => {
   const btnArticlesData: BtnFlatType = {
+    additionalClasses: ["header__articles-btn"],
     styles: {
       size: "full",
     },
-    additionalClasses: ["header__articles-btn"],
     title: "sdf",
   };
 
@@ -35,11 +35,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <a
-        href="/"
-        className="header__logo icon_logo-woman"
-        title="На главную"
-      ></a>
+      <Link classNames="header__logo icon_logo-woman" title="На главную" />
       <div className="header__right">
         <Placeholder name="forumHeaderBannerD" />
         <Link>

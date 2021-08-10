@@ -4,6 +4,7 @@
 import React from "react";
 
 import { ButtonType, BtnRoundType } from "../../entities/Btn";
+import { renameDataAttributes } from "../../utils/helpers";
 
 export const BtnRound = ({
   children,
@@ -14,9 +15,10 @@ export const BtnRound = ({
     states = "crimson-100",
     icon = false,
   } = {},
-  title = "",
+  title = null,
   type = ButtonType.BUTTON,
   additionalClasses = [],
+  dataAttributes = null,
   onClick = () => {},
 }: BtnRoundType) => {
   const classNames = [
@@ -30,8 +32,19 @@ export const BtnRound = ({
     .concat(additionalClasses)
     .join(" ");
 
+  let attrs;
+  if (dataAttributes) {
+    attrs = renameDataAttributes(dataAttributes);
+  }
+
   return (
-    <button className={classNames} onClick={onClick} title={title} type={type}>
+    <button
+      className={classNames}
+      {...(attrs || "")}
+      {...(title ? `title=${title}` : "")}
+      type={type}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

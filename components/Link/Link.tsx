@@ -1,25 +1,33 @@
 import NextLink from "next/link";
 import React from "react";
 
-type LinkProps = {
+type Props = {
   children?: React.ReactNode;
   href?: string;
-  className?: string;
+  classNames?: string;
   target?: string;
+  title?: string;
   scroll?: boolean;
 };
 
 function Link({
   children,
   href = "/",
-  className = "",
+  classNames = "",
   target = "_self",
   scroll = true,
+  title = "",
   ...rest
-}: LinkProps) {
+}: Props) {
+  title = "asdf";
   return (
     <NextLink href={href} scroll={scroll}>
-      <a className={className} target={target} {...rest}>
+      <a
+        className={classNames}
+        target={target}
+        {...(title ? `title=${title}` : "")}
+        {...rest}
+      >
         {children}
       </a>
     </NextLink>

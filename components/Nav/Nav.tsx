@@ -50,11 +50,11 @@ export const Nav = () => {
   ];
 
   const btnData: BtnRoundType = {
+    additionalClasses: ["nav__menu-btn", "relative"],
     styles: {
       icon: "burger-18-crimson",
     },
     title: "Меню",
-    additionalClasses: ["nav__menu-btn", "relative"],
     onClick: () => handleBurgerClick(),
   };
 

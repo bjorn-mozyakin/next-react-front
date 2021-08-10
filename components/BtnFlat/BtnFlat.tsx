@@ -4,6 +4,7 @@
 import React from "react";
 
 import { BtnFlatType, ButtonType } from "../../entities/Btn";
+import { renameDataAttributes } from "../../utils/helpers";
 
 export const BtnFlat = ({
   children,
@@ -14,9 +15,10 @@ export const BtnFlat = ({
     states = "crimson-700",
     icon = null,
   } = {},
-  type = ButtonType.BUTTON,
   title = null,
+  type = ButtonType.BUTTON,
   additionalClasses = [],
+  dataAttributes = null,
   onClick = () => {},
 }: BtnFlatType) => {
   const classNames = [
@@ -30,12 +32,18 @@ export const BtnFlat = ({
     .concat(additionalClasses)
     .join(" ");
 
+  let attrs;
+  if (dataAttributes) {
+    attrs = renameDataAttributes(dataAttributes);
+  }
+
   return (
     <button
       className={classNames}
-      onClick={onClick}
+      {...(attrs || "")}
       {...(title ? `title=${title}` : "")}
       type={type}
+      onClick={onClick}
     >
       {children}
     </button>

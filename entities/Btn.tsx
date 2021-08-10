@@ -7,6 +7,8 @@ export enum ButtonType {
 
 export interface BtnFlatType {
   children?: React.ReactNode;
+  additionalClasses?: string[];
+  dataAttributes?: any;
   styles?: {
     size?: string;
     color?: string;
@@ -16,12 +18,13 @@ export interface BtnFlatType {
   };
   title?: string;
   type?: ButtonType;
-  additionalClasses?: string[];
   onClick?: () => void;
 }
 
 export interface BtnRoundType {
   children?: React.ReactNode;
+  additionalClasses?: string[];
+  dataAttributes?: any;
   styles?: {
     volume?: string;
     size?: string;
@@ -31,6 +34,5 @@ export interface BtnRoundType {
   };
   title?: string;
   type?: ButtonType;
-  additionalClasses?: string[];
   onClick?: () => void;
 }
