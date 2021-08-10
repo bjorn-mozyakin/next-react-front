@@ -21,6 +21,7 @@ const initialState: State = {
   banners: [],
   scrolledPageCount: 0,
   isSidebarVisible: false,
+  isSearchFormVisible: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -29,6 +30,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isSidebarVisible: !state.isSidebarVisible,
+      };
+    case ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY:
+      return {
+        ...state,
+        isSearchFormVisible: !state.isSearchFormVisible,
       };
     case ACTIONS.UPDATE_THREAD_LIST:
       return {

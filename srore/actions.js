@@ -6,6 +6,10 @@ export const toggleSidebarVisibility = () => ({
   type: ACTIONS.TOGGLE_SIDEBAR_VISIBILITY,
 });
 
+export const toggleSearchFormVisibility = () => ({
+  type: ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY,
+});
+
 export const updateThreadList = (threads) => ({
   type: ACTIONS.UPDATE_THREAD_LIST,
   threads,

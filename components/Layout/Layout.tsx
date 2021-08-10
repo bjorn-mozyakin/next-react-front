@@ -37,6 +37,7 @@ export const Layout = ({
         title={title}
         needAdScripts={needAdScripts}
         needAdfoxScript={needAdfoxScript}
+        isMobile={deviceType === "mobile"}
       />
       <Page type="service">{layout}</Page>
     </>

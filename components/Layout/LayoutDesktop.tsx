@@ -8,7 +8,7 @@ import { State } from "../../entities/State";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
-import Topbar from "../Topbar/Topbar";
+import TopbarDesktop from "../Topbar/TopbarDesktop";
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -23,7 +23,7 @@ export const LayoutDesktop = ({ children }: LayoutProps) => {
     <>
       Desktop
       <Header />
-      <Topbar />
+      <TopbarDesktop />
       {children}
       <Footer />
       {isSidebarVisible && <Sidebar />}

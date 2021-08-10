@@ -2,17 +2,19 @@
 // import styles from './Nav.module.scss';
 import React from "react";
 
-type PlaceholderProps = {
+type Props = {
   name?: string;
+  additionalClasses?: string[];
   html?: string;
   script?: string;
 };
 
 export const Placeholder = ({
   name = "",
+  additionalClasses = [],
   html = "",
   script = "",
-}: PlaceholderProps) => {
+}: Props) => {
   // const scriptRef = useRef(null);
   //
   // useEffect(() => {
@@ -64,10 +66,13 @@ export const Placeholder = ({
         googletag.display('forum_mobile_hb-bottom');
       });      
         `;
+
+  const classNames = ["placeholder"].concat(additionalClasses).join(" ");
+
   return (
     <>
       <div
-        className="placeholder"
+        className={classNames}
         data-name={name}
         dangerouslySetInnerHTML={{
           __html:

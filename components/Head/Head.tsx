@@ -10,6 +10,7 @@ type HeadProps = {
   title?: string;
   needAdScripts?: boolean;
   needAdfoxScript?: boolean;
+  isMobile: boolean;
 };
 
 export const Head = ({
@@ -17,6 +18,7 @@ export const Head = ({
   title = "Форум Woman.ru",
   needAdScripts = true,
   needAdfoxScript = true,
+  isMobile,
 }: HeadProps) => {
   return (
     <HeadNext>
@@ -28,12 +30,19 @@ export const Head = ({
       <link href="/static/main.css" rel="stylesheet" />
       */}
 
-      <link
-        rel="stylesheet"
-        href="https://i42-cdn.woman.ru/static/forum/desktop/css/_desktop.css?36-1601"
-        media="all"
-      />
-
+      {isMobile ? (
+        <link
+          rel="stylesheet"
+          href="https://i42-cdn.woman.ru/static/forum/mobile/css/_mobile.css?36-1610"
+          media="all"
+        />
+      ) : (
+        <link
+          rel="stylesheet"
+          href="https://i42-cdn.woman.ru/static/forum/desktop/css/_desktop.css?36-1601"
+          media="all"
+        />
+      )}
       {children}
     </HeadNext>
   );

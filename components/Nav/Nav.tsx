@@ -69,7 +69,7 @@ export const Nav = () => {
             <div key={`nav__item_${idx}`} className="nav__item">
               <Link
                 href={href}
-                className="nav__link interactive"
+                classNames="nav__link interactive"
                 aria-label={name}
               >
                 {name}
