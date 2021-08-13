@@ -5,28 +5,30 @@ type Props = {
   children?: React.ReactNode;
   href?: string;
   classNames?: string;
+  rel?: string;
+  scroll?: boolean;
   target?: string;
   title?: string;
-  scroll?: boolean;
 };
 
 function Link({
   children,
   href = "/",
   classNames = "",
-  target = "_self",
+  rel = "",
   scroll = true,
+  target = "_self",
   title = "",
   ...rest
 }: Props) {
-  title = "asdf";
   return (
     <NextLink href={href} scroll={scroll}>
       <a
         className={classNames}
         target={target}
-        {...(title ? `title=${title}` : "")}
+        {...(title ? { title } : "")}
         {...rest}
+        {...(rel ? { rel } : "")}
       >
         {children}
       </a>

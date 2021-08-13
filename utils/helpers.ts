@@ -1,3 +1,5 @@
+import React from "react";
+
 export const devideArrays = (threads, size = 30) => {
   const arr = [];
   while (threads.length > 0) arr.push(threads.splice(0, size));
@@ -23,4 +25,11 @@ export const renameDataAttributes = (obj) => {
   return Object.fromEntries(
     Object.entries(obj).map(([key, value]) => [`data-${key}`, value])
   );
+};
+
+export const defineAvatarClass = (id: number): string => {
+  if (id > 0) {
+    return "user__pic_crimson-100";
+  }
+  return "";
 };

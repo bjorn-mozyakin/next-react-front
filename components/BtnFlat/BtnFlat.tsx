@@ -41,7 +41,7 @@ export const BtnFlat = ({
     <button
       className={classNames}
       {...(attrs || "")}
-      {...(title ? `title=${title}` : "")}
+      {...(title ? { title } : "")}
       type={type}
       onClick={onClick}
     >

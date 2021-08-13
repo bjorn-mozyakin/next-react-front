@@ -9,7 +9,7 @@ import Page from "../Page/Page";
 import LayoutDesktop from "./LayoutDesktop";
 import LayoutMobile from "./LayoutMobile";
 
-type LayoutProps = {
+type Props = {
   children?: React.ReactNode;
   title?: string;
   needAdScripts?: boolean;
@@ -23,14 +23,7 @@ export const Layout = ({
   needAdScripts = true,
   needAdfoxScript = true,
   deviceType = "mobile",
-}: LayoutProps) => {
-  const layout =
-    deviceType === "mobile" ? (
-      <LayoutMobile>{children}</LayoutMobile>
-    ) : (
-      <LayoutDesktop>{children}</LayoutDesktop>
-    );
-
+}: Props) => {
   return (
     <>
       <Head
@@ -39,7 +32,13 @@ export const Layout = ({
         needAdfoxScript={needAdfoxScript}
         isMobile={deviceType === "mobile"}
       />
-      <Page type="service">{layout}</Page>
+      <Page type="service">
+        {deviceType === "mobile" ? (
+          <LayoutMobile>{children}</LayoutMobile>
+        ) : (
+          <LayoutDesktop>{children}</LayoutDesktop>
+        )}
+      </Page>
     </>
   );
 };
