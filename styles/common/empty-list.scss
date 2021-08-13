@@ -1,0 +1,19 @@
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8*$bmu 2.5*$bmu;
+  text-align: center;
+
+  &__icon {
+    margin-bottom: 2*$bmu;
+  }
+
+  &__log-in,
+  &__sign-up,
+  &__add-thread {
+    color: $cCrimson500;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,6 @@
+.favorite {
+  @extend %sRootLevel;
+  z-index: 100;
+  margin: 2.5*$bmu 0;
+  background-color: $cWhite500;
+}

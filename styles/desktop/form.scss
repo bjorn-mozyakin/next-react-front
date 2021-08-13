@@ -1,0 +1,198 @@
+.form {
+  display: none;
+  max-width: $wDesktop;
+
+  &_visible {
+    display: block;
+  }
+
+  &_tight {
+    width: 480px;
+  }
+
+  &_wide {
+    width: 660px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: $bmu 2*$bmu;
+
+    &_purple {
+      color: $cWhite400;
+      background: $gPurple;
+    }
+
+    &_dreams {
+      color: $cWhite400;
+      background: $gDreams;
+    }
+
+    &_red {
+      color: $cWhite400;
+      background: $gRed;
+    }
+
+    &_havelock-500 {
+      color: $cWhite400;
+      background: $cHavelock500;
+    }
+  }
+
+  &__header-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__content {
+    max-width: $wDesktop;
+    max-height: 85vh;
+    padding: 2*$bmu 3*$bmu 3*$bmu 2*$bmu; // заложено место для полос прокрутки
+    overflow-y: auto;
+    background-color: $cBahamas50;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: $cBahamas700;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: $cBahamas500;
+    white-space: pre-wrap;
+  }
+
+  &__content-title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__content-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBlack500;
+  }
+
+  &__line {
+    margin-top: 2*$bmu;
+  }
+
+  &__actionbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__select {
+    margin-left: 2*$bmu;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  &__btns-text {
+    margin-left: 30px;
+    font-size: 12px;
+    color: $cBahamas500;
+    white-space: normal;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2*$bmu;
+    border-bottom: 1px solid $cHavelock100;
+    white-space: nowrap;
+  }
+
+  &__sb {
+    margin: 0 $bmu;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__emoji-textarea {
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+
+    & .user__main {
+      flex-shrink: 0;
+      width: 270px;
+      padding-right: 2*$bmu;
+    }
+  }
+
+  &__user-hint {
+    padding-left: 2*$bmu;
+    border-left: 1px solid $cHavelock500;
+  }
+
+  &__user-hint-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: $cBahamas700;
+  }
+
+  &__user-hint-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+
+  &__final {
+    display: flex;
+    min-width: 360px;
+    max-width: 440px;
+    margin: 4*$bmu 2*$bmu 0;
+  }
+
+  &__final-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5*$bmu;
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__error {
+    margin: $bmu/2 0 2*$bmu;
+  }
+
+  // Стили блок для закрепления ответа в форме редактирования модератором
+  &__pin-block {
+    display: flex;
+    align-items: center;
+    height: 32px;
+  }
+
+  &__pin-type {
+    display: flex;
+    margin-left: 4*$bmu;
+
+    &_hidden {
+      display: none;
+    }
+  }
+}

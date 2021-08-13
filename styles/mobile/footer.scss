@@ -1,0 +1,73 @@
+.footer {
+  $hStickyBottom: 140px;
+
+  &__container {
+    position: relative;
+    padding: 2*$bmu 2*$bmu ($hStickyBottom + $bmu); // снизу отступ, чтобы нижний стики не перекрывал контент
+    font-size: 12px;
+    color: $cWhite100;
+    background: $gNight;
+  }
+
+  &__logo {
+    @extend .icon-before_logo-holding;
+    margin-bottom: 5*$bmu;
+    text-align: center;
+  }
+
+  &__share {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 5*$bmu;
+  }
+
+  &__share-btn {
+    margin: $bmu/2;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 5*$bmu;
+  }
+
+  &__action {
+    position: relative;
+    max-width: 124px;
+    padding-left: 4*$bmu;
+  }
+
+  &__link {
+    opacity: .8;
+    font-weight: 700;
+    color: $cWhite500;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: $bmu;
+    }
+  }
+
+  &__copyright {
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__16plus {
+    position: absolute;
+    right: $bmu;
+    bottom: $hStickyBottom;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: $cBlack500;
+    background-color: $cBahamas50;
+  }
+}

@@ -1,0 +1,28 @@
+.search {
+  &__container {
+    margin: 0 $bmu;
+  }
+
+  &__input {
+    width: 150px;
+    height: 38px;
+    padding: 0 5*$bmu 0 $bmu/2;
+    border: none;
+    border-bottom: 2px solid $cHavelock100;
+    color: $cBahamas500;
+    transition: border-bottom-color .2s ease-out, width .2s ease-out;
+
+    &:focus {
+      width: 280px;
+      border-bottom-color: $cHavelock500;
+    }
+
+    &::placeholder {
+      color: $cBahamas500;
+    }
+  }
+
+  &__submit {
+    right: 0;
+  }
+}

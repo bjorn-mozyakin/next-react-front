@@ -1,0 +1,128 @@
+.menu {
+  position: relative;
+  z-index: 90;
+  display: block;
+  width: 100%;
+
+  &__container {
+    @extend %sThirdLevel;
+    padding: 2.5*$bmu 2*$bmu 0;
+    text-align: center;
+    background-color: $cWhite500;
+
+    &_no-shadow {
+      box-shadow: none;
+    }
+  }
+
+  &__title {
+    display: block;
+    padding: 0 0 2.5*$bmu; // Так - потому что в Ответах Экспертов есть заголовок, но нет пунктов меню
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(100% / 3);
+    margin-bottom: 2.5*$bmu;
+  }
+
+  &__link {
+    display: inline-block;
+    margin: auto;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    color: $cBlack500;
+
+    &:active {
+      .menu__link-icon {
+        background-color: $cCrimson50;
+      }
+    }
+
+    &_active {
+      .menu__link-icon {
+        background-color: $cCrimson500;
+      }
+
+      &:active {
+        .menu__link-icon {
+          background-color: $cCrimson500;
+        }
+      }
+
+      .menu__link-icon_my-forum {
+        @extend .icon-before_my-forum-48-white;
+      }
+
+      .menu__link-icon_new {
+        @extend .icon-before_bell-48-white;
+      }
+
+      .menu__link-icon_popular {
+        @extend .icon-before_star-48-white;
+      }
+
+      .menu__link-icon_expert {
+        @extend .icon-before_expert-48-white;
+      }
+
+      .menu__link-icon_rubrics {
+        @extend .icon-before_label-48-white;
+      }
+
+      .menu__link-icon_live {
+        @extend .icon-before_live-48-white;
+      }
+    }
+  }
+
+  &__link-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    max-width: 130px;
+    height: 25vw;
+    max-height: 130px;
+    margin-bottom: 1.5*$bmu;
+    border-radius: 50%;
+    background-color: $cBahamas50;
+
+    &_my-forum {
+      @extend .icon-before_my-forum-48-crimson;
+    }
+
+    &_new {
+      @extend .icon-before_bell-48-crimson;
+    }
+
+    &_popular {
+      @extend .icon-before_star-48-crimson;
+    }
+
+    &_expert {
+      @extend .icon-before_expert-48-crimson;
+    }
+
+    &_rubrics {
+      @extend .icon-before_label-48-crimson;
+    }
+
+    &_live {
+      @extend .icon-before_live-48-crimson;
+    }
+  }
+}

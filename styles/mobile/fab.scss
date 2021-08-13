@@ -1,0 +1,40 @@
+//fab - Float Action Button
+
+.fab {
+  @extend %sFloatingLevel;
+  position: fixed;
+  z-index: 150;
+  right: 2*$bmu;
+  bottom: ($hPager + 2*$bmu);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0 2*$bmu;
+  border-radius: calc(56px / 2);
+  text-align: right;
+  color: $cHavelock100;
+  background-color: $cHavelock500;
+  cursor: pointer;
+  transition: width .4s ease-out;
+  white-space: nowrap;
+
+  @media screen and (min-width: 640px) {
+    right: 50%;
+    transform: translateX($wMobileMax / 2 - 2*$bmu);
+  }
+
+  &_expanded {
+    width: auto;
+
+    &::before {
+      flex-shrink: 0;
+      margin-right: $bmu;
+    }
+  }
+
+  &:active {
+    background-color: $cBahamas700;
+  }
+}

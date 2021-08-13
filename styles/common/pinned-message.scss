@@ -1,0 +1,68 @@
+.pinned-message {
+  position: relative;
+  z-index: 50;
+  display: block;
+  margin-top: 2 * $bmu;
+
+  & ~ & {
+    margin-top: 0;
+  }
+
+  &__container {
+    width: 100%;
+    padding-bottom: $bmu;
+
+    // Переопределяем отступ у карточки ответа эксперта
+    & .card {
+      margin-bottom: 0;
+    }
+  }
+
+  &_common {
+    .pinned-message__container {
+      background: $gBlue;
+    }
+  }
+
+  &_expert-answer {
+    .pinned-message__container {
+      background: $gLightPurple;
+    }
+  }
+
+  &_video {
+    .pinned-message__container {
+      background: $gPeach;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5*$bmu $bmu 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: $cBlack300;
+
+    &::before {
+      margin-right: $bmu;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color: $cBlack200;
+  }
+
+  &__all-answers {
+    text-align: center;
+  }
+}

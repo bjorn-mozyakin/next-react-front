@@ -1,0 +1,47 @@
+.actionbar {
+  display: block;
+  width: 100%;
+  padding: 0 $bmu;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: $bmu 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBlack500;
+    cursor: pointer;
+
+    &:active {
+      color: $cCrimson500;
+    }
+
+    &::before {
+      flex-shrink: 0;
+      margin-right: 1.5*$bmu;
+    }
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &_centred &__item {
+    justify-content: center;
+  }
+
+  &_left &__link {
+    justify-content: flex-start;
+    text-align: left;
+
+    &_white {
+      opacity: .8;
+      color: $cWhite500;
+    }
+  }
+
+  &_centred &__link {
+    justify-content: center;
+    text-decoration: underline;
+  }
+}

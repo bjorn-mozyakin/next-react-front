@@ -1,0 +1,9 @@
+// Переписываем стили tagify,
+// чтобы его "placeholder" переносился на несколько строк при необходимости
+// Используется в форме Добавления темы на mobile/desktop
+
+.tagify {
+  &__input::before {
+    white-space: pre-wrap;
+  }
+}

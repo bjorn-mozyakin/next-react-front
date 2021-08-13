@@ -1,0 +1,24 @@
+.tabs {
+  @extend %sSecondLevel;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: $cWhite500;
+  user-select: none;
+
+  &_hidden {
+    display: none;
+  }
+
+  &__tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBahamas500;
+    cursor: pointer;
+    transition: color .15s ease-out;
+  }
+}

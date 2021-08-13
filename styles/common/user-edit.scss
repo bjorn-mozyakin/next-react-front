@@ -1,0 +1,24 @@
+.user-edit {
+  padding: 2*$bmu;
+
+  &__label {
+    margin-bottom: $bmu;
+    font-size: 14px;
+    font-weight: 400;
+    color: $cBahamas500;
+  }
+
+  &__link {
+    color: $cCrimson500;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__action {
+    display: flex;
+    margin: 4*$bmu auto 0;
+  }
+}

@@ -1,0 +1,26 @@
+.list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__other-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBahamas700;
+
+    &::before {
+      margin-right: $bmu;
+    }
+  }
+
+  &_type_spatial {
+    .list__subtitle {
+      margin: 0 2.5*$bmu;
+      padding: 2.5*$bmu 0 $bmu;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.actionbar {
+  &__link {
+    &:hover {
+      color: $cCrimson500;
+    }
+
+    &:active {
+      color: $cCrimson700;
+    }
+  }
+}

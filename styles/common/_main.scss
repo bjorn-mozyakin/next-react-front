@@ -1,0 +1,75 @@
+// Внешние модули
+//@import './~@yaireo/tagify/dist/tagify.css';
+
+// Модули, для которых ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения:
+@import './reset.scss';
+@import './vars.scss';
+@import './common.scss';
+
+// Модули, для которых НЕ ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения (по алфавиту):
+@import './actionbar.scss';
+@import './ajax-loader.scss';
+@import './backdrop.scss';
+@import './birthday-selector.scss';
+@import './breadcrumbs.scss';
+@import './btn-flat.scss';
+@import './btn-round.scss';
+@import './card.scss';
+@import './card-list.scss';
+@import './checkbox.scss';
+@import './congrat-dialog.scss';
+@import './content-nav.scss';
+@import './dialog.scss';
+@import './divider.scss';
+@import './dropdown-menu.scss';
+@import './empty-list.scss';
+@import './error-page.scss';
+@import './expert-carousel.scss';
+@import './favorite.scss';
+@import './filled-block.scss';
+@import './flash-message.scss';
+@import './footer-thread.scss';
+@import './form.scss';
+@import './gallery.scss';
+@import './hashtag.scss';
+@import './input-area.scss';
+@import './list.scss';
+@import './list-item.scss';
+@import './loader-spin.scss';
+@import './menu-archive.scss';
+@import './my-forum.scss';
+@import './navbar.scss';
+@import './page.scss';
+@import './pager.scss';
+@import './page-splitter.scss';
+@import './pinned-message.scss';
+@import './placeholder.scss';
+@import './plate.scss';
+@import './poll.scss';
+@import './profile.scss';
+@import './profile/card-profile.scss';
+@import './profile/user-statistic.scss';
+@import './quote.scss';
+@import './radio.scss';
+@import './search.scss';
+@import './select.scss';
+@import './service-page.scss';
+@import './sidebar.scss';
+@import './special-project.scss';
+@import './switch.scss';
+@import './tabs.scss';
+@import './tagify.scss';
+@import './title.scss';
+@import './title-badge.scss';
+@import './tooltip.scss';
+@import './topblock.scss';
+@import './user.scss';
+@import './user-info.scss';
+@import './user-edit.scss';
+@import './grecaptcha-badge.scss';
+
+// Модули, для которых ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения:
+@import './text.scss';
+@import './indent.scss';
+@import './align.scss';
+@import './interactive.scss';

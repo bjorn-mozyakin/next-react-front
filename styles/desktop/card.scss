@@ -1,0 +1,99 @@
+.card {
+  &_animated-collapse {
+    animation: .2s ease-out 0s 1 normal forwards running collapse;
+  }
+
+  &_topic-start {
+    margin-bottom: 2.5*$bmu;
+  }
+
+  &_expert {
+    .card__voting > *:first-child {
+      margin-right: 2.5*$bmu;
+    }
+  }
+
+  &__anchor {
+    position: absolute;
+    top: -($hNav + $hServicebar); // чтобы при прыжке к карточке она не перекрывалась topbar-ом и servicebar-ом
+  }
+
+  &__container {
+    position: relative;
+    padding: 2.5*$bmu 2.5*$bmu 1.5*$bmu;
+  }
+
+  &__title {
+    width: calc(100% + 40px);
+    margin-top: -2.5*$bmu;
+    margin-left: -2.5*$bmu;
+    padding: $bmu 2.5*$bmu;
+  }
+
+  &__title-link {
+    width: inherit;
+    margin: -$bmu -2.5*$bmu;
+    padding: $bmu 2.5*$bmu;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+
+    &_left,
+    &_right {
+      display: flex;
+      align-items: center;
+    }
+
+    & .card__favorite {
+      margin: 0;
+    }
+  }
+
+  &__fast-reply {
+    margin-top: $bmu;
+  }
+
+  &__fast-reply-field {
+    position: relative;
+  }
+
+  &__fast-reply-label {
+    display: block;
+    margin-bottom: $bmu/2;
+    font-size: 12px;
+    color: $cBahamas700;
+  }
+
+  &__fast-reply-textarea {
+    height: 85px;
+  }
+
+  &__moderator-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-actions {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: $bmu;
+    right: $bmu;
+  }
+}
+
+@keyframes collapse {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}

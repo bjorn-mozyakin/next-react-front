@@ -1,0 +1,54 @@
+.topbar {
+  position: sticky;
+  z-index: 95;
+  top: 0;
+  width: $wDesktop;
+  margin: auto;
+
+  &_sticked {
+    @extend %sTopLevel;
+    position: fixed;
+    z-index: 770;
+    width: 100%;
+    background-color: $cWhite500;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      content: '';
+      border-top: 2px solid $cCrimson500;
+    }
+
+    & .topbar__container {
+      box-shadow: none;
+
+      &::before {
+        margin: 0;
+      }
+    }
+  }
+
+  &__container {
+    @extend %sTopLevel;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $wDesktop;
+    margin: auto;
+    padding: 0 $bmu 0 2.5*$bmu;
+    background-color: $cWhite500;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      content: '';
+      margin: 0 2.5*$bmu;
+      border-top: 2px solid $cCrimson500;
+    }
+  }
+}

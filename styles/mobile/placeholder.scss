@@ -1,0 +1,148 @@
+%stickyBanner {
+  position: fixed;
+  z-index: 750; // такое большое значение - чтобы перекрыть progressbar при проигрывании видео в inread-mobile
+  left: 50%;
+  width: 100%;
+  max-width: $wMobileMax;
+  height: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $cBahamas50;
+  transform: translateX(-50%);
+}
+
+.placeholder {
+  max-width: $wMobileMax;
+
+  &_restrict-height-280 {
+    @include restrict-height(280px);
+  }
+
+  // Sticky-баннер сверху - для длинных тем
+  &_sticky-upper {
+    @extend %stickyBanner;
+    @extend %sTopLevel;
+    top: 0;
+
+    & .placeholder__close {
+      top: calc(100% + #{$bmu}/2);
+    }
+  }
+
+  // Sticky-баннер снизу - для коротких тем
+  &_sticky-bottom {
+    height: 110px;
+    padding-top: 10px;
+    border-top: 1px solid $cBahamas500;
+
+    & .placeholder__close-background {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 60px;
+      height: 60px;
+    }
+
+    & .placeholder__close {
+      // Стили взяли со стики на woman.ru
+      position: absolute;
+      top: 30px;
+      left: $bmu;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border: 1px solid $cBahamas500;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      font-size: 18px;
+      color: $cBahamas500;
+      background: $cBahamas50;
+
+      //top: -($hStickyCloseBtn);
+
+      &_disabled {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &_head1 {
+    position: absolute;
+    top: 50%;
+    right: 50px; // (отступ иконки поиска от края экрана(36) + ширина кнопки поиска(8) + отступ баннера от кнопки поиска(8));
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+
+  //// Используется в js для залипание hb-top при скролле
+  //&_sticky-hb-top {
+  //  @extend %stickyBanner;
+  //  top: -125px;
+  //  margin: 2*$bmu 0;
+  //}
+
+  &__hb-top {
+    @include restrict-height(280px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__inread-mobile {
+    @include restrict-height(300px);
+  }
+
+  &__mob-in {
+    @include restrict-height(280px);
+
+    &:not(#forum_mobile_mob-in-favorite) {
+      @include restrict-height(300px);
+    }
+  }
+
+  // ======================================================
+  // Стили, используемые при mobile-брендировании НАЧАЛО
+  // ======================================================
+
+  // ВАЖНО! Должен быть ниже остальных классов (__hb-top), чтобы _hidden не перекрывался
+  // сей модификатор используем, чтобы при временно прятать дефолтный контейнер для баннера, заменяя его на бренд-ссылку placeholder__branding-link
+  &__banner {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  // Плейсолдер-дырка под Избранным - чтобы просвечивало брендирование
+  &__branding-hole {
+    display: flex;
+    align-items: center;
+    height: calc(280px + 36px);
+  }
+
+  &__branding-link {
+    display: block;
+    width: 100%;
+    height: 280px;
+
+    &_margin {
+      margin: 2*$bmu 0;
+    }
+  }
+
+  &__branding-hb-top {
+    display: flex;
+    align-items: flex-end;
+    height: 280px;
+    background-color: #f3f2f7;
+  }
+
+  &__branding-hb-top-img {
+    width: 100%; // обязательно, иначе картинка не масштабируется
+  }
+}

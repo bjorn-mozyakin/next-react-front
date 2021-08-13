@@ -1,0 +1,47 @@
+.my-forum {
+  &__user-block {
+    padding: 0 $bmu 2*$bmu;
+  }
+
+  &__user-block-text,
+  &__banned-text {
+    font-size: 12px;
+    line-height: 1.45;
+    color: $cBlack200;
+  }
+
+  &__user-block-text {
+    padding: 0 $bmu;
+  }
+
+  &__banned-text {
+    margin: 0 2.5*$bmu;
+  }
+
+  &__user {
+    margin: $bmu 0;
+  }
+
+  &__clear-history {
+    margin-left: $bmu;
+  }
+
+  &__remove-explanation {
+    margin: 0 2.5*$bmu $bmu;
+    font-size: 12px;
+    color: $cBlack200;
+  }
+
+  &__tabs {
+    .tabs__tab {
+      flex: 0 1 25%;
+      padding: 0;
+    }
+
+    @media all and (max-width: 370px) {
+      .tabs__tab {
+        flex: 0 1 50%;
+      }
+    }
+  }
+}

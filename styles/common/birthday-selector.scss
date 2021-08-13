@@ -1,0 +1,12 @@
+.birthday-selector {
+  display: flex;
+  margin-bottom: 3*$bmu;
+
+  &__item {
+    margin-right: 2*$bmu;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

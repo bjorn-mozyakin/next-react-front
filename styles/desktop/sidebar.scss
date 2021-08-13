@@ -1,0 +1,51 @@
+.sidebar {
+  width: $wContent;
+  background-color: $cBahamas50;
+
+  &__container {
+    width: $wContent - 20px; // выделяем эти 20px для скроллбара (чтобы при его появлении контент не "прыгал")
+    padding: 2*$bmu $bmu 2*$bmu 3*$bmu;
+  }
+
+  &__topbar {
+    flex-shrink: 0;
+  }
+
+  &__maindata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2*$bmu 0;
+    border-bottom: 1px solid $cBlack50;
+  }
+
+  &__my-rubrics-list,
+  &__all-rubrics-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__my-rubrics-list-half,
+  &__all-rubrics-list-half {
+    list-style-type: none;
+    width: 45%;
+  }
+
+  &__actionbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $bmu 2.5*$bmu;
+    border-top: 1px solid $cBlack50;
+  }
+
+  & .user__container {
+    padding: $bmu;
+    background-color: $cWhite500;
+  }
+
+  & .user__main {
+    margin-right: 2*$bmu;
+  }
+}

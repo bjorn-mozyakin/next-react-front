@@ -1,0 +1,28 @@
+.modal {
+  @extend %sTopLevel;
+  position: fixed;
+  z-index: 900;
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  animation: .3s cubic-bezier(.4, 1.5, .8, 1) 0s 1 normal none running modalAnimation;
+  transform-origin: top;
+
+  &_hidden {
+    display: none;
+  }
+}
+
+@keyframes modalAnimation {
+  0% {
+    opacity: 0;
+    transform: scaleY(0) translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translate(-50%, -50%);
+  }
+}

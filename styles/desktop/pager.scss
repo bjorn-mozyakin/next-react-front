@@ -1,0 +1,41 @@
+.pager {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    min-width: 220px;
+    max-width: 350px;
+  }
+
+  &_small {
+    padding: $bmu 0;
+
+    & .pager__container {
+      width: 225px;
+      min-width: auto;
+      max-width: none;
+    }
+
+    & .pager__item {
+      min-width: 18px;
+      height: 18px;
+      line-height: 18px;
+    }
+
+    & .pager__arrow {
+      border-radius: 5px;
+    }
+
+    & .pager__arrow-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+    }
+  }
+
+  &_only-arrows {
+    .pager__container {
+      width: auto;
+    }
+  }
+}

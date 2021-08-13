@@ -1,0 +1,14 @@
+.footer-thread {
+  padding: 2*$bmu;
+  text-align: center;
+  background: $gCarbon;
+
+  &__nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2*$bmu 0 4*$bmu;
+    font-size: 12px;
+    line-height: 30px;
+    color: $cWhite300;
+  }
+}

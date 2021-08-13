@@ -1,0 +1,41 @@
+// Модули, для которых ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения:
+
+// 1. Иконки важно подключать первыми!!!, т.к. они уникальны для каждой сборки
+// и экстендятся в общих стилях
+// 2. Общие стили
+@import './icons.scss';
+@import './../common/main.scss';
+@import './vars.scss';
+
+// Модули, для которых НЕ ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения (по алфавиту):
+@import './actionbar.scss';
+@import './card.scss';
+@import './checkbox.scss';
+@import './content-nav.scss';
+@import './dialog.scss';
+@import './error-page.scss';
+@import './expert-carousel.scss';
+@import './fab.scss';
+@import './favorite.scss';
+@import './footer.scss';
+@import './form.scss';
+@import './list-item.scss';
+@import './menu.scss';
+@import './modal.scss';
+@import './my-forum.scss';
+@import './navbar.scss';
+@import './page.scss';
+@import './pager.scss';
+@import './page-splitter.scss';
+@import './placeholder.scss';
+@import './profile.scss';
+@import './quote.scss';
+@import './search.scss';
+@import './search-modal.scss';
+@import './service-page.scss';
+@import './sidebar.scss';
+@import './switch.scss';
+@import './tabs.scss';
+@import './topblock.scss';
+@import './title.scss';
+@import './topbar.scss';

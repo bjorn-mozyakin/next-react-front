@@ -1,0 +1,58 @@
+// ВАЖНО!!! если общая ширина спрайта ($svgSpriteWidth) не добавлена в конце файла,
+// то над добавить ее вручную в формате $svgSpriteWidth = 242px
+
+// по конфигу svg-sprite, если указать padding - он добавляется внутрь самой иконки(на снаружи),
+// тем самым увеличивая ее размер
+// чтобы продолжать использовать иконку в исходном размере - применяем хак, "превращающий" внутренние отступы во внешние (см. https://github.com/jkphl/svg-sprite/issues/200  сообщ от vincentbernat 01.02.17)
+// Ограничения - координаты абсолютные, затрудняют масштабирование иконок (но вроде пока и не надо)
+
+{{#hasMixin}}{{mixinName}}() {
+  display: inline-block;
+  background: url("{{{sprite}}}") no-repeat;
+}
+{{#hasCommon}}.{{commonName}}
+{{mixinName}}()
+
+// миксин с общими свойствами для всех иконок
+{{/hasCommon}}{{/hasMixin}}{{^hasMixin}}{{#hasCommon}}.{{/hasCommon}}{{^hasCommon}}%{{/hasCommon}}{{commonName}} {
+  display: inline-block;
+  background: url("{{{sprite}}}") no-repeat;
+}{{/hasMixin}}
+
+{{#shapes}}
+// миксин для конкретной иконки
+%icon_{{#selector.shape}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}} {
+{{/selector.shape}}
+{{^hasCommon}}{{#hasMixin}}{{mixinName}}(){{/hasMixin}}{{^hasMixin}}  @extend %{{commonName}}{{/hasMixin}};
+{{/hasCommon}}
+  background-position: ({{position.absolute.x}}px - ({{width.outer}}px - {{width.inner}}px)/2) ({{position.absolute.y}}px - ({{height.outer}}px - {{height.inner}}px)/2);
+  width: {{width.inner}}px;
+  height: {{height.inner}}px;
+  //background-position {{position.relative.xy}}{{#dimensions.inline}}
+  //width {{width.outer}}px
+  //height {{height.outer}}px
+}
+{{/dimensions.inline}}
+
+// класс для иконки без использования before
+.icon_{{#selector.shape}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}} {
+  @extend %icon_{{#selector.shape}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}}{{/selector.shape}};
+}
+{{/selector.shape}}
+
+// класс для иконки через before
+.icon-before_{{#selector.shape}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}} {
+  &::before {
+    content: '';
+    @extend %icon_{{#selector.shape}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}}{{/selector.shape}};
+  }
+}
+{{/selector.shape}}
+
+{{#dimensions.extra}}
+{{#selector.dimensions}}{{#escape}}{{expression}}{{/escape}}{{^last}},{{/last}}
+{{/selector.dimensions}}
+  width {{width.inner}}px
+  height {{height.inner}}px
+{{/dimensions.extra}}
+{{/shapes}}

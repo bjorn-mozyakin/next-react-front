@@ -1,0 +1,26 @@
+.dropdown {
+  position: relative;
+
+  &__toggle-btn {
+    &_rotated {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 50%;
+  }
+
+  &_position_left {
+    & .dropdown__menu {
+      right: calc(100% + 8px);
+    }
+  }
+
+  &_position_right {
+    & .dropdown__menu {
+      left: calc(100% + 8px);
+    }
+  }
+}

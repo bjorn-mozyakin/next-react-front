@@ -1,0 +1,10 @@
+.select {
+  width: 200px;
+  height: 30px;
+  font-size: 14px;
+  color: $cBlack500;
+
+  &_hidden {
+    display: none;
+  }
+}

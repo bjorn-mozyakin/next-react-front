@@ -1,0 +1,44 @@
+.expert-carousel {
+  &__container {
+    padding: 2*$bmu 2.5*$bmu;
+  }
+
+  &__title {
+    margin-bottom: $bmu;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__list-container {
+    margin: 0 -2.5*$bmu;
+    padding: .5*$bmu 0 $bmu;
+    overflow: auto;
+  }
+
+  &__expert {
+    display: inline-flex;
+    width: calc(100vw - #{8*$bmu});
+    height: 90px;
+    margin-right: $bmu;
+
+    &:active {
+      background-color: $cWhite500;
+    }
+
+    &:first-child {
+      margin-left: 2.5*$bmu;
+    }
+
+    &:last-child {
+      margin-right: 2.5*$bmu;
+    }
+  }
+
+  &__expert-link {
+    display: inline-flex;
+  }
+
+  &__expert-img {
+    margin-right: $bmu;
+  }
+}

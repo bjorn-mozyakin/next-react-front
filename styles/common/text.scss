@@ -1,0 +1,85 @@
+.text {
+  color: $cBlack500;
+
+  &_bahamas {
+    color: $cBahamas500;
+  }
+
+  &_havelock-500 {
+    color: $cHavelock500;
+  }
+
+  &_carbon {
+    color: $cBahamas700;
+  }
+
+  &_crimson {
+    color: $cCrimson500;
+  }
+
+  &_villain {
+    color: $cCaprice500;
+  }
+
+  &_caribbean-500 {
+    color: $cCaribbean500;
+  }
+
+  &_maltese-500 {
+    color: $cMaltese500;
+  }
+
+  &_weight_regular {
+    font-weight: 400;
+  }
+
+  &_weight_medium {
+    font-weight: 500;
+  }
+
+  &_weight_bold {
+    font-weight: 700;
+  }
+
+  &_page-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &_widget-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &_title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  &_subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  &_body-big {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  &_body-small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  &_caption {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}

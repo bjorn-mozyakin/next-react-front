@@ -1,0 +1,61 @@
+.expert-carousel {
+  &__container {
+    @extend %sRootLevel;
+    padding: 4*$bmu 2*$bmu 2.5*$bmu;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  &__title {
+    justify-content: center;
+    margin-bottom: $bmu;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__list-container {
+    display: inline-block;
+    padding: 1.5*$bmu;
+    overflow-y: scroll;
+    font-size: 0;
+    // ниже скрытие скроллбара
+    // firefox
+    scrollbar-width: none;
+    // IE 10+
+    -ms-overflow-style: none;
+    // webkit
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__expert {
+    display: inline-block;
+    width: 166px;
+    height: 166px;
+    margin-right: 3*$bmu;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $cWhite500;
+    }
+  }
+
+  &__expert-img {
+    margin: 0 auto $bmu;
+  }
+
+  &__arrow {
+    &_rotated {
+      transform: rotate(-180deg);
+    }
+  }
+}

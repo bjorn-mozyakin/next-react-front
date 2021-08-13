@@ -1,0 +1,321 @@
+.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    &_valign_top {
+      align-items: flex-start;
+    }
+  }
+
+  &__link:link,
+  &__link:visited,
+  &__link:hover,
+  &__link:active {
+    color: $cCrimson500;
+  }
+
+  &__pic_expert {
+    box-shadow:
+      0 0 0 3px $cWhite500,
+      0 0 0 6px $cCrimson300;
+  }
+
+  &__pic-img {
+    position: relative;
+    // хак, чтобы внутренности были полностью скрыты за аватаром
+    top: -1px;
+    left: -1px;
+    flex-shrink: 0;
+    // хак, чтобы внутренности были полностью скрыты за аватаром
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__pic {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: $bmu;
+    border-radius: 50%;
+
+    &::before {
+      margin: auto;
+    }
+
+    &_my::after,
+    &_author::after,
+    &_ban::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+    }
+
+    &_size_compact {
+      width: $userPicSizeCompact;
+      height: $userPicSizeCompact;
+    }
+
+    &_size_small {
+      width: $userPicSizeSmall;
+      height: $userPicSizeSmall;
+    }
+
+    &_size_big {
+      width: $userPicSizeBig;
+      height: $userPicSizeBig;
+
+      &::before {
+        transform: scale($userPicSizeBig/$userPicSizeSmall);
+      }
+    }
+
+    &_my {
+      &::after {
+        @extend .icon_badge-my-16-blue;
+        content: '';
+      }
+    }
+
+    &_author {
+      &::after {
+        @extend .icon_badge-author-16-crimson;
+        content: '';
+      }
+    }
+
+    &_ban {
+      &::after {
+        @extend .icon_badge-ban-16-red;
+        content: '';
+      }
+    }
+
+    &_white-noise {
+      @extend .icon-before_userpic-24-blue;
+      background-color: $cBahamas200;
+    }
+
+    &_maltese-500 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cMaltese500;
+    }
+
+    &_black-board {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cBlack500;
+    }
+
+    &_carbon {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cBahamas700;
+    }
+
+    &_crimson-200 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cCrimson200;
+    }
+
+    &_crimson-700 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cCrimson700;
+    }
+
+    &_havelock-500 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cHavelock500;
+    }
+
+    &_crimson-100 {
+      @extend .icon-before_userpic-24-blue;
+      background-color: $cCrimson50;
+    }
+
+    &_caribbean-500 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cCaribbean500;
+    }
+
+    &_seashell-pink {
+      @extend .icon-before_userpic-24-blue;
+      background-color: $cCaprice100;
+    }
+
+    &_coral {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cCaprice400;
+    }
+
+    &_crimson {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: $cCrimson500;
+    }
+
+    &_nopalette_1 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #be3a34;
+    }
+
+    &_nopalette_2 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #ff8f1c;
+    }
+
+    &_nopalette_3 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #d78825;
+    }
+
+    &_nopalette_4 {
+      @extend .icon-before_userpic-24-blue;
+      background-color: #f8e08e;
+    }
+
+    &_nopalette_5 {
+      @extend .icon-before_userpic-24-blue;
+      background-color: #e0ec89;
+    }
+
+    &_nopalette_6 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #00573f;
+    }
+
+    &_nopalette_7 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #3cdbc0;
+    }
+
+    &_nopalette_8 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #005f86;
+    }
+
+    &_nopalette_9 {
+      @extend .icon-before_userpic-24-blue;
+      background-color: #b8ccea;
+    }
+
+    &_nopalette_10 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #7b6469;
+    }
+
+    &_nopalette_11 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #946037;
+    }
+
+    &_nopalette_12 {
+      @extend .icon-before_userpic-24-white-linen;
+      background-color: #eb6fbd;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+    color: $cBahamas700;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__name {
+    display: inline-flex;
+    align-items: center;
+    color: $cBahamas700;
+
+    &_underlined {
+      text-decoration: underline;
+    }
+  }
+
+  &__maindata {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__metadata {
+    font-size: 12px;
+    font-weight: 400;
+    color: $cBahamas500;
+  }
+
+  &__open-details {
+    font-size: 12px;
+    font-weight: 400;
+    color: $cCrimson500;
+  }
+
+  &__login,
+  &__logout {
+    flex-shrink: 0;
+  }
+
+  &__change-name {
+    font-size: 12px;
+    font-weight: 400;
+    color: $cCrimson500;
+    cursor: pointer;
+
+    &:hover {
+      color: $cCrimson700;
+    }
+
+    &:active {
+      color: $cCrimson900;
+    }
+  }
+
+  &__name-input {
+    display: flex;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__verified-sign {
+    margin-left: $bmu/4;
+    line-height: 0;
+  }
+
+  &__expert-site {
+    font-weight: 500;
+    color: $cCrimson500;
+    cursor: pointer;
+  }
+}

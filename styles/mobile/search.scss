@@ -1,0 +1,66 @@
+.search {
+  &__container {
+    padding: 2*$bmu $bmu 0;
+  }
+
+  &__input {
+    height: 48px;
+    padding: 0 2*$bmu;
+    border: 1px solid $cBlack500;
+    border-radius: 4px;
+
+    &:focus {
+      border: 1px solid $cHavelock500;
+    }
+  }
+
+  &__submit {
+    right: $bmu;
+  }
+
+  &__advanced {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    padding: 0 $bmu;
+  }
+
+  &__expand-btn {
+    &_opened {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__filters {
+    width: 100%;
+    padding: 0 $bmu 2*$bmu;
+    color: $cBahamas500;
+    background-color: $cWhite500;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__filter {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $bmu;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Чтобы раскрытый select, распложенный выше, перекрывал раскрытые select-ы, расположенные ниже.
+  @for $i from 1 through 10 {
+    &__filter:nth-child(#{$i}) {
+      z-index: calc(10 - #{$i});
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.service-page {
+  margin-bottom: 2.5*$bmu;
+  padding: 2.5*$bmu;
+  // Переопределяем границы, заданные в общем %rootLevel
+  border: none;
+  border-bottom: 1px solid $cHavelock100;
+  overflow-wrap: break-word;
+  background-color: $cWhite500;
+
+  &__title {
+    position: relative;
+  }
+
+  & h1 {
+    margin: 2*$bmu 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    color: $cCrimson500;
+  }
+
+  & h2 {
+    margin: 4*$bmu 0 2*$bmu;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: left;
+    color: $cHavelock500;
+  }
+
+  & h3 {
+    margin: 4*$bmu 0 $bmu;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: left;
+    color: $cBlack300;
+  }
+
+  & h2 + h3 {
+    margin-top: 0;
+  }
+
+  & nav {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  & p {
+    margin-bottom: $bmu;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $cBlack500;
+  }
+
+  & a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $cCrimson500;
+  }
+
+  & ul,
+  & ol {
+    padding: $bmu 2*$bmu;
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
+  & ul + p,
+  & ol + p {
+    margin-top: $bmu;
+  }
+
+  & li {
+    color: $cBlack500;
+
+    &::before {
+      content: '\2022';
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-weight: bold;
+      color: $cCrimson500;
+    }
+  }
+}

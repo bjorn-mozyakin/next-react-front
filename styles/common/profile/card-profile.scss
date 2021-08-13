@@ -1,0 +1,119 @@
+.card-profile {
+  position: relative;
+  display: block;
+  margin: 4*$bmu $bmu;
+  padding: 2*$bmu;
+  border-radius: 8px;
+  color: $cBlack500;
+  background-color: $cWhite500;
+
+  &_is-moderated {
+    background-color: $cBahamas100;
+
+    & * {
+      opacity: .7;
+    }
+  }
+
+  &_inner-card {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: $bmu;
+    }
+  }
+
+  &__anonymously {
+    display: flex;
+    align-items: center;
+    width: calc(100% + 4*#{$bmu});
+    margin: -2*$bmu 0 $bmu -2*$bmu;
+    padding: $bmu/2 2*$bmu;
+    border-radius: 8px 8px 0 0;
+    color: $cWhite500;
+    background-color: $cBahamas500;
+
+    &::before {
+      margin-right: $bmu;
+    }
+  }
+
+  &__title {
+    margin-bottom: $bmu;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &__title-link {
+    color: $cBlack500;
+  }
+
+  &__thread-ext-status {
+    font-size: 14px;
+    font-weight: 400;
+    color: $cBahamas800;
+  }
+
+  &__text {
+    margin-bottom: $bmu;
+    word-break: break-word;
+  }
+
+  &__full-text {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__go-to {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+
+  &__all-answers {
+    color: $cBahamas500;
+  }
+
+  //&__footer-left {}
+  //
+  //&__footer-right {}
+
+  &__inner-cards {
+    margin: 2*$bmu -2*$bmu;
+    padding: $bmu;
+
+    &_havelock-50 {
+      background-color: $cHavelock50;
+    }
+
+    &_light-purple {
+      background: $gLightPurple;
+    }
+  }
+
+  & .divider {
+    margin: 2*$bmu 0;
+  }
+
+  // TODO правильно цитату выделить в отдельный самостоятельный класс в php/js/css
+  & .card__quote {
+    margin: 0 0 2*$bmu;
+  }
+}

@@ -1,0 +1,57 @@
+.switch {
+  $sSwitchControl: 26px; // s - size
+
+  display: inline-block;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + &__control {
+    background-color: $cCrimson500;
+  }
+
+  &__input:checked + &__control::before {
+    left: calc(100% - #{$sSwitchControl} - #{$bmu}/2);
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBlack500;
+  }
+
+  &__control {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    width: 64px;
+    height: 36px;
+    margin-left: 2*$bmu;
+    border-radius: calc(36px / 2);
+    background-color: $cBlack50;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: $bmu/2;
+      content: '';
+      display: inline-block;
+      width: $sSwitchControl;
+      height: $sSwitchControl;
+      border-radius: 50%;
+      background-color: $cWhite500;
+      transform: translateY(-50%);
+      transition: left 300ms;
+    }
+  }
+}

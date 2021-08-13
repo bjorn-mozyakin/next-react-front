@@ -1,0 +1,22 @@
+.profile-pop-up {
+  @extend %sTopLevel;
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + #{$bmu} + #{2.5*$bmu}); // второй отступ нужен только для анимации
+  left: 0;
+  width: 320px;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  background-color: $cWhite500;
+  transition: top .3s, opacity .3s;
+
+  &_hidden {
+    display: none;
+  }
+
+  &_animated {
+    top: calc(100% + #{$bmu});
+    opacity: 1;
+  }
+}

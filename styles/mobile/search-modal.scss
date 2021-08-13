@@ -1,0 +1,55 @@
+.search-modal {
+  &__container {
+    height: 100%;
+    transition: all .5s;
+  }
+
+  &_theme_havelock {
+    background-color: $cHavelock50;
+  }
+
+  &__close-btn {
+    position: fixed;
+    top: 2 * $bmu;
+    right: 2 * $bmu;
+  }
+
+  &__form {
+    position: relative;
+    margin: 0 2 * $bmu;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    // Важно. Инпут должен располагаться достаточно высоко,
+    // чтобы Сафари не захотелось прокрутить модалку вверх
+    margin-top: 12*$bmu;
+    padding: 0 5*$bmu 0 $bmu;
+    border: none;
+    border-bottom: 2px solid $cHavelock100;
+    border-radius: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: $cBahamas700;
+    background-color: $cTransparent;
+    outline: none;
+
+    &::placeholder {
+      color: $cBahamas300;
+    }
+
+    &:focus {
+      border-bottom: 2px solid $cHavelock500;
+      transition: all .5s;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}

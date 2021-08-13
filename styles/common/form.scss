@@ -1,0 +1,93 @@
+.form {
+  &__wait-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 2.5*$bmu;
+    border-radius: calc(90px / 2);
+
+    &_awaiting {
+      background: $gDreams;
+    }
+
+    &_approved {
+      background: $gGreen;
+    }
+
+    &_rejected {
+      background: $gRed;
+    }
+
+    &_carbon {
+      background: $gCarbon;
+    }
+  }
+
+  &__quote {
+    padding-bottom: 0;
+  }
+
+  &__radio {
+    margin-top: 2*$bmu;
+  }
+
+  &__error {
+    display: none;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    color: $cCaprice500;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__link {
+    color: $cCrimson500;
+    cursor: pointer;
+
+    &:hover {
+      color: $cCrimson700;
+    }
+
+    &:active {
+      color: $cCrimson900;
+    }
+  }
+
+  &__poll-option-area {
+    position: relative;
+    margin-bottom: 2*$bmu;
+  }
+
+  &__add-poll-option {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__poll-option {
+    padding-right: 6*$bmu;
+  }
+
+  &__remove-poll-option {
+    position: absolute;
+    top: 50%;
+    right: $bmu;
+    transform: translateY(-50%);
+  }
+
+  &__recaptcha-policy {
+    margin-top: 2*$bmu;
+    font-size: 12px;
+    text-align: left;
+    color: $cBahamas500;
+  }
+
+  &__btns {
+    margin-top: $bmu*2;
+  }
+}

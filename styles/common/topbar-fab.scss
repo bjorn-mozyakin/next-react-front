@@ -1,0 +1,37 @@
+// fab - Float Action Button
+// Пока отсутсвует на форуме, но, может, захотим вернуть
+
+.topbar-fab {
+  @extend %sTopLevel;
+  position: fixed;
+  z-index: 150;
+  top: 2*$bmu;
+  left: 2*$bmu;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: $cWhite500;
+  cursor: pointer;
+  transition: opacity .2s linear;
+
+  @media screen and (min-width: 640px) {
+    left: 50%;
+    transform: translateX(-1 * ($wMobileMax / 2) + 2*$bmu);
+  }
+
+  &:active {
+    background-color: $cCrimson50;
+  }
+
+  &_hidden {
+    display: none;
+  }
+
+  &_invisible {
+    opacity: 0;
+  }
+}

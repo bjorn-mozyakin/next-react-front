@@ -1,0 +1,76 @@
+.congrat-dialog {
+  position: fixed;
+  z-index: 85;
+  top: 50%;
+  left: 50%;
+  line-height: 1.25;
+  transform: translate(-50%, -50%);
+
+  &.dialog_hidden {
+    display: none;
+  }
+
+  &__container {
+    @extend %sFloatingLevel;
+    position: relative;
+    padding: 5*$bmu;
+    border-radius: 8px;
+    background-color: $cWhite500;
+  }
+
+  &__body {
+    position: relative;
+    text-align: center;
+  }
+
+  &__img {
+    width: 150px;
+    height: 230px;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 2*$bmu;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: $cBlack500;
+  }
+
+  &__text {
+    display: block;
+    margin-top: $bmu;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    color: $cBlack500;
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+    color: $cCrimson500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2*$bmu;
+  }
+
+  &__btn-ok {
+    margin: 0;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 2*$bmu;
+    right: 2*$bmu;
+  }
+}

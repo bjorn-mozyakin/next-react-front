@@ -1,0 +1,132 @@
+.pager {
+  padding: $bmu;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+
+  &_only-arrows {
+    .pager__item {
+      display: none;
+    }
+
+    .pager__arrow {
+      display: flex;
+      align-items: center;
+      padding: $bmu/2;
+    }
+
+    .pager__arrow_left {
+      margin-right: 2.5*$bmu;
+
+      .pager__arrow-text {
+        margin-left: $bmu;
+      }
+    }
+
+    .pager__arrow_right {
+      .pager__arrow-text {
+        margin-right: $bmu;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    display: inline-block;
+    min-width: 38px;
+    height: 30px;
+    border-radius: 4px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+
+    &:not(&_dots) &:hover {
+      background: $cCrimson50;
+    }
+
+    &:not(&_dots) &:active {
+      background: $cCrimson100;
+    }
+
+    &_hidden {
+      display: none;
+    }
+
+    &_dots {
+      font-weight: 500;
+      color: $cCrimson500;
+      cursor: default;
+    }
+
+    &_active {
+      pointer-events: none;
+      color: $cCrimson50;
+      background: $cCrimson500;
+      cursor: default;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: inherit;
+  }
+
+  &__arrow {
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background: $cCrimson50;
+    }
+
+    &:active {
+      background: $cCrimson100;
+    }
+
+    &_left {
+      .pager__arrow-icon {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &_right {
+      .pager__arrow-icon {
+        transform: rotate(0deg);
+      }
+    }
+
+    &_passive {
+      opacity: .25;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &__arrow-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: $cBahamas50;
+
+    &::before {
+      content: '';
+    }
+  }
+
+  &__arrow-text {
+    color: $cCrimson500;
+
+    &_hidden {
+      display: none;
+    }
+  }
+}

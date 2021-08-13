@@ -1,0 +1,69 @@
+.navbar {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: $cWhite500;
+  }
+
+  &__item {
+    display: flex;
+    flex-grow: 1;
+    height: 50px;
+
+    &_active {
+      background-color: $cCrimson500;
+
+      & .navbar__link_my-forum {
+        @extend .icon-before_my-forum-24-white;
+      }
+
+      & .navbar__link_new {
+        @extend .icon-before_bell-24-white;
+      }
+
+      & .navbar__link_popular {
+        @extend .icon-before_star-24-white;
+      }
+
+      & .navbar__link_expert {
+        @extend .icon-before_expert-24-white;
+      }
+
+      & .navbar__link_rubrics {
+        @extend .icon-before_label-24-white;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-grow: 1;
+    height: 50px;
+
+    &::before {
+      margin: auto;
+    }
+
+    &_my-forum {
+      @extend .icon-before_my-forum-24-crimson;
+    }
+
+    &_new {
+      @extend .icon-before_bell-24-crimson;
+    }
+
+    &_popular {
+      @extend .icon-before_star-24-crimson;
+    }
+
+    &_expert {
+      @extend .icon-before_expert-24-crimson;
+    }
+
+    &_rubrics {
+      @extend .icon-before_label-24-crimson;
+    }
+  }
+}

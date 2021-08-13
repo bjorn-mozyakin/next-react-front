@@ -1,0 +1,161 @@
+.footer {
+  position: relative;
+  z-index: 10; // Чтобы быть выше подложки, приходящей при брендировании (у подложки z-index не выставлен => берется по дефолту)
+  min-width: $wDesktop; // нужно для того, чтобы на мобайле в десктопной версии нормально скейлился футер
+  background-color: $cWhite500;
+
+  a {
+    transition: color .15s ease-out;
+  }
+
+  a:hover,
+  a:active {
+    color: $cCrimson500;
+  }
+
+  &__container {
+    $hStickyBottom: 140px;
+    width: $wDesktop;
+    margin: 0 auto;
+    padding: 0 6*$bmu $hStickyBottom; // добавляем отступ, чтобы sticky-баннер не перекрывал инфу футера
+  }
+
+  &__sitemap-title {
+    padding: 3*$bmu 0;
+    text-align: center;
+    color: $cBlack500;
+  }
+
+  &__sitemap-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    flex-basis: 20%;
+    margin-bottom: 4*$bmu;
+
+    ul {
+      margin-top: $bmu;
+      list-style: none;
+      font-size: 12px;
+    }
+  }
+
+  &__section-title {
+    font-weight: 500;
+    color: $cBlack500;
+  }
+
+  &__section-item {
+    line-height: 22px;
+
+    a {
+      color: $cBlack200;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+    padding: $bmu 3*$bmu;
+    border-top: 2px solid $cBahamas50;
+    border-bottom: 2px solid $cBahamas50;
+
+    a {
+      padding: $bmu/2;
+      font-size: 14px;
+      font-weight: 500;
+      color: $cBlack500;
+    }
+  }
+
+  &__logos {
+    margin: 4*$bmu 0;
+    text-align: center;
+
+    &_network {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2.5*$bmu 3*$bmu 0;
+    }
+  }
+
+  &__logo {
+    padding: $bmu/2;
+  }
+
+  &__copyright {
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    color: $cBahamas700;
+
+    a {
+      color: $cBahamas700;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 4*$bmu 0 2.5*$bmu;
+  }
+
+  &__social,
+  &__mob-version {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 50px;
+    border-radius: 25px;
+    background: $cHavelock100;
+    cursor: pointer;
+
+    &:hover {
+      background: $cHavelock200;
+    }
+
+    &:active {
+      background: $cHavelock300;
+    }
+  }
+
+  &__social {
+    width: 50px;
+    margin: 0 $bmu;
+  }
+
+  &__mob-version {
+    width: 200px;
+    margin: 0 auto 4*$bmu;
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBahamas700;
+    user-select: none;
+
+    &::before {
+      margin-right: $bmu;
+      line-height: 0;
+    }
+  }
+
+  &__16plus {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    margin-top: 4*$bmu;
+    border: 2px solid $cCaprice400;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    color: $cCaprice400;
+    background: $cWhite400;
+  }
+}

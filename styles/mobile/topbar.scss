@@ -1,0 +1,26 @@
+.topbar {
+  position: relative;
+  z-index: 110;
+  display: block;
+  max-width: $wMobileMax;
+  margin: 0 auto;
+
+  &_pos_sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  &__container {
+    @extend %sTopLevel;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 $bmu;
+    background-color: $cWhite500;
+  }
+
+  &__logo {
+    display: flex;
+  }
+}

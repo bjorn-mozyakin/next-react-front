@@ -1,0 +1,66 @@
+.quote {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: $bmu 0;
+  padding: $bmu 2*$bmu;
+  border-left: 3px solid $cHavelock500;
+  border-radius: 0 4px 4px 0;
+  background-color: $cBahamas50;
+
+  &_resizable {
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cHavelock500;
+  }
+
+  &__text {
+    overflow: hidden;
+    font-size: 14px;
+    font-style: italic;
+    color: $cBahamas500;
+    transition: max-height .2s ease-out;
+  }
+
+  &__resize {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background: radial-gradient($cBahamas50 10px, $cTransparent 10px);
+  }
+
+  &__resize-btn {
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transform: rotate(0deg);
+
+    &:hover {
+      background: $cHavelock100;
+    }
+
+    &:active {
+      background: $cHavelock200;
+    }
+
+    &_resized {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__delete-btn {
+    position: relative;
+    left: 100%;
+    display: inline-block;
+    transform: translateX(-100%);
+  }
+}

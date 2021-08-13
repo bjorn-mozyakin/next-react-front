@@ -1,0 +1,54 @@
+.loader-spin {
+  width: 100%;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-top: -1*(24px/2);
+    margin-left: -1*(24px/2);
+    border: 3px solid $cCrimson500;
+    border-left-color: transparent;
+    border-radius: 50%;
+    animation: rotating 1s linear infinite;
+  }
+
+  &_white-400 {
+    &::before {
+      border: 3px solid $cWhite400;
+      border-left-color: transparent;
+    }
+  }
+
+  &_crimson-50 {
+    &::before {
+      border: 3px solid $cCrimson50;
+      border-left-color: transparent;
+    }
+  }
+
+  &_bahamas-500 {
+    &::before {
+      border: 3px solid $cBahamas500;
+      border-left-color: transparent;
+    }
+  }
+
+  &_hidden {
+    display: none;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

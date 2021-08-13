@@ -1,0 +1,44 @@
+.tabs {
+  z-index: 85;
+  padding: 0 2.5*$bmu;
+  border-radius: 8px;
+
+  &_connected-top {
+    border: 1px solid $cHavelock100;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: none;
+  }
+
+  &_connected-bottom {
+    border: 1px solid $cHavelock100;
+    box-shadow: none;
+  }
+
+  &_connected-both {
+    border: 1px solid $cHavelock100;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__tab {
+    height: 40px;
+    padding: 0 $bmu;
+
+    &_active {
+      border-bottom: 2px solid $cHavelock500;
+      pointer-events: none;
+      color: $cHavelock500;
+    }
+
+    &:active {
+      background-color: $cHavelock50;
+    }
+
+    &:hover {
+      color: $cHavelock500;
+    }
+  }
+}

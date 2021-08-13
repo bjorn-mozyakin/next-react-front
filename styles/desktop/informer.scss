@@ -1,0 +1,30 @@
+.informer {
+  @extend %sTopLevel;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  min-width: $wDesktop;
+  color: $cHavelock500;
+  background-color: $cHavelock100;
+
+  &_hidden {
+    display: none;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $wDesktop;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

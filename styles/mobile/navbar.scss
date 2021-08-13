@@ -1,0 +1,23 @@
+.navbar {
+  $hNavbar: 50px;
+
+  position: sticky;
+  z-index: 85;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: $hNavbar;
+  margin-top: calc(-#{$hNavbar} - 4*#{$bmu}); // Прячем navbar на дополнительные 4*$bmu выше под Меню, чтобы его тень не выпячивалась из-под Меню
+  margin-bottom: 4*$bmu;
+
+  &__container {
+    @extend %sTopLevel;
+  }
+
+  &__item {
+    &:active:not(&_active) {
+      background: $cCrimson100;
+    }
+  }
+}

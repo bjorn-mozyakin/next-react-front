@@ -1,0 +1,60 @@
+// Градиенты плохо анимируются, поэтому создаем второй слой (через before) и анимируем opacity
+// Текст пишем отдельным слоем (через after), дабы он не перекрывался анимируемым фоном
+.plate {
+  position: relative;
+  z-index: 85;
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: $gPurple;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 50px;
+    opacity: 0;
+    background: $gDreams;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'Уже появились новые ответы. Показать?';
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+    text-align: center;
+    color: $cWhite500;
+  }
+
+  &_animated {
+    &::before {
+      animation: plate-blink 1s linear 2;
+    }
+  }
+
+  &_hidden {
+    display: none;
+  }
+}
+
+@keyframes plate-blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

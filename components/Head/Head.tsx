@@ -26,9 +26,6 @@ export const Head = ({
       <title>{title}</title>
       {needAdScripts && <HeadAdScripts />}
       {needAdfoxScript && <HeadAdfoxScript />}
-      {/*
-      <link href="/static/main.css" rel="stylesheet" />
-      */}
 
       {isMobile ? (
         <link

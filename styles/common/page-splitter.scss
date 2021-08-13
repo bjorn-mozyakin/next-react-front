@@ -1,0 +1,48 @@
+.page-splitter {
+  margin: -6*$bmu 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: $cWhite500;
+  background: $gCarbon;
+
+  &__container {
+    position: relative;
+  }
+
+  &__answers-count {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $cWhite400;
+  }
+
+  &__last-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__last-answer-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $cWhite300;
+  }
+
+  &__info {
+    margin-top: 4*$bmu;
+    font-size: 16px;
+    font-weight: 400;
+    color: $cWhite400;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &_text {
+      margin: 0 2*$bmu;
+    }
+  }
+}

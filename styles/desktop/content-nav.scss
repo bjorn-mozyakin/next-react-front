@@ -1,0 +1,13 @@
+.content-nav {
+  margin: 4*$bmu 0 2.5*$bmu;
+
+  &__container {
+    padding: 2.5*$bmu;
+    border-radius: 8px;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 24px;
+  }
+}

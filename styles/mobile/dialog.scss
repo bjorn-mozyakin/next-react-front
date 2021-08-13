@@ -1,0 +1,20 @@
+.dialog {
+  min-width: 300px;
+  max-width: $wMobileMax;
+
+  &_type_context {
+    min-width: 220px;
+
+    & .dialog__message {
+      padding: $bmu;
+    }
+  }
+
+  &_type_content {
+    padding: 0 $bmu;
+
+    & .dialog__message {
+      padding: $bmu;
+    }
+  }
+}

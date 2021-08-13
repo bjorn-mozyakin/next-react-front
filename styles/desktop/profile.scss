@@ -1,0 +1,41 @@
+.profile {
+  &__background {
+    height: $hProfileBackground;
+  }
+
+  &__background-actions {
+    top: 2*$bmu;
+    right: 2*$bmu;
+  }
+
+  &_view_wide {
+    & .profile__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    & .profile__user-info {
+      position: sticky;
+      z-index: 90; // чтобы Tooltip для верифицированного юзера был НАД вкладкой табов в profile__activity
+      top: $hNav;
+      flex-shrink: 0;
+    }
+
+    // Якорь для залипания профиля.
+    // Как только он скрывается из viewport - профиль залипает
+    & .profile__user-info-anchor {
+      position: absolute;
+      top: -1*($hNav + $userPicSizeBig / 2 + 32px + $bmu); // 32px - первоначальное смещение user-info относительно profile__user-info
+      left: 0;
+      width: 100%;
+      height: 1px;
+      visibility: hidden;
+    }
+
+    & .profile__activity {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+  }
+}

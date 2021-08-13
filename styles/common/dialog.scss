@@ -1,0 +1,155 @@
+.dialog {
+  z-index: 85;
+  line-height: 1.25;
+
+  &_type_default {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .dialog__message {
+      padding: 3*$bmu;
+    }
+  }
+
+  &_type_context {
+    position: absolute;
+
+    &.dialog_side_top {
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.dialog_side_right {
+      top: 50%;
+      left: calc(100% + #{$bmu});
+      transform: translateY(-50%);
+    }
+
+    &.dialog_side_bottom {
+      top: calc(100% + #{$bmu});
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.dialog_side_left {
+      top: 50%;
+      left: -$bmu/2;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  &_side_top {
+    & .dialog__pointer {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateZ(45deg);
+    }
+  }
+
+  &_side_right {
+    & .dialog__pointer {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%) rotateZ(45deg);
+    }
+  }
+
+  &_side_bottom {
+    & .dialog__pointer {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateZ(45deg);
+    }
+  }
+
+  &_side_left {
+    & .dialog__pointer {
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%) rotateZ(45deg);
+    }
+  }
+
+  &.dialog_hidden {
+    display: none;
+  }
+
+  &.dialog_above-all {
+    z-index: 999;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: $cBlack500;
+  }
+
+  &__message {
+    @extend %sFloatingLevel;
+    position: relative;
+    border-radius: 8px;
+    background-color: $cBlack500;
+  }
+
+  &__title {
+    display: block;
+    padding-bottom: $bmu;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    color: $cWhite300;
+  }
+
+  &__text {
+    display: block;
+    padding: $bmu 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    color: $cBahamas500;
+  }
+
+  // Повышаем специфичность, чтоб перекрыть стили для стандартных иконок (icon)
+  & &__pic {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cWhiteOriginal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__btn-cancel {
+    flex-shrink: 0;
+    margin: 0 $bmu 0 0;
+  }
+
+  &__btn-ok {
+    margin: 0;
+  }
+}

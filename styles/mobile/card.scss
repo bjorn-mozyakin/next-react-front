@@ -1,0 +1,36 @@
+.card {
+  &_topic-start {
+    .card__container {
+      // Переопределяем границы, заданные в общем %rootLevel у common/card
+      border-right: none;
+      border-left: none;
+    }
+  }
+
+  &__anchor {
+    position: absolute;
+    top: -1 * ($hTopbar + $bmu); // чтобы при прыжке к карточке она не перекрывалась topbar-ом
+  }
+
+  &__container {
+    padding: $bmu;
+  }
+
+  &__title {
+    width: calc(100% + 2*#{$bmu});
+    margin-top: -$bmu;
+    margin-left: -$bmu;
+    padding: $bmu;
+  }
+
+  &__title-link {
+    width: inherit;
+    margin: -$bmu;
+    padding: $bmu;
+  }
+
+  &__voting {
+    justify-content: space-around;
+    height: 40px;
+  }
+}

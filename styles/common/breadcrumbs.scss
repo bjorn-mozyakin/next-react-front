@@ -1,0 +1,29 @@
+.breadcrumbs {
+  &__main {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: $cBahamas700;
+  }
+
+  &__links {
+    margin-top: 2*$bmu;
+    color: $cBahamas500;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $cBahamas500;
+
+    h2 {
+      display: inline-block;
+      font-weight: 500;
+    }
+  }
+}
+
+.menu .breadcrumbs {
+  margin-bottom: 2.5*$bmu;
+}

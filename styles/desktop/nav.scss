@@ -1,0 +1,60 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $hNav;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5*$bmu;
+  }
+
+  &__item {
+    height: $hNav;
+    user-select: none;
+  }
+
+  &__link {
+    $hColoredLine: 2px;
+
+    position: relative;
+    display: block;
+    height: $hNav;
+    padding: $hColoredLine 1.5*$bmu 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: $hNav;
+    text-transform: uppercase;
+    color: $cBlack500;
+    transition: all .2s ease-out;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 1.5*$bmu;
+      left: 1.5*$bmu;
+      content: '';
+      border-top: $hColoredLine solid transparent;
+      transition: all .2s ease-out;
+    }
+
+    &:hover {
+      color: $cCrimson500;
+
+      &::before {
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+
+  @for $idx from 1 through length($navbarColors) {
+    // 5n + ... - чтобы зациклить цвета, если добавятся еще пункты меню
+    .nav__item:nth-child(5n + #{$idx}) {
+      & .nav__link::before {
+        border-top: 2px solid nth($navbarColors, $idx);
+      }
+    }
+  }
+}

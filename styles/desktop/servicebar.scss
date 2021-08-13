@@ -1,0 +1,47 @@
+.servicebar {
+  @extend %sSecondLevel;
+  position: fixed;
+  z-index: 760;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $wContent;
+  height: 50px;
+  padding: 0 2.5*$bmu;
+  border-radius: 0 0 8px 8px;
+  background-color: $cWhite500;
+  transition: top .2s ease-out;
+
+  &_hidden {
+    display: none;
+  }
+
+  &_animated {
+    top: $hNav;
+  }
+
+  &__aux {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__move-up {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__page-title {
+    padding: 0 $bmu;
+    font-size: 16px;
+    font-weight: 700;
+    color: $cCrimson500;
+  }
+
+  &__btn-add-message,
+  &__btn-add-favorite {
+    margin-left: 1.5*$bmu;
+  }
+}

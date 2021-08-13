@@ -1,0 +1,59 @@
+// Блок спецпроектов доступен только на определенных темах,
+// заданных в админке: http://www.woman.ru/moderator/SpBlock/
+// На mobile для спецпроекта используются стили карточки .card вместо .special-project
+.special-project {
+  @extend %sRootLevel;
+  position: relative;
+  z-index: 50;
+  max-width: 640px;
+  margin: 2.5*$bmu $bmu;
+  padding: $bmu 2.5*$bmu;
+  border-radius: 8px;
+  background-color: $cWhite500;
+
+  &__header {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cCrimson500;
+  }
+
+  &__img {
+    max-width: 80px;
+    border-radius: 50%;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2.5*$bmu;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $cBlack500;
+  }
+
+  &__description {
+    margin-left: 2.5*$bmu;
+  }
+
+  &__text {
+    margin-top: $bmu;
+    font-size: 16px;
+    font-weight: 400;
+    color: $cBlack500;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $cCrimson500;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

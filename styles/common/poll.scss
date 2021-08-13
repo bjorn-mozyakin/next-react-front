@@ -1,0 +1,131 @@
+.poll {
+
+  $coef: .5;
+
+  $lefts: ((1 -12px), (2 -48px), (3 -84px));
+  width: 100%;
+
+  &_locked {
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    margin: 0 0 2 * $bmu;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+
+  &__question {
+    &_state_voting {
+      & .poll__option-result {
+        display: none;
+      }
+
+      & .poll__option-voices {
+        display: none;
+      }
+    }
+
+    &_state_result {
+      & .poll__radio {
+        pointer-events: none;
+      }
+
+      & .poll__option-result {
+        display: block;
+      }
+
+      & .poll__option-voices {
+        display: block;
+      }
+    }
+  }
+
+  &__question-title {
+    padding-top: .5 * $bmu;
+    font-size: 18px;
+    font-weight: 700;
+    word-break: break-word;
+    color: $cHavelock500;
+  }
+
+  &__option-voices {
+    min-width: 46px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: right;
+    color: $cBahamas700;
+  }
+
+  &__option-result {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 4*$bmu;
+  }
+
+  &__option-result-line {
+    height: 4px;
+    border-radius: 2px;
+    background-color: $cHavelock100;
+    transition: width 1s;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2 * $bmu;
+  }
+
+  &__action {
+    &_hidden {
+      display: none;
+    }
+
+    &_deactivate-poll {
+      position: absolute;
+      top: -$bmu/2;
+      right: 0;
+    }
+  }
+
+  &__voters-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px; // Равно высоте кнопок Закрыть опрос/Отменить голос
+    font-size: 12px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+
+  // TODO Подумать на свежую голову, как сделать это красиво
+  &__voters-pics {
+    position: relative;
+    display: flex;
+    height: 40px;
+  }
+
+  @for $i from 1 through 3 {
+    $coef: $coef + (.5);
+    &__voters-pics_length_#{$i} {
+      width: $coef * 24px;
+    }
+  }
+
+  @each $left in $lefts {
+    &__voter-pic:nth-child(#{nth($left, 1)}) {
+      position: relative;
+      top: 0;
+      left: nth($left, 2);
+      transform: scale(.5);
+    }
+  }
+}

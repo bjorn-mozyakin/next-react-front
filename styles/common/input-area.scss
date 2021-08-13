@@ -1,0 +1,92 @@
+// Для скрытия/отображения элемента используется и opacity, и visibility,
+// т.к. visibility родителя НЕ перекрывает visibility потомка и может появляться баг
+// например, в скрытой (hidden) форме просвечивает visible инпут
+
+.input-area {
+  text-align: left;
+
+  &_hidden {
+    display: none;
+  }
+
+  &__input {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 2*$bmu;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    color: $cBlack500;
+    background-color: $cWhite500;
+    outline: none;
+
+    &:disabled {
+      color: $cBahamas500;
+      background-color: $cBahamas100;
+      -webkit-text-fill-color: $cBahamas500; // хак для Safari, который по умолчанию осветляет текст в input:disabled
+    }
+
+    &_textarea {
+      height: 140px;
+      padding: 2*$bmu 2.5*$bmu;
+      line-height: 1.25;
+      resize: none;
+    }
+
+    &_bordered {
+      border: 1px solid $cBlack50;
+    }
+
+    &:focus {
+      border: 1px solid $cHavelock500;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $cBlack100;
+    }
+
+    &_error {
+      border: 1px solid $cCaprice500;
+
+      &:focus {
+        border: 1px solid $cCaprice500;
+      }
+
+      & ~ .input-area__underneath .input-area__error-msg {
+        display: block;
+      }
+    }
+  }
+
+  &__underneath {
+    min-height: 15px;
+    margin: $bmu/2 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  &__hint {
+    color: $cBlack100;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__error-msg {
+    display: none;
+    color: $cCaprice500;
+  }
+
+  & .tagify {
+    height: auto;
+    min-height: 140px;
+  }
+}

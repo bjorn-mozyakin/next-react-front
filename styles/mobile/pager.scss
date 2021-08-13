@@ -1,0 +1,15 @@
+.pager {
+  @extend %sTopLevelReverse;
+  z-index: 100;
+  background-color: $cWhite500;
+  transform: translate(0, 0);
+  transition: transform ease-out .6s;
+
+  &_hidden {
+    transform: translate(0, 100%);
+  }
+
+  &__container {
+    width: 100%;
+  }
+}

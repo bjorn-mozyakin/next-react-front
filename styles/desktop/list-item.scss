@@ -1,0 +1,26 @@
+.list-item {
+  &__anchor {
+    position: absolute;
+    top: -($hNav + $hServicebar);
+  }
+
+  &__link:hover {
+    & .list-item__title {
+      color: $cCrimson700;
+    }
+  }
+
+  &__show-topic,
+  &__remove-thread {
+    visibility: visible;
+    transition: none; // Важно!, чтобы отменить анимация btn-round, которая тут находится
+
+    // скрываем не через display:none, а visibility
+    // т.к. необходимо резервировать место под сей элемент,
+    // чтобы не прыгал заголовок в однолайновых списках при hover
+    &_hidden {
+      visibility: hidden;
+      pointer-events: none; // на всякий случай (протестить сложно), чтоб не сработал обработчик, пока элемент невидим
+    }
+  }
+}

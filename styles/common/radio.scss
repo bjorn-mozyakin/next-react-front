@@ -1,0 +1,119 @@
+.radio {
+  width: 100%;
+
+  &_direction_vertical {
+    display: block;
+    padding: 2 * $bmu 0;
+  }
+
+  &_direction_horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .radio__container {
+      margin-top: 0 !important; // TODO Переделать (добавив &_direction_vertical)
+    }
+  }
+
+  &_theme_havelock-500 {
+    & .radio__circle::after {
+      background: $cHavelock500;
+    }
+
+    & .radio__input:checked + .radio__item .radio__circle {
+      border: 2px solid $cHavelock500;
+    }
+
+    & .radio__input:checked + .radio__item .radio__text {
+      color: $cHavelock500;
+    }
+  }
+
+  &_theme_caprice-500 {
+    & .radio__circle::after {
+      background: $cCaprice500;
+    }
+
+    & .radio__input:checked + .radio__item .radio__circle {
+      border: 2px solid $cCaprice500;
+    }
+
+    & .radio__input:checked + .radio__item .radio__text {
+      color: $cCaprice500;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: $bmu;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    // Задает hover только на устройствах, поддерживающих hover
+    @media (hover: hover) {
+      &:hover {
+        background-color: $cBahamas100;
+      }
+    }
+
+    &:active {
+      background-color: $cBahamas200;
+    }
+  }
+
+  &__input {
+    @include visually-hidden();
+
+    &:checked + .radio__item .radio__circle {
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $bmu 0 $bmu $bmu;
+  }
+
+  &__circle {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border: 2px solid $cBahamas500;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      display: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    flex-grow: 1;
+    padding-left: $bmu;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    word-break: break-word;
+    color: $cBahamas700;
+  }
+}

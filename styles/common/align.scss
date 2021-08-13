@@ -1,0 +1,19 @@
+/**
+ * TODO
+ Подумать, нужен ли отдельный Микс для выравнивания
+ Если нужен, то как его реализовать.
+ Пока так
+ */
+
+.align-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.align-right {
+  position: relative;
+  left: 100%;
+  display: inline-block;
+  transform: translateX(-100%);
+}

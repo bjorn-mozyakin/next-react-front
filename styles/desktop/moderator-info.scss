@@ -1,0 +1,14 @@
+.moderator-info {
+  padding: $bmu 0;
+  font-size: 12px;
+  text-align: left;
+  color: $cBlack500;
+
+  & > *:not(:last-child) {
+    margin-bottom: $bmu/2;
+  }
+
+  &__expand {
+    cursor: pointer;
+  }
+}

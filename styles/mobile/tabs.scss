@@ -1,0 +1,22 @@
+.tabs {
+  z-index: 80;
+
+  &__tab {
+    height: 50px;
+    padding: 0 2*$bmu;
+
+    &_active {
+      border-bottom: 3px solid $cCrimson500;
+      pointer-events: none;
+      color: $cCrimson500;
+    }
+
+    &:active {
+      background-color: $cCrimson50;
+    }
+
+    &:hover {
+      color: $cCrimson500;
+    }
+  }
+}

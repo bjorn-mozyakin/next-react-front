@@ -1,0 +1,13 @@
+.my-forum {
+  &__user-block-text,
+  &__banned-text {
+    margin: 2.5*$bmu;
+    font-size: 14px;
+    line-height: 1.45;
+    color: $cBlack200;
+  }
+
+  &__text-pointer {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5*$bmu;
+  color: $cBlack500;
+
+  &__link {
+    color: $cBlack500;
+  }
+
+  &__btn-right {
+    margin-right: -$bmu; //смещаем кнопку вправо на величину отступа текста внутри нее
+  }
+}

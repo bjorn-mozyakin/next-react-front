@@ -1,0 +1,40 @@
+.search {
+  position: relative;
+  z-index: 90;
+
+  &__container {
+    background-color: $cWhite500;
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $cBlack200;
+    background-color: $cWhite500;
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__info-text {
+    padding: 4*$bmu;
+    text-align: center;
+    color: $cCrimson500;
+    background: $cWhite500;
+  }
+}

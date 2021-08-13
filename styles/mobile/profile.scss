@@ -1,0 +1,15 @@
+.profile {
+  &__background {
+    height: $hProfileBackground;
+  }
+
+  &__background-actions {
+    top: $bmu;
+    right: $bmu;
+  }
+
+  &__tabs-anchor {
+    position: relative;
+    top: -1*($hTopbar + $bmu);
+  }
+}

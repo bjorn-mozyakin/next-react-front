@@ -1,0 +1,10 @@
+.service-page {
+  &__indent-element {
+    padding-left: 4*$bmu;
+  }
+
+  &__anchor {
+    position: absolute;
+    top: -1 * ($hServicebar + 18);
+  }
+}

@@ -1,0 +1,13 @@
+.error-page {
+  &__message {
+    font-size: 34px;
+  }
+
+  &__title {
+    font-size: 28px;
+  }
+
+  &__search {
+    max-width: $wContent;
+  }
+}

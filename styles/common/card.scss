@@ -1,0 +1,286 @@
+.card {
+  display: block;
+  margin: $bmu;
+
+  &_hidden {
+    display: none;
+  }
+
+  &_mini-version {
+    .card__user,
+    .card__voting,
+    .card__footer {
+      display: none;
+    }
+
+    .card__text {
+      padding: 2*$bmu 0;
+    }
+  }
+
+  &_search {
+    .card__title {
+      box-shadow: none;
+    }
+  }
+
+  &_expandable {
+    .card__title {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  &_notice {
+    .card__container {
+      background: $cHavelock100;
+    }
+
+    .card__title {
+      margin-bottom: 0;
+      color: $cHavelock500;
+      box-shadow: none;
+    }
+
+    .card__text {
+      color: $cBahamas700;
+    }
+  }
+
+  &_topic-start {
+    margin: 0;
+
+    .card__container {
+      padding-top: 2.5*$bmu;
+      border-radius: 0;
+    }
+
+    .card__user {
+      padding-top: $bmu;
+    }
+  }
+
+  &_survey {
+    & .card__container {
+      background-color: $cBahamas700;
+    }
+
+    & .card__title {
+      margin-bottom: 0;
+      color: $cWhite400;
+      box-shadow: none;
+    }
+
+    & .card__text {
+      color: $cWhite300;
+    }
+
+    & .card__footer {
+      justify-content: flex-end;
+      padding-top: 0;
+    }
+
+    & .card__metadata {
+      margin-right: 2.5*$bmu;
+    }
+  }
+
+  // выделение незакрепленного ответа эксперта в теме
+  &_answer-expert {
+    .card__container {
+      border: 2px solid $cPurple300;
+    }
+  }
+
+  &__container {
+    @extend %sRootLevel;
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    background-color: $cWhite500;
+  }
+
+  &__title {
+    margin-bottom: $bmu;
+    border-bottom: 1px solid $cHavelock100;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+
+    &_crimson {
+      color: $cCrimson500;
+    }
+  }
+
+  &__title-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: $cBlack500;
+
+    &_gray {
+      color: $cBahamas700;
+    }
+
+    &:hover {
+      background-color: $cCrimson50;
+    }
+
+    &:active {
+      background-color: $cCrimson100;
+    }
+  }
+
+  &__topic-title {
+    display: block;
+    margin-top: $bmu;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+    color: $cCrimson500;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: $bmu;
+  }
+
+  &__text {
+    display: block;
+    box-sizing: border-box;
+    padding: 2*$bmu 0;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 400;
+    word-break: break-word;
+    color: $cBlack500;
+
+    & + .card__user {
+      padding-top: $bmu;
+    }
+  }
+
+  &__message-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: $cBahamas500;
+
+    &:not(:empty) {
+      margin-bottom: $bmu;
+    }
+  }
+
+  &__topic-data {
+    font-size: 12px;
+    color: $cBahamas500;
+
+    &:not(:empty) {
+      margin-top: $bmu;
+    }
+  }
+
+  &__voting {
+    display: flex;
+    align-items: center;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $bmu;
+  }
+
+  &__footer-left,
+  &__footer-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__link-inline {
+    color: $cCrimson500;
+  }
+
+  &__metadata {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: $cBahamas500;
+  }
+
+  &__status {
+    margin-top: 2*$bmu;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &_closed {
+      color: $cCaprice500;
+    }
+  }
+
+  &__favorite {
+    display: inline-flex;
+    align-items: center;
+    margin: $bmu 0;
+    cursor: pointer;
+
+    &:empty {
+      display: none;
+    }
+
+    &-text {
+      margin-left: $bmu/2;
+      font-size: 12px;
+      font-weight: 500;
+      color: $cBahamas500;
+    }
+  }
+
+  &__expandable-content {
+    overflow: hidden;
+    transition: height .3s ease-out;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__frame {
+    margin-bottom: $bmu;
+    overflow: hidden;
+
+    & > * {
+      max-width: 100% !important; // Кажется, что нельзя без important. У элемента могут быть inline стили
+    }
+  }
+
+  &__frame-title-area {
+    margin-bottom: $bmu;
+    padding-top: 2.5*$bmu;
+  }
+
+  &__frame-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+
+  &__frame-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: $cHavelock500;
+  }
+}

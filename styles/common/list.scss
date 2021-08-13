@@ -1,0 +1,114 @@
+.list {
+  position: relative;
+  z-index: 50;
+  display: block;
+  align-self: stretch; // Чтобы если список лежит в другом блоке - он растягивался по ширине
+  margin: 0 $bmu 2.5*$bmu;
+
+  &_hidden {
+    display: none;
+  }
+
+  &__container {
+    @extend %sRootLevel;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 700;
+    color: $cBlack500;
+    background-color: $cWhite500;
+    transition: height .3s ease-out;
+    list-style-type: none;
+
+    &_empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      padding: 1.5*$bmu;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  &_role_independant {
+    & .list__container:first-child {
+      border-radius: 8px;
+    }
+  }
+
+  &_role_dependant {
+    & .list__container:first-child {
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  &__header {
+    margin: 0 2.5*$bmu;
+    padding: 2.5*$bmu 0 $bmu;
+    border-bottom: 2px solid $cHavelock100;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+
+    // как минимум - Похожие темы в форме Добавления тем
+    &_color_crimson-500 {
+      color: $cCrimson500;
+    }
+
+    // как минимум - Нов/Поп темы в конце Темы на desk
+    &_color_bahamas-700 {
+      color: $cBahamas700;
+    }
+  }
+
+  &__subtitle {
+    padding: $bmu;
+    font-size: 14px;
+    font-weight: 500;
+
+    // как минимум - Нов/Поп в конце Темы на desk, Новые/Дзен в середине тем
+    &_color_crimson-500 {
+      color: $cCrimson500;
+    }
+
+    // как минимум - Мудрость форума
+    &_color_white-500 {
+      color: $cWhite500;
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    background-color: $cWhite500;
+  }
+
+  &_type_spatial {
+    .list-item__container {
+      margin: 0 2.5*$bmu;
+    }
+  }
+
+  &_forum-knowledge {
+    margin: 2.5*$bmu 0;
+
+    .list__container {
+      padding: $bmu;
+      border: none; // Переопределяем границы, заданные в общем %rootLevel
+      background: $gPurple;
+    }
+
+    .list__subtitle {
+      padding: $bmu 0 2*$bmu;
+    }
+
+    .list__body {
+      border-radius: 8px;
+    }
+  }
+}

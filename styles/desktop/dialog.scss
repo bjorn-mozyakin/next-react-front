@@ -1,0 +1,22 @@
+.dialog {
+  min-width: 320px;
+  max-width: $wContent;
+
+  &_type_context {
+    min-width: 200px;
+
+    & .dialog__message {
+      padding: $bmu 2.5*$bmu;
+    }
+  }
+
+  &_type_content {
+    & .dialog__message {
+      padding: $bmu 2.5*$bmu;
+    }
+  }
+
+  &_width_160 {
+    min-width: 160px;
+  }
+}

@@ -1,0 +1,6 @@
+.favorite {
+  // Переопределяем границы, заданные в общем %rootLevel
+  border: none;
+  border-top: 1px solid $cHavelock100;
+  border-bottom: 1px solid $cHavelock100;
+}

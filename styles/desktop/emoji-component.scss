@@ -1,0 +1,52 @@
+.emoji-component {
+  position: absolute;
+  z-index: 85;
+  top: $bmu;
+  right: 2.5*$bmu;
+  text-align: right;
+
+  &__picker {
+    @extend %sSecondLevel;
+    width: 210px;
+    height: 200px;
+    padding: $bmu;
+    border-radius: 5px;
+    overflow-y: scroll;
+    background-color: $cWhite500;
+
+    &_hidden {
+      display: none;
+    }
+
+    &_title {
+      margin-bottom: $bmu/2;
+      text-align: left;
+      color: $cBahamas700;
+    }
+
+    &_section {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: $bmu;
+
+      & span {
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        line-height: 25px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color .15s ease-out;
+        user-select: none;
+
+        &:hover {
+          background-color: $cCrimson200;
+        }
+
+        &:active {
+          background-color: $cCrimson500;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ==========================
+// Поверхносить и перспектива
+// ==========================
+// s - surface
+
+%sRootLevel {
+  border: 1px solid $cHavelock100;
+}
+
+%sSecondLevel {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .18);
+}
+
+%sThirdLevel {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
+}
+
+%sTopLevel {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, .14);
+}
+
+%sTopLevelReverse {
+  box-shadow: 0 -3px 14px rgba(0, 0, 0, .14);
+}
+
+%sFloatingLevel {
+  box-shadow: 0 0 24px rgba(0, 0, 0, .24);
+}
+
+// ==========================
+// МИКСИНЫ (SCSS)
+// ==========================
+@mixin restrict-height($height) {
+  height: $height;
+  max-height: $height;
+}
+
+//Скрывает элемент, но оставляет его видимым для скринридеров и управления с клавиатуры (в отличии от display:none)
+//(типа accessibility никому ненужная)
+//Используется в кастомных чекбоксах, радиокнопках и т.д
+//При использовании - НЕ ЗАБЫТЬ добавить position:relative родителю
+//Можно использовать appearance:none с префиксами, но он не поддерживается в IE11
+//и когда будем редизайнить десктоп - все равно придется делать такой миксин
+@mixin visually-hidden() {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+// ========
+// МИКСЫ (БЭМ)
+// ========
+
+// класс для временной блокировки элемента - все обработчики на эл-те с данным классом игнорируются,
+// пока класс не будет снят. Нужен чтобы исключить повторные запуски обработчиков на кнопках, формах и т.д.
+.wait {
+  pointer-events: none;
+}
+
+// нужен, например, для диалога: контексту устанавливает position: relative
+// inline стили лучше не переопределять, т.к. вдруг у контекста уже был инлайн стиль position
+.relative {
+  position: relative;
+}
+
+//// Для спрайта
+//// Может пригодиться!!!, если надо будет ресайзить иконки в спрайте
+//
+//// Ширина спрайта - меняется вручную после сборки спрайта
+//$spriteWidth: 408px;
+//
+//// абсолютные размеры
+//@mixin svg-icon-size($iconWidthOrigin, $iconHeightOrigin, $coef) {
+//  width: $iconWidthOrigin * $coef;
+//  height: $iconHeightOrigin * $coef;
+//  background-size: $svgSpriteWidth * $coef;
+//}
+//
+//// относительные размеры
+//@mixin svg-icon-size-rel($widthPercent, $heightPercent, $iconWidthOrigin) {
+//  width: $widthPercent;
+//  height: $heightPercent;
+//  background-size: percentage($svgSpriteWidth / $iconWidthOrigin);
+//}

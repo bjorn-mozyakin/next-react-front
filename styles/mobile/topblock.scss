@@ -1,0 +1,7 @@
+.topblock {
+  &__container {
+    // Переопределяем границы, заданные в общем %rootLevel
+    border: none;
+    border-bottom: 1px solid $cHavelock100;
+  }
+}

@@ -1,0 +1,62 @@
+.dropdown-menu {
+  @extend %sFloatingLevel;
+  z-index: 85; // Dropdown должен быть ниже servicebar и topbar, но выше card
+  padding: 2*$bmu;
+  border-radius: 6px;
+  background-color: $cWhite500;
+
+  &_hidden {
+    display: none;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__close-btn {
+    position: relative;
+    top: -1*$bmu;
+    right: -1*$bmu;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 24px;
+    margin-bottom: 2*$bmu;
+    font-size: 14px;
+    font-weight: 500;
+    color: $cBlack500;
+    cursor: pointer;
+    transition: background-color .2s ease-out;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $cCrimson500;
+    }
+  }
+
+  &__item-icon {
+    position: relative;
+    margin-right: $bmu;
+    font-size: 0;
+
+    &.loader-spin {
+      width: 18px;
+    }
+  }
+
+  &__footer {
+    margin-top: 2*$bmu;
+    font-size: 12px;
+    font-weight: 500;
+    color: $cBahamas500;
+  }
+}

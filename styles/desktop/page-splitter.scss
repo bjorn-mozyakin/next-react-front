@@ -1,0 +1,29 @@
+.page-splitter {
+  padding: 6*$bmu 4*$bmu;
+  border-radius: 8px;
+
+  // Чтобы при "прыжке" по якорю к разделителю страниц сверху был отступ
+  &__anchor {
+    position: absolute;
+    top: -1 * ($hNav + $hServicebar + $bmu);
+  }
+
+  &__first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    justify-content: space-between;
+
+    &_text {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+
+  &__last-answer-btn {
+    margin-left: 1.5*$bmu;
+  }
+}

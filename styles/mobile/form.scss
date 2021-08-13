@@ -1,0 +1,204 @@
+// Для скрытия/отображения элемента используется и opacity и visibility
+// т.к. visibility родителя НЕ перекрывает visibility потомка и может появляться баг
+// например, в скрытой(hidden) форме просвечивает visible инпут
+.form {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: $cBahamas50;
+  transform: translate(100%, 0);
+  transition: transform .5s ease-out 0s;
+  -webkit-overflow-scrolling: touch;
+
+  &_hidden {
+    display: none;
+  }
+
+  // Вообще все блоки обычно имеют класс _hidden. Тут исключение, т.к. сюда сильно завязан js
+  &_visible {
+    transform: translate(0, 0);
+  }
+
+  &_static {
+    position: static;
+    transform: none;
+  }
+
+  &__header {
+    @extend %sTopLevel;
+    position: sticky;
+    z-index: 900;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 $bmu 0 $bmu;
+
+    &_new-thread {
+      color: $cWhite400;
+      background: $gDreams;
+    }
+
+    &_login {
+      color: $cCrimson500;
+      background: $cWhite500;
+    }
+
+    &_complaint {
+      color: $cWhite400;
+      background: $gRed;
+    }
+  }
+
+  &__content {
+    padding: $bmu 2.5*$bmu 2*$bmu;
+    text-align: center;
+    color: $cBlack500;
+  }
+
+  &__title {
+    margin-top: 2*$bmu;
+    font-size: 24px;
+  }
+
+  &__subtitle {
+    margin-top: 2*$bmu;
+    font-size: 16px;
+    font-weight: 400;
+    color: $cBlack200;
+  }
+
+  &__content-subtitle {
+    padding: $bmu 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    color: $cBlack500;
+  }
+
+  &__wait-icon {
+    margin-top: 4*$bmu;
+  }
+
+  &__user {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 2*$bmu;
+
+    & .user {
+      height: 50px; // чтобы верстка не прыгала при переключении на Анонимную отправку сообшения/темы
+    }
+
+    & .user__main,
+    & .input-area {
+      width: 100%;
+    }
+
+    & .user__info {
+      flex-shrink: 0;
+    }
+
+    & .form__actionbar {
+      padding-left: 11px; // чтобы выровнять по аватару пользователя
+    }
+  }
+
+  &__actionbar {
+    margin-top: 2*$bmu;
+  }
+
+  &__switch-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+    margin-top: 2*$bmu;
+    overflow: hidden;
+    transition: height ease-out .3s;
+  }
+
+  &__switch-block {
+    display: flex;
+    flex-shrink: 0; // эта дрисня тут для айфона. Не трогать!
+    align-items: center;
+    margin: 2*$bmu 0;
+    text-align: left;
+  }
+
+  &__switch-icon {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-right: $bmu;
+    border-radius: 25px;
+    background-color: $cCrimson500;
+  }
+
+  &__switch-text {
+    max-width: 190px;
+  }
+
+  &__list {
+    margin: 2.5*$bmu 0;
+    text-align: left;
+  }
+
+  &__error {
+    margin: $bmu/2 0;
+  }
+
+  &__errorbar {
+    position: absolute;
+    z-index: 20;
+    top: 6*$bmu;
+    width: 100%;
+    height: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: $cWhite500;
+    background-color: $cCaprice500;
+    transition: top .5s ease-out;
+
+    &_hidden {
+      top: 4*$bmu;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-around;
+    margin-top: $bmu;
+  }
+
+  &__quote {
+    text-align: left;
+  }
+
+  &__poll-actions {
+    margin-top: 2*$bmu;
+    text-align: left;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > *:not(.loader-spin) {
+      margin-top: $bmu;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

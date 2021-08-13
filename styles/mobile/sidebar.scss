@@ -1,0 +1,73 @@
+.sidebar {
+  width: 75%;
+  min-width: 280px;
+  max-width: 360px;
+  // всякая дрисня для комфортного скролла в Safari iOS
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 1000;
+  touch-action: pan-y;
+  -webkit-user-drag: none;
+
+  &__container {
+    padding: $bmu 2*$bmu 2.5*$bmu;
+  }
+
+  // Основное меню сайдбара
+  &__menu {
+    margin: 2*$bmu 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $cBlack500;
+
+    &::before {
+      margin-right: 1.5*$bmu;
+    }
+
+    // На мобайле если задан ховер - он остается на элементе после клика
+    // (пока не кликнут в другое место). Обычно это баг, а тут фича -
+    // юзер все равно переходит по ссылке, пусть эти 1-2 секунды, пока срабатывает переход
+    // юзер видит кликнутый пункт меню.
+    // Для остальных ссылок в сайдбаре состояния берутся из общего sidebar.scss
+    &:hover {
+      color: $cCrimson600;
+    }
+
+    &:active {
+      color: $cCrimson700;
+    }
+  }
+
+  &__my-rubrics-block {
+    border-top: 1px solid $cBlack50;
+  }
+
+  &__actionbar {
+    .actionbar__link {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: $cBahamas500;
+
+      &:hover {
+        color: $cBahamas700;
+      }
+
+      &:active {
+        color: $cBahamas900;
+      }
+    }
+  }
+
+  &__user {
+    margin: 2.5*$bmu 0;
+  }
+}

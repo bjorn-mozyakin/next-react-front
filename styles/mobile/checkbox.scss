@@ -1,0 +1,16 @@
+.checkbox {
+  &_colored:active {
+    & .checkbox__square {
+      border: 3px solid $cBahamas900;
+    }
+
+    & .checkbox__input:checked + .checkbox__square {
+      border: 3px solid $cCrimson900;
+      background-color: $cCrimson900;
+    }
+
+    & .checkbox__text {
+      color: $cBahamas900;
+    }
+  }
+}

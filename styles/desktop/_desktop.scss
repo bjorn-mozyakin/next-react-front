@@ -1,0 +1,49 @@
+// Модули, для которых ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения:
+// 1. Иконки важно подключать первыми!!!, т.к. они уникальны для каждой сборки
+// и экстендятся в общих стилях
+// 2. Общие стили
+// 3. Кастомные переменные для desktop
+@import './icons.scss';
+@import './../common/main.scss';
+@import './vars.scss';
+
+// Модули, для которых НЕ ВАЖНА ПОСЛЕДОВАТЕЛЬНОСТЬ подключения (по алфавиту):
+@import './actionbar.scss';
+@import './card.scss';
+@import './checkbox.scss';
+@import './content-nav.scss';
+@import './dialog.scss';
+@import './dropdown.scss';
+@import './emoji-component.scss';
+@import './error-page.scss';
+@import './expert-carousel.scss';
+@import './footer.scss';
+@import './form.scss';
+@import './header.scss';
+@import './informer.scss';
+@import './input.scss';
+@import './list.scss';
+@import './list-item.scss';
+@import './modal.scss';
+@import './moderator-info.scss';
+@import './my-forum.scss';
+@import './nav.scss';
+@import './navbar.scss';
+@import './page.scss';
+@import './pager.scss';
+@import './page-splitter.scss';
+@import './placeholder.scss';
+@import './profile.scss';
+@import './quote.scss';
+@import './search.scss';
+@import './search-full.scss';
+@import './select.scss';
+@import './separator.scss';
+@import './servicebar.scss';
+@import './service-page.scss';
+@import './profile-pop-up.scss';
+@import './sidebar.scss';
+@import './tabs.scss';
+@import './title.scss';
+@import './topbar.scss';
+@import './user-info.scss';

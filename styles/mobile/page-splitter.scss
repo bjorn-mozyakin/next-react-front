@@ -1,0 +1,21 @@
+.page-splitter {
+  padding: 6*$bmu 2*$bmu;
+
+  // Чтобы при "прыжке" по якорю к разделителю страниц сверху был отступ
+  &__anchor {
+    position: absolute;
+    top: -1 * ($hTopbar + $bmu);
+  }
+
+  &__last-answer-btn {
+    margin-left: 4*$bmu;
+  }
+
+  &__nav {
+    justify-content: center;
+
+    &_text {
+      min-width: 210px;
+    }
+  }
+}

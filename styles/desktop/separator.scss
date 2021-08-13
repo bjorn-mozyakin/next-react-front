@@ -1,0 +1,32 @@
+.separator {
+  position: relative;
+  display: block;
+  width: calc(100% - 20px);
+  height: 2px;
+  margin: 4*$bmu auto;
+  background-color: $cBahamas500;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    content: '';
+    display: block;
+    width: 42px;
+    height: 42px;
+    background-color: $cBahamas50;
+    transform: translate(-50%, -50%);
+  }
+}

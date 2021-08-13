@@ -1,0 +1,7 @@
+.input {
+  &__textarea {
+    display: block;
+    padding: 2*$bmu 7.5*$bmu 2*$bmu 2.5*$bmu;
+    resize: vertical;
+  }
+}

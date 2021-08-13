@@ -1,0 +1,56 @@
+.profile {
+  &__header {
+    position: relative;
+  }
+
+  &__background {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    visibility: hidden;
+
+    &[src] {
+      visibility: visible;
+    }
+  }
+
+  &__background-actions {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__edit-background {
+    &_hidden {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__edit-background-input {
+    display: none;
+  }
+
+  &__activity {
+    margin-bottom: 5 * $bmu;
+    padding-top: 2 * $bmu;
+  }
+
+  &__empty-list {
+    padding-bottom: 3*$bmu;
+  }
+
+  &_view_narrow {
+    & .profile__background {
+      height: $hProfileBackgroundSmall;
+    }
+  }
+
+  &_view_wide {
+    & .profile__background {
+      height: $hProfileBackgroundBig;
+    }
+  }
+}

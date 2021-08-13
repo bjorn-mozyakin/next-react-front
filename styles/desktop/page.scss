@@ -1,0 +1,42 @@
+.page {
+  line-height: 1.5;
+
+  // переопределяем стили для служебной страницы
+  &_service,
+  &_error,
+  &_profile {
+    .page__content {
+      width: $wDesktop;
+    }
+
+    .header__right {
+      justify-content: flex-end;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: $wDesktop;
+    margin: auto;
+    background-color: $cBahamas50;
+    // Дублируем тут фон из .page(common/page) и ставим position: relative для случая с брендированием
+    // (при нем фон .page заменяется баннером, но контент должен оставаться на однотонном фоне)
+  }
+
+  &__content {
+    position: relative;
+    width: $wContent;
+  }
+
+  &__right-column {
+    position: sticky;
+    top: $hNav;
+    flex-shrink: 0;
+    width: 300px;
+    margin-left: 2.5*$bmu;
+    background-color: $cBahamas50;
+  }
+}

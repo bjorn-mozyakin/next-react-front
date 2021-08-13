@@ -1,0 +1,103 @@
+.btn-round {
+
+  $backgrounds: (
+    'bahamas-50': $cBahamas50,
+    'bahamas-500': $cBahamas500,
+    'caribbean-500': $cCaribbean500,
+    'crimson-500': $cCrimson500,
+    'havelock-100': $cHavelock100,
+    'havelock-500': $cHavelock500,
+    'maltese-500': $cMaltese500,
+    'transparent': $cTransparent,
+    'white-500': $cWhite500
+  );
+
+  // Модификаторы состояний active и hover - по алфавиту.
+  // Название дается по цвету для состояния active
+  // т.к. оно есть и на desktop, и на mobile.
+  $states: (
+    ('bahamas-200', $cCaribbean100, $cCaribbean200),
+    ('caribbean-700', $cCaribbean600, $cCaribbean700),
+    ('crimson-100', $cCrimson50, $cCrimson100),
+    ('crimson-200', $cCrimson100, $cCrimson200),
+    ('crimson-700', $cCrimson600, $cCrimson700),
+    ('havelock-100', $cHavelock50, $cHavelock100),
+    ('havelock-400', $cHavelock300, $cHavelock400),
+    ('transparent', $cTransparent, $cTransparent),
+    ('white-400', $cWhite300, $cWhite400),
+    ('white-200', $cWhite100, $cWhite200)
+  );
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  font-family: inherit;
+  cursor: pointer;
+  transition: linear .2s;
+  user-select: none;
+
+  &_size_content {
+    width: 36px;
+    height: 36px;
+  }
+
+  &_size_full {
+    width: 50px;
+    height: 50px;
+  }
+
+  &_size_tiny {
+    width: 30px;
+    height: 30px;
+  }
+
+  // Если добавятся еще цвета - сделать циклом (как для фонов)
+  &_border_white-500 {
+    border: 2px solid $cWhite500;
+  }
+
+  // Объемность/выпуклость
+  &_volume_default {
+    @extend %sThirdLevel;
+  }
+
+  &_volume_flat {
+    line-height: 0;
+  }
+
+  // усиливаем специфичность
+  &.btn-round_loading {
+    pointer-events: none;
+    color: transparent;
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  // Модификаторы фона - по алфавиту.
+  // Лучше избегать фонов-градиентов (т.к. градиенты плавно НЕ анимируются).
+  @each $bgName, $bgValue in $backgrounds {
+    &_bg_#{$bgName} {
+      background: $bgValue;
+    }
+  }
+
+  @each $state in $states {
+    &_states_#{nth($state, 1)} {
+      &:active {
+        background: nth($state, 3);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background: nth($state, 2);
+        }
+      }
+    }
+  }
+}

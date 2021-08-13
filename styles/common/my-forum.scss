@@ -1,0 +1,11 @@
+.my-forum {
+  &__reg-anonim {
+    display: flex;
+    align-items: center;
+  }
+
+  &__reg-tooltip {
+    margin-left: $bmu / 2;
+    line-height: 0;
+  }
+}

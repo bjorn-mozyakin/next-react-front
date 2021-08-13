@@ -1,0 +1,84 @@
+.user-info {
+  &_view_wide {
+    position: relative;
+    top: -4 * $bmu;
+    width: 280px;
+    margin: 0 2*$bmu 2*$bmu;
+    border-radius: 6px;
+    transition: .3s;
+
+    &.user-info_sticked {
+      top: $bmu;
+
+      & .user-info__avatar {
+        top: $bmu * 2;
+      }
+
+      & .user-info__content {
+        padding-top: $userPicSizeBig + 4*$bmu; // аватар + отступы сверху/снизу от него
+      }
+
+      & .user-info__about {
+        max-height: 0;
+        padding: 0;
+      }
+    }
+
+    & .user-info__about {
+      max-height: 500px; // заведомо больше, чем позволяет вместить это поле
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    & .user-info__content {
+      padding-top: $userPicSizeBig / 2 + 2*$bmu; // полаватара + отступы снизу от него
+      transition: .3s;
+    }
+
+    & .user-info__avatar {
+      top: -1* ($userPicSizeBig / 2);
+      left: 50%;
+      margin-bottom: $userPicSizeBig / 2;
+      transform: translateX(-50%);
+      transition: .3s;
+    }
+
+    & .user-info__base-info {
+      align-items: center;
+      text-align: center;
+    }
+
+    & .user-info__socials {
+      text-align: center;
+    }
+
+    & .user-info__field {
+      padding: 1.5*$bmu 0;
+      border-bottom: 1px solid $cBahamas100;
+      font-size: 12px;
+      font-weight: 500;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.user-info__about {
+        font-weight: 400;
+      }
+
+      &_direction_horizontal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    & .user-info__field-name {
+      color: $cBahamas500;
+    }
+
+    & .user-info__footer {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.error-page {
+  margin-bottom: 2.5*$bmu;
+  padding: 2.5*$bmu;
+  border: none;
+  border-bottom: 1px solid $cHavelock100;
+  background-color: $cWhite500;
+
+  &__message {
+    color: $cBlack500;
+  }
+
+  &__title {
+    color: $cCrimson500;
+  }
+}

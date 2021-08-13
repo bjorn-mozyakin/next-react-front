@@ -1,0 +1,21 @@
+.content-nav {
+  margin: 0 0 2.5*$bmu;
+  overflow: hidden;
+
+  &__actions {
+    white-space: nowrap;
+  }
+
+  &__container {
+    padding: 4*$bmu 1.5*$bmu 1.5*$bmu;
+    // Переопределяем границы, заданные в общем %rootLevel
+    border: none;
+    border-bottom: 1px solid $cHavelock100;
+  }
+
+  &__toggle-subsections-view_opened {
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+}

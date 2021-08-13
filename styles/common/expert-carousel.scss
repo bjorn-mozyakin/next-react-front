@@ -1,0 +1,68 @@
+.expert-carousel {
+  position: relative;
+  display: block;
+
+  &__container {
+    width: 100%;
+    background: $gLightPurple;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    color: $cBlack500;
+
+    &::before {
+      margin-right: $bmu;
+    }
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__list-container {
+    margin: 0;
+    white-space: nowrap;
+    list-style-type: none;
+  }
+
+  &__expert {
+    @extend %sSecondLevel;
+    padding: $bmu;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: $cWhite300;
+    transition: background-color .2s ease-out;
+  }
+
+  &__expert-img {
+    display: flex;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $cBahamas50;
+    object-fit: cover;
+  }
+
+  &__expert-block {
+    line-height: 1.5;
+    white-space: normal;
+  }
+
+  &__expert-name {
+    margin-bottom: $bmu/2;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: $cBahamas700;
+  }
+
+  &__expert-info {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    color: $cBahamas500;
+  }
+}

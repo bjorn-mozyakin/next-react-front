@@ -1,0 +1,45 @@
+.error-page {
+  text-align: center;
+
+  &__message {
+    margin-bottom: 2.5*$bmu;
+    font-size: 28px;
+  }
+
+  &__title {
+    font-size: 22px;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $bmu;
+    padding: 0 $bmu;
+  }
+
+  &__navigation-link {
+    display: flex;
+    flex: 1 0 50%;
+    align-items: center;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $cBlack500;
+
+    @media all and (max-width: 370px) {
+      flex: 1 0 100%;
+    }
+
+    &::before {
+      margin-right: 1.5*$bmu;
+    }
+
+    &:hover {
+      color: $cCrimson600;
+    }
+
+    &:active {
+      color: $cCrimson700;
+    }
+  }
+}

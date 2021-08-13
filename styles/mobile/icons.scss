@@ -1,0 +1,2989 @@
+// ВАЖНО!!! если общая ширина спрайта ($svgSpriteWidth) не добавлена в конце файла,
+// то над добавить ее вручную в формате $svgSpriteWidth = 242px
+
+// по конфигу svg-sprite, если указать padding - он добавляется внутрь самой иконки(на снаружи),
+// тем самым увеличивая ее размер
+// чтобы продолжать использовать иконку в исходном размере - применяем хак, "превращающий" внутренние отступы во внешние (см. https://github.com/jkphl/svg-sprite/issues/200  сообщ от vincentbernat 01.02.17)
+// Ограничения - координаты абсолютные, затрудняют масштабирование иконок (но вроде пока и не надо)
+
+%svg-common {
+  display: inline-block;
+  background: url("../../img/mobile/icons-mobile-b0a0fecc.svg") no-repeat;
+}
+
+// миксин для конкретной иконки
+%icon_abuse-18-blue {
+  @extend %svg-common;
+  background-position: (-396px - (22px - 18px)/2) (-295px - (21.99px - 17.99px)/2);
+  width: 18px;
+  height: 17.99px;
+  //background-position 94.28571428571429% 70.7417088319225%
+  //width 22px
+  //height 21.99px
+}
+
+// класс для иконки без использования before
+.icon_abuse-18-blue {
+  @extend %icon_abuse-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_abuse-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_abuse-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_abuse-48-white {
+  @extend %svg-common;
+  background-position: (-210.01px - (52px - 48px)/2) (-212px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 53.84871794871795% 54.78036175710594%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_abuse-48-white {
+  @extend %icon_abuse-48-white;
+}
+
+// класс для иконки через before
+.icon-before_abuse-48-white {
+  &::before {
+    content: '';
+    @extend %icon_abuse-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_add-message-24-crimson {
+  @extend %svg-common;
+  background-position: (-368px - (28px - 24px)/2) (-183px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 88.88888888888889% 44.52554744525548%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_add-message-24-crimson {
+  @extend %icon_add-message-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_add-message-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_add-message-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_add-message-24-white {
+  @extend %svg-common;
+  background-position: (-368px - (28px - 24px)/2) (-211px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 88.88888888888889% 51.338199513381994%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_add-message-24-white {
+  @extend %icon_add-message-24-white;
+}
+
+// класс для иконки через before
+.icon-before_add-message-24-white {
+  &::before {
+    content: '';
+    @extend %icon_add-message-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_add-message-48-white {
+  @extend %svg-common;
+  background-position: (-262.01px - (52px - 48px)/2) (-212px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 67.18205128205128% 54.78036175710594%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_add-message-48-white {
+  @extend %icon_add-message-48-white;
+}
+
+// класс для иконки через before
+.icon-before_add-message-48-white {
+  &::before {
+    content: '';
+    @extend %icon_add-message-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_add-user-18-blue-green {
+  @extend %svg-common;
+  background-position: (-396px - (22px - 18px)/2) (-183px - (23px - 19px)/2);
+  width: 18px;
+  height: 19px;
+  //background-position 94.28571428571429% 43.99038461538461%
+  //width 22px
+  //height 23px
+}
+
+// класс для иконки без использования before
+.icon_add-user-18-blue-green {
+  @extend %icon_add-user-18-blue-green;
+}
+
+// класс для иконки через before
+.icon-before_add-user-18-blue-green {
+  &::before {
+    content: '';
+    @extend %icon_add-user-18-blue-green;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_add-user-48-white {
+  @extend %svg-common;
+  background-position: (-163px - (52px - 48px)/2) (-128px - (53px - 49px)/2);
+  width: 48px;
+  height: 49px;
+  //background-position 41.794871794871796% 33.16062176165803%
+  //width 52px
+  //height 53px
+}
+
+// класс для иконки без использования before
+.icon_add-user-48-white {
+  @extend %icon_add-user-48-white;
+}
+
+// класс для иконки через before
+.icon-before_add-user-48-white {
+  &::before {
+    content: '';
+    @extend %icon_add-user-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_anonymous-24-white {
+  @extend %svg-common;
+  background-position: (-368px - (28px - 24px)/2) (-239px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 88.88888888888889% 58.15085158150852%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_anonymous-24-white {
+  @extend %icon_anonymous-24-white;
+}
+
+// класс для иконки через before
+.icon-before_anonymous-24-white {
+  &::before {
+    content: '';
+    @extend %icon_anonymous-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_badge-author-16-crimson {
+  @extend %svg-common;
+  background-position: (-110px - (20px - 16px)/2) (-399px - (20px - 16px)/2);
+  width: 16px;
+  height: 16px;
+  //background-position 26.066350710900473% 95.22673031026252%
+  //width 20px
+  //height 20px
+}
+
+// класс для иконки без использования before
+.icon_badge-author-16-crimson {
+  @extend %icon_badge-author-16-crimson;
+}
+
+// класс для иконки через before
+.icon-before_badge-author-16-crimson {
+  &::before {
+    content: '';
+    @extend %icon_badge-author-16-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_badge-ban-16-red {
+  @extend %svg-common;
+  background-position: (-130px - (20px - 16px)/2) (-399px - (20px - 16px)/2);
+  width: 16px;
+  height: 16px;
+  //background-position 30.805687203791468% 95.22673031026252%
+  //width 20px
+  //height 20px
+}
+
+// класс для иконки без использования before
+.icon_badge-ban-16-red {
+  @extend %icon_badge-ban-16-red;
+}
+
+// класс для иконки через before
+.icon-before_badge-ban-16-red {
+  &::before {
+    content: '';
+    @extend %icon_badge-ban-16-red;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_badge-my-16-blue {
+  @extend %svg-common;
+  background-position: (-150px - (20px - 16px)/2) (-399px - (20px - 16px)/2);
+  width: 16px;
+  height: 16px;
+  //background-position 35.54502369668246% 95.22673031026252%
+  //width 20px
+  //height 20px
+}
+
+// класс для иконки без использования before
+.icon_badge-my-16-blue {
+  @extend %icon_badge-my-16-blue;
+}
+
+// класс для иконки через before
+.icon-before_badge-my-16-blue {
+  &::before {
+    content: '';
+    @extend %icon_badge-my-16-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_bell-18-crimson {
+  @extend %svg-common;
+  background-position: (-344px - (22px - 18px)/2) (-260px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 81.9047619047619% 62.35011990407674%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_bell-18-crimson {
+  @extend %icon_bell-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_bell-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_bell-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_bell-24-crimson {
+  @extend %svg-common;
+  background-position: (-368px - (28px - 24px)/2) (-267px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 88.88888888888889% 64.96350364963503%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_bell-24-crimson {
+  @extend %icon_bell-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_bell-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_bell-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_bell-24-white {
+  @extend %svg-common;
+  background-position: (-368px - (28px - 24px)/2) (-295px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 88.88888888888889% 71.77615571776155%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_bell-24-white {
+  @extend %icon_bell-24-white;
+}
+
+// класс для иконки через before
+.icon-before_bell-24-white {
+  &::before {
+    content: '';
+    @extend %icon_bell-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_bell-48-crimson {
+  @extend %svg-common;
+  background-position: (-316px - (52px - 48px)/2) (0px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 81.02564102564102% 0
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_bell-48-crimson {
+  @extend %icon_bell-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_bell-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_bell-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_bell-48-white {
+  @extend %svg-common;
+  background-position: (-316px - (52px - 48px)/2) (-52px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 81.02564102564102% 13.436692506459949%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_bell-48-white {
+  @extend %icon_bell-48-white;
+}
+
+// класс для иконки через before
+.icon-before_bell-48-white {
+  &::before {
+    content: '';
+    @extend %icon_bell-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_block-user-18-blue-red {
+  @extend %svg-common;
+  background-position: (-291px - (22px - 18px)/2) (-158px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 69.28571428571429% 37.88968824940048%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_block-user-18-blue-red {
+  @extend %icon_block-user-18-blue-red;
+}
+
+// класс для иконки через before
+.icon-before_block-user-18-blue-red {
+  &::before {
+    content: '';
+    @extend %icon_block-user-18-blue-red;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_block-user-48-white {
+  @extend %svg-common;
+  background-position: (-316px - (52px - 48px)/2) (-104px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 81.02564102564102% 26.873385012919897%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_block-user-48-white {
+  @extend %icon_block-user-48-white;
+}
+
+// класс для иконки через before
+.icon-before_block-user-48-white {
+  &::before {
+    content: '';
+    @extend %icon_block-user-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_burger-24-crimson {
+  @extend %svg-common;
+  background-position: (-316px - (28px - 24px)/2) (-260px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 76.32850241545894% 63.26034063260341%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_burger-24-crimson {
+  @extend %icon_burger-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_burger-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_burger-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_camera-18-crimson {
+  @extend %svg-common;
+  background-position: (-368px - (22px - 18px)/2) (-323px - (20px - 16px)/2);
+  width: 18px;
+  height: 16px;
+  //background-position 87.61904761904762% 77.08830548926014%
+  //width 22px
+  //height 20px
+}
+
+// класс для иконки без использования before
+.icon_camera-18-crimson {
+  @extend %icon_camera-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_camera-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_camera-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_close-18-bahamas {
+  @extend %svg-common;
+  background-position: (-291px - (22px - 18px)/2) (-180px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 69.28571428571429% 43.16546762589928%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_close-18-bahamas {
+  @extend %icon_close-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_close-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_close-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_close-18-black {
+  @extend %svg-common;
+  background-position: (-215px - (22px - 18px)/2) (-128px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 51.19047619047619% 30.695443645083934%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_close-18-black {
+  @extend %icon_close-18-black;
+}
+
+// класс для иконки через before
+.icon-before_close-18-black {
+  &::before {
+    content: '';
+    @extend %icon_close-18-black;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_close-18-crimson {
+  @extend %svg-common;
+  background-position: (-215px - (22px - 18px)/2) (-150px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 51.19047619047619% 35.97122302158273%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_close-18-crimson {
+  @extend %icon_close-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_close-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_close-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_close-18-white {
+  @extend %svg-common;
+  background-position: (-163px - (22px - 18px)/2) (-181px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 38.80952380952381% 43.405275779376495%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_close-18-white {
+  @extend %icon_close-18-white;
+}
+
+// класс для иконки через before
+.icon-before_close-18-white {
+  &::before {
+    content: '';
+    @extend %icon_close-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_close-24-black {
+  @extend %svg-common;
+  background-position: (-136px - (28px - 24px)/2) (-60px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 32.85024154589372% 14.598540145985401%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_close-24-black {
+  @extend %icon_close-24-black;
+}
+
+// класс для иконки через before
+.icon-before_close-24-black {
+  &::before {
+    content: '';
+    @extend %icon_close-24-black;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_closed-discussion-48-white {
+  @extend %svg-common;
+  background-position: (-237px - (54px - 50px)/2) (-158px - (52px - 48px)/2);
+  width: 50px;
+  height: 48px;
+  //background-position 61.08247422680412% 40.82687338501292%
+  //width 54px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_closed-discussion-48-white {
+  @extend %icon_closed-discussion-48-white;
+}
+
+// класс для иконки через before
+.icon-before_closed-discussion-48-white {
+  &::before {
+    content: '';
+    @extend %icon_closed-discussion-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_content-nav-archive {
+  @extend %svg-common;
+  background-position: (-84px - (79px - 75px)/2) (-128px - (79px - 75px)/2);
+  width: 75px;
+  height: 75px;
+  //background-position 23.140495867768596% 35.55555555555556%
+  //width 79px
+  //height 79px
+}
+
+// класс для иконки без использования before
+.icon_content-nav-archive {
+  @extend %icon_content-nav-archive;
+}
+
+// класс для иконки через before
+.icon-before_content-nav-archive {
+  &::before {
+    content: '';
+    @extend %icon_content-nav-archive;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_content-nav-expert {
+  @extend %svg-common;
+  background-position: (-237px - (79px - 75px)/2) (0px - (79px - 75px)/2);
+  width: 75px;
+  height: 75px;
+  //background-position 65.2892561983471% 0
+  //width 79px
+  //height 79px
+}
+
+// класс для иконки без использования before
+.icon_content-nav-expert {
+  @extend %icon_content-nav-expert;
+}
+
+// класс для иконки через before
+.icon-before_content-nav-expert {
+  &::before {
+    content: '';
+    @extend %icon_content-nav-expert;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_content-nav-hashtag {
+  @extend %svg-common;
+  background-position: (-237px - (79px - 75px)/2) (-79px - (79px - 75px)/2);
+  width: 75px;
+  height: 75px;
+  //background-position 65.2892561983471% 21.944444444444443%
+  //width 79px
+  //height 79px
+}
+
+// класс для иконки без использования before
+.icon_content-nav-hashtag {
+  @extend %icon_content-nav-hashtag;
+}
+
+// класс для иконки через before
+.icon-before_content-nav-hashtag {
+  &::before {
+    content: '';
+    @extend %icon_content-nav-hashtag;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_content-nav-live {
+  @extend %svg-common;
+  background-position: (0px - (79px - 75px)/2) (-212px - (79px - 75px)/2);
+  width: 75px;
+  height: 75px;
+  //background-position 0 58.888888888888886%
+  //width 79px
+  //height 79px
+}
+
+// класс для иконки без использования before
+.icon_content-nav-live {
+  @extend %icon_content-nav-live;
+}
+
+// класс для иконки через before
+.icon-before_content-nav-live {
+  &::before {
+    content: '';
+    @extend %icon_content-nav-live;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_content-nav-page {
+  @extend %svg-common;
+  background-position: (-79px - (79px - 75px)/2) (-212px - (79px - 75px)/2);
+  width: 75px;
+  height: 75px;
+  //background-position 21.763085399449036% 58.888888888888886%
+  //width 79px
+  //height 79px
+}
+
+// класс для иконки без использования before
+.icon_content-nav-page {
+  @extend %icon_content-nav-page;
+}
+
+// класс для иконки через before
+.icon-before_content-nav-page {
+  &::before {
+    content: '';
+    @extend %icon_content-nav-page;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_dialog-80-crimson {
+  @extend %svg-common;
+  background-position: (0px - (84px - 80px)/2) (-128px - (84px - 80px)/2);
+  width: 80px;
+  height: 80px;
+  //background-position 0 36.056338028169016%
+  //width 84px
+  //height 84px
+}
+
+// класс для иконки без использования before
+.icon_dialog-80-crimson {
+  @extend %icon_dialog-80-crimson;
+}
+
+// класс для иконки через before
+.icon-before_dialog-80-crimson {
+  &::before {
+    content: '';
+    @extend %icon_dialog-80-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_dislike-18-blue {
+  @extend %svg-common;
+  background-position: (-185px - (22px - 18px)/2) (-181px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 44.04761904761905% 43.405275779376495%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_dislike-18-blue {
+  @extend %icon_dislike-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_dislike-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_dislike-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_dislike-18-villain {
+  @extend %svg-common;
+  background-position: (-207px - (22px - 18px)/2) (-181px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 49.285714285714285% 43.405275779376495%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_dislike-18-villain {
+  @extend %icon_dislike-18-villain;
+}
+
+// класс для иконки через before
+.icon-before_dislike-18-villain {
+  &::before {
+    content: '';
+    @extend %icon_dislike-18-villain;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_edit-18-crimson {
+  @extend %svg-common;
+  background-position: (-158px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 37.61904761904762% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_edit-18-crimson {
+  @extend %icon_edit-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_edit-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_edit-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_edit-24-white {
+  @extend %svg-common;
+  background-position: (-164px - (28px - 24px)/2) (-60px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 39.61352657004831% 14.598540145985401%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_edit-24-white {
+  @extend %icon_edit-24-white;
+}
+
+// класс для иконки через before
+.icon-before_edit-24-white {
+  &::before {
+    content: '';
+    @extend %icon_edit-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expand-18-bahamas {
+  @extend %svg-common;
+  background-position: (-180px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 42.857142857142854% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_expand-18-bahamas {
+  @extend %icon_expand-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_expand-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_expand-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expand-18-blue {
+  @extend %svg-common;
+  background-position: (-202px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 48.095238095238095% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_expand-18-blue {
+  @extend %icon_expand-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_expand-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_expand-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expand-18-crimson {
+  @extend %svg-common;
+  background-position: (-224px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 53.333333333333336% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_expand-18-crimson {
+  @extend %icon_expand-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_expand-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_expand-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-18-bahamas {
+  @extend %svg-common;
+  background-position: (-246px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 58.57142857142857% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_expert-18-bahamas {
+  @extend %icon_expert-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_expert-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_expert-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-18-crimson {
+  @extend %svg-common;
+  background-position: (-268px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 63.80952380952381% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_expert-18-crimson {
+  @extend %icon_expert-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_expert-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_expert-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-24-black {
+  @extend %svg-common;
+  background-position: (-192px - (28px - 24px)/2) (-60px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 46.3768115942029% 14.598540145985401%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_expert-24-black {
+  @extend %icon_expert-24-black;
+}
+
+// класс для иконки через before
+.icon-before_expert-24-black {
+  &::before {
+    content: '';
+    @extend %icon_expert-24-black;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-24-crimson {
+  @extend %svg-common;
+  background-position: (-136px - (28px - 24px)/2) (-94px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 32.85024154589372% 22.871046228710462%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_expert-24-crimson {
+  @extend %icon_expert-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_expert-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_expert-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-24-white {
+  @extend %svg-common;
+  background-position: (-164px - (28px - 24px)/2) (-94px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 39.61352657004831% 22.871046228710462%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_expert-24-white {
+  @extend %icon_expert-24-white;
+}
+
+// класс для иконки через before
+.icon-before_expert-24-white {
+  &::before {
+    content: '';
+    @extend %icon_expert-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-48-crimson {
+  @extend %svg-common;
+  background-position: (-316px - (52px - 48px)/2) (-156px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 81.02564102564102% 40.310077519379846%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_expert-48-crimson {
+  @extend %icon_expert-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_expert-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_expert-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_expert-48-white {
+  @extend %svg-common;
+  background-position: (-316px - (52px - 48px)/2) (-208px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 81.02564102564102% 53.746770025839794%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_expert-48-white {
+  @extend %icon_expert-48-white;
+}
+
+// класс для иконки через before
+.icon-before_expert-48-white {
+  &::before {
+    content: '';
+    @extend %icon_expert-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_facebook-24-carbon {
+  @extend %svg-common;
+  background-position: (-192px - (28px - 24px)/2) (-94px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 46.3768115942029% 22.871046228710462%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_facebook-24-carbon {
+  @extend %icon_facebook-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_facebook-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_facebook-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_facebook-24-white {
+  @extend %svg-common;
+  background-position: (0px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 0 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_facebook-24-white {
+  @extend %icon_facebook-24-white;
+}
+
+// класс для иконки через before
+.icon-before_facebook-24-white {
+  &::before {
+    content: '';
+    @extend %icon_facebook-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_garbage-18-crimson {
+  @extend %svg-common;
+  background-position: (-290px - (22px - 18px)/2) (-264.04px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 69.04761904761905% 63.31894484412471%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_garbage-18-crimson {
+  @extend %icon_garbage-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_garbage-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_garbage-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_garbage-18-white {
+  @extend %svg-common;
+  background-position: (-308px - (22px - 18px)/2) (-371px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 73.33333333333333% 88.96882494004797%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_garbage-18-white {
+  @extend %icon_garbage-18-white;
+}
+
+// класс для иконки через before
+.icon-before_garbage-18-white {
+  &::before {
+    content: '';
+    @extend %icon_garbage-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_gem-18-blue {
+  @extend %svg-common;
+  background-position: (-330px - (22px - 18px)/2) (-371px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 78.57142857142857% 88.96882494004797%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_gem-18-blue {
+  @extend %icon_gem-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_gem-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_gem-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_gem-18-emerald {
+  @extend %svg-common;
+  background-position: (-352px - (22px - 18px)/2) (-371px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 83.80952380952381% 88.96882494004797%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_gem-18-emerald {
+  @extend %icon_gem-18-emerald;
+}
+
+// класс для иконки через before
+.icon-before_gem-18-emerald {
+  &::before {
+    content: '';
+    @extend %icon_gem-18-emerald;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_gem-18-white {
+  @extend %svg-common;
+  background-position: (-374px - (22px - 18px)/2) (-371px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 89.04761904761905% 88.96882494004797%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_gem-18-white {
+  @extend %icon_gem-18-white;
+}
+
+// класс для иконки через before
+.icon-before_gem-18-white {
+  &::before {
+    content: '';
+    @extend %icon_gem-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_gem-24-blue {
+  @extend %svg-common;
+  background-position: (-28px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 6.763285024154589% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_gem-24-blue {
+  @extend %icon_gem-24-blue;
+}
+
+// класс для иконки через before
+.icon-before_gem-24-blue {
+  &::before {
+    content: '';
+    @extend %icon_gem-24-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_gem-24-white {
+  @extend %svg-common;
+  background-position: (-56px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 13.526570048309178% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_gem-24-white {
+  @extend %icon_gem-24-white;
+}
+
+// класс для иконки через before
+.icon-before_gem-24-white {
+  &::before {
+    content: '';
+    @extend %icon_gem-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_info-18-blue {
+  @extend %svg-common;
+  background-position: (-396px - (22px - 18px)/2) (-371px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 94.28571428571429% 88.96882494004797%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_info-18-blue {
+  @extend %icon_info-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_info-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_info-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_info-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (0px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 0
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_info-18-crimson {
+  @extend %icon_info-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_info-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_info-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_info-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-22px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 5.275779376498801%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_info-18-white {
+  @extend %icon_info-18-white;
+}
+
+// класс для иконки через before
+.icon-before_info-18-white {
+  &::before {
+    content: '';
+    @extend %icon_info-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_info-24-crimson {
+  @extend %svg-common;
+  background-position: (-84px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 20.28985507246377% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_info-24-crimson {
+  @extend %icon_info-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_info-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_info-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_instagram-24-carbon {
+  @extend %svg-common;
+  background-position: (-112px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 27.053140096618357% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_instagram-24-carbon {
+  @extend %icon_instagram-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_instagram-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_instagram-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_label-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-44px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 10.551558752997602%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_label-18-crimson {
+  @extend %icon_label-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_label-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_label-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_label-24-crimson {
+  @extend %svg-common;
+  background-position: (-140px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 33.81642512077295% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_label-24-crimson {
+  @extend %icon_label-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_label-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_label-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_label-24-white {
+  @extend %svg-common;
+  background-position: (-168px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 40.57971014492754% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_label-24-white {
+  @extend %icon_label-24-white;
+}
+
+// класс для иконки через before
+.icon-before_label-24-white {
+  &::before {
+    content: '';
+    @extend %icon_label-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_label-48-crimson {
+  @extend %svg-common;
+  background-position: (0px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 0 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_label-48-crimson {
+  @extend %icon_label-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_label-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_label-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_label-48-white {
+  @extend %svg-common;
+  background-position: (-52px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 13.333333333333334% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_label-48-white {
+  @extend %icon_label-48-white;
+}
+
+// класс для иконки через before
+.icon-before_label-48-white {
+  &::before {
+    content: '';
+    @extend %icon_label-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_laptop-18-blue {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-66px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 15.827338129496402%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_laptop-18-blue {
+  @extend %icon_laptop-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_laptop-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_laptop-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_laptop-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-88px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 21.103117505995204%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_laptop-18-white {
+  @extend %icon_laptop-18-white;
+}
+
+// класс для иконки через before
+.icon-before_laptop-18-white {
+  &::before {
+    content: '';
+    @extend %icon_laptop-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_left-arrow-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-110px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 26.378896882494004%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_left-arrow-18-white {
+  @extend %icon_left-arrow-18-white;
+}
+
+// класс для иконки через before
+.icon-before_left-arrow-18-white {
+  &::before {
+    content: '';
+    @extend %icon_left-arrow-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_like-18-blue {
+  @extend %svg-common;
+  background-position: (-396px - (22px - 18px)/2) (-239px - (22.01px - 18.01px)/2);
+  width: 18px;
+  height: 18.01px;
+  //background-position 94.28571428571429% 57.31552315403247%
+  //width 22px
+  //height 22.01px
+}
+
+// класс для иконки без использования before
+.icon_like-18-blue {
+  @extend %icon_like-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_like-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_like-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_like-18-emerald {
+  @extend %svg-common;
+  background-position: (-396px - (22px - 18px)/2) (-267px - (22.01px - 18.01px)/2);
+  width: 18px;
+  height: 18.01px;
+  //background-position 94.28571428571429% 64.03031247751744%
+  //width 22px
+  //height 22.01px
+}
+
+// класс для иконки без использования before
+.icon_like-18-emerald {
+  @extend %icon_like-18-emerald;
+}
+
+// класс для иконки через before
+.icon-before_like-18-emerald {
+  &::before {
+    content: '';
+    @extend %icon_like-18-emerald;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_link-18-bahamas {
+  @extend %svg-common;
+  background-position: (-396px - (22.02px - 18.02px)/2) (-211px - (22.02px - 18.02px)/2);
+  width: 18.02px;
+  height: 18.02px;
+  //background-position 94.29020429544263% 50.601947335603626%
+  //width 22.02px
+  //height 22.02px
+}
+
+// класс для иконки без использования before
+.icon_link-18-bahamas {
+  @extend %icon_link-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_link-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_link-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_live-24-crimson {
+  @extend %svg-common;
+  background-position: (-196px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 47.34299516908212% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_live-24-crimson {
+  @extend %icon_live-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_live-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_live-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_live-48-crimson {
+  @extend %svg-common;
+  background-position: (-104px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 26.666666666666668% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_live-48-crimson {
+  @extend %icon_live-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_live-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_live-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_live-48-white {
+  @extend %svg-common;
+  background-position: (-156px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 40% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_live-48-white {
+  @extend %icon_live-48-white;
+}
+
+// класс для иконки через before
+.icon-before_live-48-white {
+  &::before {
+    content: '';
+    @extend %icon_live-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_lock-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-132px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 31.654676258992804%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_lock-18-crimson {
+  @extend %icon_lock-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_lock-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_lock-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_logo-holding {
+  @extend %svg-common;
+  background-position: (0px - (237px - 233px)/2) (0px - (60px - 56px)/2);
+  width: 233px;
+  height: 56px;
+  //background-position 0 0
+  //width 237px
+  //height 60px
+}
+
+// класс для иконки без использования before
+.icon_logo-holding {
+  @extend %icon_logo-holding;
+}
+
+// класс для иконки через before
+.icon-before_logo-holding {
+  &::before {
+    content: '';
+    @extend %icon_logo-holding;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_logo-woman {
+  @extend %svg-common;
+  background-position: (0px - (136px - 132px)/2) (-60px - (34px - 30px)/2);
+  width: 132px;
+  height: 30px;
+  //background-position 0 14.814814814814815%
+  //width 136px
+  //height 34px
+}
+
+// класс для иконки без использования before
+.icon_logo-woman {
+  @extend %icon_logo-woman;
+}
+
+// класс для иконки через before
+.icon-before_logo-woman {
+  &::before {
+    content: '';
+    @extend %icon_logo-woman;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_logo-woman_promoted {
+  @extend %svg-common;
+  background-position: (0px - (136px - 132px)/2) (-94px - (34px - 30px)/2);
+  width: 132px;
+  height: 30px;
+  //background-position 0 23.209876543209877%
+  //width 136px
+  //height 34px
+}
+
+// класс для иконки без использования before
+.icon_logo-woman_promoted {
+  @extend %icon_logo-woman_promoted;
+}
+
+// класс для иконки через before
+.icon-before_logo-woman_promoted {
+  &::before {
+    content: '';
+    @extend %icon_logo-woman_promoted;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_mail-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-154px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 36.930455635491604%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_mail-18-white {
+  @extend %icon_mail-18-white;
+}
+
+// класс для иконки через before
+.icon-before_mail-18-white {
+  &::before {
+    content: '';
+    @extend %icon_mail-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_mail-24-white {
+  @extend %svg-common;
+  background-position: (-224px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 54.106280193236714% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_mail-24-white {
+  @extend %icon_mail-24-white;
+}
+
+// класс для иконки через before
+.icon-before_mail-24-white {
+  &::before {
+    content: '';
+    @extend %icon_mail-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_map-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-176px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 42.20623501199041%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_map-18-crimson {
+  @extend %icon_map-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_map-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_map-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_my-forum-24-crimson {
+  @extend %svg-common;
+  background-position: (-252px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 60.869565217391305% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_my-forum-24-crimson {
+  @extend %icon_my-forum-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_my-forum-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_my-forum-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_my-forum-24-white {
+  @extend %svg-common;
+  background-position: (-280px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 67.6328502415459% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_my-forum-24-white {
+  @extend %icon_my-forum-24-white;
+}
+
+// класс для иконки через before
+.icon-before_my-forum-24-white {
+  &::before {
+    content: '';
+    @extend %icon_my-forum-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_my-forum-48-crimson {
+  @extend %svg-common;
+  background-position: (-208px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 53.333333333333336% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_my-forum-48-crimson {
+  @extend %icon_my-forum-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_my-forum-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_my-forum-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_my-forum-48-white {
+  @extend %svg-common;
+  background-position: (-260px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 66.66666666666667% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_my-forum-48-white {
+  @extend %icon_my-forum-48-white;
+}
+
+// класс для иконки через before
+.icon-before_my-forum-48-white {
+  &::before {
+    content: '';
+    @extend %icon_my-forum-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_ok-24-carbon {
+  @extend %svg-common;
+  background-position: (-308px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 74.39613526570048% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_ok-24-carbon {
+  @extend %icon_ok-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_ok-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_ok-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_ok-24-white {
+  @extend %svg-common;
+  background-position: (-336px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 81.15942028985508% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_ok-24-white {
+  @extend %icon_ok-24-white;
+}
+
+// класс для иконки через before
+.icon-before_ok-24-white {
+  &::before {
+    content: '';
+    @extend %icon_ok-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_plus-18-caribbean {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-198px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 47.48201438848921%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_plus-18-caribbean {
+  @extend %icon_plus-18-caribbean;
+}
+
+// класс для иконки через before
+.icon-before_plus-18-caribbean {
+  &::before {
+    content: '';
+    @extend %icon_plus-18-caribbean;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_poll-18-havelock {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-220px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 52.75779376498801%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_poll-18-havelock {
+  @extend %icon_poll-18-havelock;
+}
+
+// класс для иконки через before
+.icon-before_poll-18-havelock {
+  &::before {
+    content: '';
+    @extend %icon_poll-18-havelock;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_question-18-bahamas {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-242px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 58.03357314148681%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_question-18-bahamas {
+  @extend %icon_question-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_question-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_question-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_rewind-18-blue {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-264px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 63.30935251798561%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_rewind-18-blue {
+  @extend %icon_rewind-18-blue;
+}
+
+// класс для иконки через before
+.icon-before_rewind-18-blue {
+  &::before {
+    content: '';
+    @extend %icon_rewind-18-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_right-arrow-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-286px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 68.58513189448442%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_right-arrow-18-crimson {
+  @extend %icon_right-arrow-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_right-arrow-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_right-arrow-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_right-arrow-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-308px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 73.86091127098321%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_right-arrow-18-white {
+  @extend %icon_right-arrow-18-white;
+}
+
+// класс для иконки через before
+.icon-before_right-arrow-18-white {
+  &::before {
+    content: '';
+    @extend %icon_right-arrow-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_script-18-bahamas {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-330px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 79.13669064748201%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_script-18-bahamas {
+  @extend %icon_script-18-bahamas;
+}
+
+// класс для иконки через before
+.icon-before_script-18-bahamas {
+  &::before {
+    content: '';
+    @extend %icon_script-18-bahamas;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_script-18-crimson {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-352px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 84.41247002398082%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_script-18-crimson {
+  @extend %icon_script-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_script-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_script-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_script-18-white {
+  @extend %svg-common;
+  background-position: (-420px - (22px - 18px)/2) (-374px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 100% 89.68824940047962%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_script-18-white {
+  @extend %icon_script-18-white;
+}
+
+// класс для иконки через before
+.icon-before_script-18-white {
+  &::before {
+    content: '';
+    @extend %icon_script-18-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_search-24-crimson {
+  @extend %svg-common;
+  background-position: (-364px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 87.92270531400966% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_search-24-crimson {
+  @extend %icon_search-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_search-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_search-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_sheet-18-havelock {
+  @extend %svg-common;
+  background-position: (0px - (22px - 18px)/2) (-399px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 0 95.68345323741008%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_sheet-18-havelock {
+  @extend %icon_sheet-18-havelock;
+}
+
+// класс для иконки через before
+.icon-before_sheet-18-havelock {
+  &::before {
+    content: '';
+    @extend %icon_sheet-18-havelock;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_stamp-18-caribbean {
+  @extend %svg-common;
+  background-position: (0px - (18px - 14px)/2) (-421px - (18px - 14px)/2);
+  width: 14px;
+  height: 14px;
+  //background-position 0 100%
+  //width 18px
+  //height 18px
+}
+
+// класс для иконки без использования before
+.icon_stamp-18-caribbean {
+  @extend %icon_stamp-18-caribbean;
+}
+
+// класс для иконки через before
+.icon-before_stamp-18-caribbean {
+  &::before {
+    content: '';
+    @extend %icon_stamp-18-caribbean;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_star-18-crimson {
+  @extend %svg-common;
+  background-position: (-22px - (22px - 18px)/2) (-399px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 5.238095238095238% 95.68345323741008%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_star-18-crimson {
+  @extend %icon_star-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_star-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_star-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_star-24-crimson {
+  @extend %svg-common;
+  background-position: (-392px - (28px - 24px)/2) (-343px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 94.68599033816425% 83.45498783454988%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_star-24-crimson {
+  @extend %icon_star-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_star-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_star-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_star-24-white {
+  @extend %svg-common;
+  background-position: (0px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 0 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_star-24-white {
+  @extend %icon_star-24-white;
+}
+
+// класс для иконки через before
+.icon-before_star-24-white {
+  &::before {
+    content: '';
+    @extend %icon_star-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_star-48-crimson {
+  @extend %svg-common;
+  background-position: (-312px - (52px - 48px)/2) (-291px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 80% 75.1937984496124%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_star-48-crimson {
+  @extend %icon_star-48-crimson;
+}
+
+// класс для иконки через before
+.icon-before_star-48-crimson {
+  &::before {
+    content: '';
+    @extend %icon_star-48-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_star-48-white {
+  @extend %svg-common;
+  background-position: (-368px - (52px - 48px)/2) (0px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 94.35897435897436% 0
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_star-48-white {
+  @extend %icon_star-48-white;
+}
+
+// класс для иконки через before
+.icon-before_star-48-white {
+  &::before {
+    content: '';
+    @extend %icon_star-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_telegram-24-carbon {
+  @extend %svg-common;
+  background-position: (-28px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 6.763285024154589% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_telegram-24-carbon {
+  @extend %icon_telegram-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_telegram-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_telegram-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_thread-approved-48-white {
+  @extend %svg-common;
+  background-position: (-158px - (52.01px - 48.01px)/2) (-212px - (52.04px - 48.04px)/2);
+  width: 48.01px;
+  height: 48.04px;
+  //background-position 40.5138593297264% 54.78602439528634%
+  //width 52.01px
+  //height 52.04px
+}
+
+// класс для иконки без использования before
+.icon_thread-approved-48-white {
+  @extend %icon_thread-approved-48-white;
+}
+
+// класс для иконки через before
+.icon-before_thread-approved-48-white {
+  &::before {
+    content: '';
+    @extend %icon_thread-approved-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_thread-awaiting-48-white {
+  @extend %svg-common;
+  background-position: (-368px - (52px - 48px)/2) (-52px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 94.35897435897436% 13.436692506459949%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_thread-awaiting-48-white {
+  @extend %icon_thread-awaiting-48-white;
+}
+
+// класс для иконки через before
+.icon-before_thread-awaiting-48-white {
+  &::before {
+    content: '';
+    @extend %icon_thread-awaiting-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_thread-rejected-48-white {
+  @extend %svg-common;
+  background-position: (-368px - (52px - 48px)/2) (-104px - (52px - 48px)/2);
+  width: 48px;
+  height: 48px;
+  //background-position 94.35897435897436% 26.873385012919897%
+  //width 52px
+  //height 52px
+}
+
+// класс для иконки без использования before
+.icon_thread-rejected-48-white {
+  @extend %icon_thread-rejected-48-white;
+}
+
+// класс для иконки через before
+.icon-before_thread-rejected-48-white {
+  &::before {
+    content: '';
+    @extend %icon_thread-rejected-48-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_tick {
+  @extend %svg-common;
+  background-position: (-170px - (20px - 16px)/2) (-399px - (16px - 12px)/2);
+  width: 16px;
+  height: 12px;
+  //background-position 40.28436018957346% 94.32624113475177%
+  //width 20px
+  //height 16px
+}
+
+// класс для иконки без использования before
+.icon_tick {
+  @extend %icon_tick;
+}
+
+// класс для иконки через before
+.icon-before_tick {
+  &::before {
+    content: '';
+    @extend %icon_tick;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_tick-white {
+  @extend %svg-common;
+  background-position: (-190px - (20px - 16px)/2) (-399px - (16px - 12px)/2);
+  width: 16px;
+  height: 12px;
+  //background-position 45.023696682464454% 94.32624113475177%
+  //width 20px
+  //height 16px
+}
+
+// класс для иконки без использования before
+.icon_tick-white {
+  @extend %icon_tick-white;
+}
+
+// класс для иконки через before
+.icon-before_tick-white {
+  &::before {
+    content: '';
+    @extend %icon_tick-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_tiktok-24-carbon {
+  @extend %svg-common;
+  background-position: (-368px - (36px - 32px)/2) (-156px - (27px - 23px)/2);
+  width: 32px;
+  height: 23px;
+  //background-position 90.64039408866995% 37.86407766990291%
+  //width 36px
+  //height 27px
+}
+
+// класс для иконки без использования before
+.icon_tiktok-24-carbon {
+  @extend %icon_tiktok-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_tiktok-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_tiktok-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_twitter-24-carbon {
+  @extend %svg-common;
+  background-position: (-56px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 13.526570048309178% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_twitter-24-carbon {
+  @extend %icon_twitter-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_twitter-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_twitter-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_user-18-crimson {
+  @extend %svg-common;
+  background-position: (-44px - (22px - 18px)/2) (-399px - (22px - 18px)/2);
+  width: 18px;
+  height: 18px;
+  //background-position 10.476190476190476% 95.68345323741008%
+  //width 22px
+  //height 22px
+}
+
+// класс для иконки без использования before
+.icon_user-18-crimson {
+  @extend %icon_user-18-crimson;
+}
+
+// класс для иконки через before
+.icon-before_user-18-crimson {
+  &::before {
+    content: '';
+    @extend %icon_user-18-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_user-messages-18-caprice {
+  @extend %svg-common;
+  background-position: (-66px - (22px - 18px)/2) (-399px - (21.99px - 17.99px)/2);
+  width: 18px;
+  height: 17.99px;
+  //background-position 15.714285714285714% 95.68115872521042%
+  //width 22px
+  //height 21.99px
+}
+
+// класс для иконки без использования before
+.icon_user-messages-18-caprice {
+  @extend %icon_user-messages-18-caprice;
+}
+
+// класс для иконки через before
+.icon-before_user-messages-18-caprice {
+  &::before {
+    content: '';
+    @extend %icon_user-messages-18-caprice;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_user-messages-18-caribbean {
+  @extend %svg-common;
+  background-position: (-88px - (22px - 18px)/2) (-399px - (21.99px - 17.99px)/2);
+  width: 18px;
+  height: 17.99px;
+  //background-position 20.952380952380953% 95.68115872521042%
+  //width 22px
+  //height 21.99px
+}
+
+// класс для иконки без использования before
+.icon_user-messages-18-caribbean {
+  @extend %icon_user-messages-18-caribbean;
+}
+
+// класс для иконки через before
+.icon-before_user-messages-18-caribbean {
+  &::before {
+    content: '';
+    @extend %icon_user-messages-18-caribbean;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_userpic-24-blue {
+  @extend %svg-common;
+  background-position: (-84px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 20.28985507246377% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_userpic-24-blue {
+  @extend %icon_userpic-24-blue;
+}
+
+// класс для иконки через before
+.icon-before_userpic-24-blue {
+  &::before {
+    content: '';
+    @extend %icon_userpic-24-blue;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_userpic-24-white-linen {
+  @extend %svg-common;
+  background-position: (-112px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 27.053140096618357% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_userpic-24-white-linen {
+  @extend %icon_userpic-24-white-linen;
+}
+
+// класс для иконки через before
+.icon-before_userpic-24-white-linen {
+  &::before {
+    content: '';
+    @extend %icon_userpic-24-white-linen;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_viber-24-carbon {
+  @extend %svg-common;
+  background-position: (-140px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 33.81642512077295% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_viber-24-carbon {
+  @extend %icon_viber-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_viber-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_viber-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_video-18-havelock {
+  @extend %svg-common;
+  background-position: (-390px - (22px - 18px)/2) (-323px - (16px - 12px)/2);
+  width: 18px;
+  height: 12px;
+  //background-position 92.85714285714286% 76.35933806146572%
+  //width 22px
+  //height 16px
+}
+
+// класс для иконки без использования before
+.icon_video-18-havelock {
+  @extend %icon_video-18-havelock;
+}
+
+// класс для иконки через before
+.icon-before_video-18-havelock {
+  &::before {
+    content: '';
+    @extend %icon_video-18-havelock;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_vk-24-carbon {
+  @extend %svg-common;
+  background-position: (-168px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 40.57971014492754% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_vk-24-carbon {
+  @extend %icon_vk-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_vk-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_vk-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_vk-24-white {
+  @extend %svg-common;
+  background-position: (-196px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 47.34299516908212% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_vk-24-white {
+  @extend %icon_vk-24-white;
+}
+
+// класс для иконки через before
+.icon-before_vk-24-white {
+  &::before {
+    content: '';
+    @extend %icon_vk-24-white;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_w-icon-24-crimson {
+  @extend %svg-common;
+  background-position: (-224px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 54.106280193236714% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_w-icon-24-crimson {
+  @extend %icon_w-icon-24-crimson;
+}
+
+// класс для иконки через before
+.icon-before_w-icon-24-crimson {
+  &::before {
+    content: '';
+    @extend %icon_w-icon-24-crimson;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_youtube-24-carbon {
+  @extend %svg-common;
+  background-position: (-252px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 60.869565217391305% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_youtube-24-carbon {
+  @extend %icon_youtube-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_youtube-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_youtube-24-carbon;
+  }
+}
+
+// миксин для конкретной иконки
+%icon_zen-24-carbon {
+  @extend %svg-common;
+  background-position: (-280px - (28px - 24px)/2) (-371px - (28px - 24px)/2);
+  width: 24px;
+  height: 24px;
+  //background-position 67.6328502415459% 90.2676399026764%
+  //width 28px
+  //height 28px
+}
+
+// класс для иконки без использования before
+.icon_zen-24-carbon {
+  @extend %icon_zen-24-carbon;
+}
+
+// класс для иконки через before
+.icon-before_zen-24-carbon {
+  &::before {
+    content: '';
+    @extend %icon_zen-24-carbon;
+  }
+}
+

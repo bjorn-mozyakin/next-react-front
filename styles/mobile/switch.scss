@@ -1,0 +1,15 @@
+.switch {
+  &:active {
+    & .switch__input:checked + .switch__control {
+      background-color: $cCrimson700;
+    }
+
+    & .switch__text {
+      color: $cCrimson500;
+    }
+
+    & .switch__control {
+      background-color: $cBlack100;
+    }
+  }
+}

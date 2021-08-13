@@ -1,0 +1,141 @@
+.user-info {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: $cBlack500;
+  background-color: $cWhite500;
+
+  &_view_narrow {
+    position: relative;
+
+    & .user-info__avatar {
+      top: -1*($hProfileBackgroundSmall - 2*$bmu);
+      left: 2*$bmu;
+    }
+
+    & .user-info__action-btn {
+      position: absolute;
+      right: 2*$bmu;
+      transform: translateY(-50%);
+    }
+
+    & .user-info__expand-btn {
+      &_opened {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    position: absolute;
+    width: $userPicSizeBig;
+    height: $userPicSizeBig;
+  }
+
+  &__pic {
+    position: relative;
+  }
+
+  &__dropdown.dropdown {
+    position: absolute;
+    z-index: 85;
+    right: -8px;
+    bottom: 0;
+  }
+
+  &__edit-pic-input {
+    display: none;
+  }
+
+  &__content {
+    padding: 4*$bmu 2*$bmu 2*$bmu;
+  }
+
+  &__base-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    word-break: break-word;
+    color: $cBlack500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title-badge {
+    margin-bottom: $bmu;
+
+    &.title-badge {
+      margin-left: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-top: $bmu/2;
+    font-weight: 400;
+    color: $cBahamas500;
+
+    time {
+      white-space: nowrap;
+    }
+  }
+
+  &__block {
+    margin-top: 2*$bmu;
+
+    & > *:not(:first-child) {
+      margin-top: $bmu;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: $cCrimson500;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__about {
+    line-height: 18px;
+  }
+
+  &__text {
+    font-size: 12px;
+    color: $cBahamas500;
+  }
+
+  &__moderator-edit,
+  &__site {
+    margin-top: $bmu;
+  }
+
+  &__full-info {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__socials {
+    & > *:not(:last-child) {
+      margin-right: $bmu;
+    }
+  }
+
+  &__footer {
+    //display: flex;
+    //justify-content: flex-end;
+    padding: 0 2*$bmu 2*$bmu;
+  }
+}

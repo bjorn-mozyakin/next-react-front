@@ -1,0 +1,97 @@
+.title-badge {
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  &_type_with-outdent {
+    margin-left: $bmu;
+  }
+
+  &_size_small {
+    padding: 0 $bmu;
+    font-size: 11px;
+  }
+
+  &_size_big {
+    padding: $bmu/2 $bmu;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &_crimson-500 {
+    color: $cWhite400;
+    background-color: $cCrimson500;
+  }
+
+  &_maltese-500 {
+    color: $cWhite400;
+    background-color: $cMaltese500;
+  }
+
+  &_g-purple {
+    color: $cWhite400;
+    background: $cPurple300;
+  }
+
+  &_caprice-500 {
+    color: $cWhite400;
+    background-color: $cCaprice500;
+  }
+
+  &_bahamas-50 {
+    color: $cBahamas500;
+    background-color: $cBahamas50;
+  }
+
+  &_bahamas-500 {
+    color: $cWhite400;
+    background-color: $cBahamas500;
+  }
+
+  &_havelock-500 {
+    color: $cWhite400;
+    background-color: $cHavelock500;
+  }
+
+  &_caribbean-500 {
+    color: $cWhite400;
+    background-color: $cCaribbean500;
+  }
+
+  &_crimson-50 {
+    border: 1px solid $cCrimson500;
+    color: $cCrimson500;
+    background-color: $cCrimson50;
+  }
+
+  &_maltese-100 {
+    border: 1px solid $cMaltese700;
+    color: $cMaltese700;
+    background-color: $cMaltese100;
+  }
+
+  &_caprice-100 {
+    border: 1px solid $cCaprice700;
+    color: $cCaprice700;
+    background-color: $cCaprice100;
+  }
+
+  &_bahamas-100 {
+    border: 1px solid $cBahamas700;
+    color: $cBahamas700;
+    background-color: $cBahamas100;
+  }
+
+  &_havelock-100 {
+    border: 1px solid $cHavelock700;
+    color: $cHavelock700;
+    background-color: $cHavelock100;
+  }
+
+  &_caribbean-100 {
+    border: 1px solid $cCaribbean700;
+    color: $cCaribbean700;
+    background-color: $cCaribbean100;
+  }
+
+}

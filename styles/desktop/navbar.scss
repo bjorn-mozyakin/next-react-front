@@ -1,0 +1,37 @@
+.navbar {
+  @extend %sTopLevel;
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $wContent;
+  height: 50px;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background-color: $cWhite500;
+  transition: top .2s ease-out;
+
+  &_hidden {
+    display: none;
+  }
+
+  &_animated {
+    top: $hNav;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__item {
+    &:hover:not(&_active) {
+      background: $cCrimson50;
+    }
+
+    &:active:not(&_active) {
+      background: $cCrimson100;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.interactive {
+  transition: background-color .2s ease-out;
+
+  &:active {
+    background-color: $cCrimson50;
+  }
+}
+
+.no-interactive {
+  &:active {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,28 @@
+.menu-archive {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 2.5*$bmu;
+
+  &__item {
+    flex-basis: calc(100% / 5);
+    margin-bottom: 2.5*$bmu;
+  }
+
+  &__link {
+    padding: $bmu;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: $cBahamas500;
+
+    &_active {
+      pointer-events: none;
+      color: $cCrimson50;
+      background-color: $cCrimson500;
+    }
+  }
+}
