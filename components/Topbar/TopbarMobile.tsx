@@ -4,11 +4,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { BtnRoundType } from "../../entities/Btn";
 import {
   toggleSearchFormVisibility,
   toggleSidebarVisibility,
-} from "../../srore/actions";
+} from "../../store/actions";
+
+import { BtnRoundType } from "../../entities/Btn";
 import BtnRound from "../BtnRound/BtnRound";
 import Link from "../Link/Link";
 import Placeholder from "../Placeholder/Placeholder";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { initializeStore } from "../../srore/reducer";
+import { initializeStore } from "../../store/reducer";
 
 import Layout from "../../components/Layout/Layout";
 

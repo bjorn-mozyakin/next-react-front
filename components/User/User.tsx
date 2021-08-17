@@ -6,7 +6,7 @@ import UserLoggedOut from "./UserLoggedOut";
 export const User = () => {
   // TODO перенести в redux-store
   const user = {
-    isLogged: true,
+    isLogged: false,
   };
   const { isLogged } = user;
   return (

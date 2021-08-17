@@ -1,6 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
+import { toggleLoginFormVisibility } from "../../store/actions";
 
 import { defineAvatarClass } from "../../utils/helpers";
+
 import BtnFlat from "../BtnFlat/BtnFlat";
 
 export const UserLoggedOut = () => {
@@ -11,6 +15,8 @@ export const UserLoggedOut = () => {
   }; // TODO Перенести это в redux-store
   const { savedAnonymousName, defaultAnonymousName, id } = user;
   const nickname = savedAnonymousName || defaultAnonymousName;
+
+  const dispatch = useDispatch();
 
   const avatarClass = defineAvatarClass(id);
 
@@ -23,7 +29,7 @@ export const UserLoggedOut = () => {
       states: "crimson-100",
     },
     onClick: () => {
-      // TODO ЛогИн
+      dispatch(toggleLoginFormVisibility());
     },
   };
 

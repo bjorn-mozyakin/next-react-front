@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import { BtnRoundType } from "../../entities/Btn";
-import { toggleSidebarVisibility } from "../../srore/actions";
+import { toggleSidebarVisibility } from "../../store/actions";
 import BtnRound from "../BtnRound/BtnRound";
 import Link from "../Link/Link";
 

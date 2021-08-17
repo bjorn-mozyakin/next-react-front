@@ -1,4 +1,23 @@
-import React from "react";
+// полная проверка на объект (исключает null/array/function и че там еще может быть)
+export const isObject = (value) => {
+  return value && typeof value === "object" && value.constructor === Object;
+};
+
+// конвертирует объект в FormData (используется в body post-запросов)
+export const convertObjectToFormData = (obj) => {
+  const formData = new FormData();
+  if (!isObject(obj)) {
+    return formData;
+  }
+  for (const key in obj) {
+    if (!obj.hasOwnProperty(key)) {
+      continue;
+    }
+    formData.append(key, obj[key]);
+  }
+
+  return formData;
+};
 
 export const devideArrays = (threads, size = 30) => {
   const arr = [];

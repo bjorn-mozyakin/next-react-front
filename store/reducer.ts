@@ -21,7 +21,15 @@ const initialState: State = {
   banners: [],
   scrolledPageCount: 0,
   isSidebarVisible: false,
+  isLoginFormVisible: false,
   isSearchFormVisible: false,
+  reCaptcha: null,
+  fingerprint: null,
+  formLogin: {
+    isVisible: false,
+    username: "",
+    password: "",
+  },
 };
 
 export const reducer = (state = initialState, action) => {
@@ -30,6 +38,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isSidebarVisible: !state.isSidebarVisible,
+      };
+    case ACTIONS.TOGGLE_LOGIN_FORM_VISIBILITY:
+      return {
+        ...state,
+        formLogin: {
+          isVisible: !state.formLogin.isVisible,
+        },
       };
     case ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY:
       return {
@@ -51,6 +66,37 @@ export const reducer = (state = initialState, action) => {
         ...state,
         banners: state.banners.concat(action.banners),
       };
+    case ACTIONS.UPDATE_RECAPTCHA:
+      return {
+        ...state,
+        reCaptcha: action.reCaptcha,
+      };
+    case ACTIONS.UPDATE_FINGERPRINT:
+      return {
+        ...state,
+        fingerprint: action.fingerprint,
+      };
+    case ACTIONS.UPDATE_USERNAME_IN_FORM_LOGIN:
+      return {
+        ...state,
+        formLogin: {
+          ...state.formLogin,
+          ...{
+            username: action.username,
+          },
+        },
+      };
+    case ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN:
+      return {
+        ...state,
+        formLogin: {
+          ...state.formLogin,
+          ...{
+            password: action.password,
+          },
+        },
+      };
+
     default:
       return state;
   }

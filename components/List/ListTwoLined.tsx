@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { State } from "../../entities/State";
-import { getThreadList } from "../../srore/actions";
+import { getThreadList } from "../../store/actions";
 import ListTwoLinedItem from "../ListItem/ListTwoLinedItem";
 import Placeholder from "../Placeholder/Placeholder";
 

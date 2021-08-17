@@ -1,4 +1,7 @@
 import axiosInstance from "../utils/axios";
+import Fingerprint from "../utils/Fingerprint";
+import { convertObjectToFormData } from "../utils/helpers";
+import { ReCaptcha } from "../utils/ReCaptcha";
 
 import * as ACTIONS from "./actions-consts";
 
@@ -8,6 +11,10 @@ export const toggleSidebarVisibility = () => ({
 
 export const toggleSearchFormVisibility = () => ({
   type: ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY,
+});
+
+export const toggleLoginFormVisibility = () => ({
+  type: ACTIONS.TOGGLE_LOGIN_FORM_VISIBILITY,
 });
 
 export const updateThreadList = (threads) => ({
@@ -20,7 +27,27 @@ export const updateBannerList = (banners) => ({
   banners,
 });
 
-export const getThreadList = (scrolledPageCount) => {
+export const updateReCaptcha = async (reCaptcha) => ({
+  type: ACTIONS.UPDATE_RECAPTCHA,
+  reCaptcha,
+});
+
+export const updateFingerprint = (fingerprint) => ({
+  type: ACTIONS.UPDATE_FINGERPRINT,
+  fingerprint,
+});
+
+export const updateUsernameInFormLogin = (username) => ({
+  type: ACTIONS.UPDATE_USERNAME_IN_FORM_LOGIN,
+  username,
+});
+
+export const updatePasswordInFormLogin = (password) => ({
+  type: ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN,
+  password,
+});
+
+export const getThreadList = () => {
   return async (dispatch, getState) => {
     const response = await axiosInstance.get(
       `https://forum.inglorium.com/api/threads?page=${
@@ -44,6 +71,30 @@ export const getThreadList = (scrolledPageCount) => {
     } catch (e) {
       console.error(e);
     }
+  };
+};
+
+export const auth = () => {
+  return async (dispatch, getState) => {
+    const reCaptcha = await ReCaptcha.getToken("submit_login");
+    const fingerprint = await Fingerprint.get();
+    // dispatch(updateReCaptcha(reCaptchaToken));
+    // dispatch(updateFingerprint(fingerprint));
+    debugger;
+    // const fl = getState.formLogin;
+    // const fl = getState.formLogin;
+    const authData = {
+      username: getState().formLogin.username,
+      password: getState().formLogin.password,
+      reCaptchaToken: reCaptcha,
+      fingerprint: fingerprint,
+    };
+    const response = await axiosInstance.post(
+      `https://forum.inglorium.com/api/auth/login`,
+      convertObjectToFormData(authData)
+    );
+    debugger;
+    const { data } = response;
   };
 };
 

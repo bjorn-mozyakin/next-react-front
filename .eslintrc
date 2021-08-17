@@ -40,14 +40,14 @@
         "groups": [
           "module",
           [
-            "parent",
-            "/utils/"
-          ],
-          [
             "/store/"
           ],
           [
-            "/components/"
+            "/utils/"
+          ],
+          [
+            "parent",
+            "/component/"
           ]
         ],
         "alphabetize": {

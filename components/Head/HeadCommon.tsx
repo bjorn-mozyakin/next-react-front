@@ -17,6 +17,10 @@ export const HeadCommon = () => {
         rel="stylesheet"
         crossOrigin=""
       />
+      <script
+        src="https://www.google.com/recaptcha/api.js?render=6LcVocUZAAAAAKHcmBE8vMZbGUB73ZLZ6cfuILKy"
+        defer
+      ></script>
     </>
   );
 };
