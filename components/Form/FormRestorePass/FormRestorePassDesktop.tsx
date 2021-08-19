@@ -1,7 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { updateUsernameInFormLogin } from "../../../store/actions";
+import {
+  toggleLoginFormVisibility,
+  toggleRestorePasswordFormVisibility,
+  updateUsernameInFormLogin,
+} from "../../../store/actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
 import BtnFlat from "../../BtnFlat/BtnFlat";
@@ -27,10 +31,18 @@ export const FormRestorePassDesktop = () => {
     onClick: () => {},
   };
 
+  const closeForm = () => {
+    dispatch(toggleRestorePasswordFormVisibility());
+  };
+
   return (
     <form className="form form_tight form_visible">
       <div className="form__container">
-        <FormHeader title="Вспомнить пароль" classNames="form__header_purple" />
+        <FormHeader
+          title="Вспомнить пароль"
+          classNames="form__header_purple"
+          onClick={closeForm}
+        />
       </div>
       <div className="form__content">
         <FormContentSubtitle>

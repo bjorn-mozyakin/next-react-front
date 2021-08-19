@@ -6,9 +6,10 @@ import BtnRound from "../../BtnRound/BtnRound";
 type Props = {
   title: string;
   classNames: string;
+  onClick: () => void;
 };
 
-const FormHeader = ({ title, classNames }: Props) => {
+const FormHeader = ({ title, classNames, onClick }: Props) => {
   const closeBtnData: BtnRoundType = {
     additionalClasses: ["form__close"],
     styles: {
@@ -17,6 +18,7 @@ const FormHeader = ({ title, classNames }: Props) => {
       states: "white-200",
       icon: "close-18-white",
     },
+    onClick: onClick,
   };
 
   return (

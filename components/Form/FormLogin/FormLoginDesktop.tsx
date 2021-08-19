@@ -72,10 +72,18 @@ export const FormLoginDesktop = () => {
     },
   };
 
+  const closeForm = () => {
+    dispatch(toggleLoginFormVisibility());
+  };
+
   return (
     <form className="form form_tight form_visible" action="/forum/ajax/auth/">
       <div className="form__container">
-        <FormHeader title="Вход на Woman.ru" classNames="form__header_purple" />
+        <FormHeader
+          title="Вход на Woman.ru"
+          classNames="form__header_purple"
+          onClick={closeForm}
+        />
       </div>
       <div className="form__content">
         <FormSocials />

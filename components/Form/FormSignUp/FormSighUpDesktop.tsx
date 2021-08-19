@@ -65,12 +65,17 @@ export const FormLoginDesktop = () => {
     required: true,
   };
 
+  const closeForm = () => {
+    dispatch(toggleSignUpFormVisibility());
+  };
+
   return (
     <form className="form form_tight form_visible">
       <div className="form__container">
         <FormHeader
           title="Регистрация на Woman.ru"
           classNames="form__header_purple"
+          onClick={closeForm}
         />
       </div>
       <div className="form__content">
