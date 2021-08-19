@@ -1,3 +1,10 @@
+export interface StateForm {
+  isVisible: boolean;
+  isUsingReCaptcha: boolean;
+  isValid: boolean;
+  isLoading: boolean;
+}
+
 export interface State {
   banners?: any;
   threads?: any;
@@ -11,11 +18,10 @@ export interface State {
     isVisible: boolean;
     username: string;
     password: string;
+    isUsingReCaptcha: boolean;
+    isValid: boolean;
+    isLoading: boolean;
   };
-  formSignUp: {
-    isVisible: boolean;
-  };
-  formRestorePass: {
-    isVisible: boolean;
-  };
+  formSignUp: StateForm;
+  formRestorePass: StateForm;
 }

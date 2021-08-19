@@ -3,8 +3,9 @@
 
 import React from "react";
 
-import { BtnFlatType, ButtonType } from "../../entities/Btn";
 import { renameDataAttributes } from "../../utils/helpers";
+
+import { BtnFlatType, ButtonType } from "../../entities/Btn";
 
 export const BtnFlat = ({
   children,
@@ -19,6 +20,7 @@ export const BtnFlat = ({
   type = ButtonType.BUTTON,
   additionalClasses = [],
   dataAttributes = null,
+  isLoading = false,
   onClick = () => {},
 }: BtnFlatType) => {
   const classNames = [
@@ -27,6 +29,7 @@ export const BtnFlat = ({
     `btn-flat_color_${color}`,
     `btn-flat_bg_${bg}`,
     `btn-flat_states_${states}`,
+    isLoading ? "btn-flat_loading" : "",
     icon ? `btn-flat_icon_yes icon-before_${icon}` : "",
   ]
     .concat(additionalClasses)

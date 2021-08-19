@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   auth,
@@ -13,13 +13,16 @@ import {
 import { BtnFlatType } from "../../../entities/Btn";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
+import Loader from "../../Loader/Loader";
 
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
 import FormSocials from "../Blocks/FormSocials";
+import { State } from "../../../entities/State";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state: State) => state.formLogin.isLoading);
 
   const inputUsernameData = {
     name: "username",
@@ -41,6 +44,7 @@ export const FormLoginDesktop = () => {
   };
 
   const btnLoginData: BtnFlatType = {
+    isLoading,
     onClick: () => {
       dispatch(auth());
     },
@@ -80,8 +84,9 @@ export const FormLoginDesktop = () => {
     <form className="form form_tight form_visible" action="/forum/ajax/auth/">
       <div className="form__container">
         <FormHeader
-          title="Вход на Woman.ru"
           classNames="form__header_purple"
+          isLoading={isLoading}
+          title="Вход на Woman.ru"
           onClick={closeForm}
         />
       </div>
@@ -95,7 +100,9 @@ export const FormLoginDesktop = () => {
           <Input {...inputUPasswordData} />
           <div className="form__error"></div>
           <div className="form__btns">
-            <BtnFlat {...btnLoginData}>Войти</BtnFlat>
+            <Loader isVisible={isLoading}>
+              <BtnFlat {...btnLoginData}>Войти</BtnFlat>
+            </Loader>
             <BtnFlat {...btnSignUpData}>Зарегистрироваться</BtnFlat>
           </div>
           <div className="form__line">

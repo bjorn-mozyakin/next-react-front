@@ -25,6 +25,18 @@ export const toggleSignUpFormVisibility = () => ({
   type: ACTIONS.TOGGLE_SIGN_UP_FORM_VISIBILITY,
 });
 
+export const toggleLoginFormLoading = () => ({
+  type: ACTIONS.TOGGLE_LOGIN_FORM_LOADING,
+});
+
+export const toggleRestorePasswordFormLoading = () => ({
+  type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING,
+});
+
+export const toggleSignUpFormLoading = () => ({
+  type: ACTIONS.TOGGLE_SIGN_UP_FORM_LOADING,
+});
+
 export const updateThreadList = (threads) => ({
   type: ACTIONS.UPDATE_THREAD_LIST,
   threads,
@@ -84,6 +96,8 @@ export const getThreadList = () => {
 
 export const auth = () => {
   return async (dispatch, getState) => {
+    dispatch(toggleLoginFormLoading());
+
     const reCaptcha = await ReCaptcha.getToken("submit_login");
     const fingerprint = await Fingerprint.get();
     // dispatch(updateReCaptcha(reCaptchaToken));
@@ -106,11 +120,29 @@ export const auth = () => {
       const { data } = response;
     } catch (err) {
       debugger;
+    } finally {
+      dispatch(toggleLoginFormLoading());
     }
   };
 };
 
-export const signup = () => {};
+export const signup = () => {
+  return async (dispatch) => {
+    dispatch(toggleSignUpFormLoading());
+    setTimeout(() => {
+      dispatch(toggleSignUpFormLoading());
+    }, 3000);
+  };
+};
+
+export const restorePass = () => {
+  return async (dispatch) => {
+    dispatch(toggleRestorePasswordFormLoading());
+    setTimeout(() => {
+      dispatch(toggleRestorePasswordFormLoading());
+    }, 3000);
+  };
+};
 
 export const getBannerList = () => {
   return async (dispatch) => {

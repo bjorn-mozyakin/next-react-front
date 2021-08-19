@@ -2,16 +2,24 @@ import React from "react";
 
 import { BtnRoundType } from "../../../entities/Btn";
 import BtnRound from "../../BtnRound/BtnRound";
+import Loader from "../../Loader/Loader";
 
 type Props = {
-  title: string;
   classNames: string;
+  isLoading?: boolean;
+  title: string;
   onClick: () => void;
 };
 
-const FormHeader = ({ title, classNames, onClick }: Props) => {
+const FormHeader = ({
+  classNames,
+  isLoading = false,
+  title,
+  onClick,
+}: Props) => {
   const closeBtnData: BtnRoundType = {
     additionalClasses: ["form__close"],
+    isLoading,
     styles: {
       size: "tiny",
       bg: "transparent",
@@ -24,7 +32,9 @@ const FormHeader = ({ title, classNames, onClick }: Props) => {
   return (
     <div className={`form__header ${classNames}`}>
       <div className="form__header-title">{title}</div>
-      <BtnRound {...closeBtnData} />
+      <Loader isVisible={isLoading}>
+        <BtnRound {...closeBtnData} />
+      </Loader>
     </div>
   );
 };

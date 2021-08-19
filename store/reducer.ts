@@ -27,14 +27,23 @@ const initialState: State = {
   fingerprint: null,
   formLogin: {
     isVisible: false,
+    isUsingReCaptcha: true,
+    isValid: true,
+    isLoading: false,
     username: "",
     password: "",
   },
   formSignUp: {
     isVisible: false,
+    isUsingReCaptcha: true,
+    isValid: true,
+    isLoading: false,
   },
   formRestorePass: {
     isVisible: false,
+    isUsingReCaptcha: true,
+    isValid: true,
+    isLoading: false,
   },
 };
 
@@ -49,27 +58,66 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         formLogin: {
-          isVisible: !state.formLogin.isVisible,
+          ...state.formLogin,
+          ...{
+            isVisible: !state.formLogin.isVisible,
+          },
         },
       };
     case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY:
       return {
         ...state,
         formRestorePass: {
-          isVisible: !state.formRestorePass.isVisible,
+          ...state.formRestorePass,
+          ...{
+            isVisible: !state.formRestorePass.isVisible,
+          },
         },
       };
     case ACTIONS.TOGGLE_SIGN_UP_FORM_VISIBILITY:
       return {
         ...state,
         formSignUp: {
-          isVisible: !state.formSignUp.isVisible,
+          ...state.formSignUp,
+          ...{
+            isVisible: !state.formSignUp.isVisible,
+          },
         },
       };
     case ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY:
       return {
         ...state,
         isSearchFormVisible: !state.isSearchFormVisible,
+      };
+    case ACTIONS.TOGGLE_LOGIN_FORM_LOADING:
+      return {
+        ...state,
+        formLogin: {
+          ...state.formLogin,
+          ...{
+            isLoading: !state.formLogin.isLoading,
+          },
+        },
+      };
+    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING:
+      return {
+        ...state,
+        formRestorePass: {
+          ...state.formRestorePass,
+          ...{
+            isLoading: !state.formRestorePass.isLoading,
+          },
+        },
+      };
+    case ACTIONS.TOGGLE_SIGN_UP_FORM_LOADING:
+      return {
+        ...state,
+        formSignUp: {
+          ...state.formSignUp,
+          ...{
+            isLoading: !state.formSignUp.isLoading,
+          },
+        },
       };
     case ACTIONS.UPDATE_THREAD_LIST:
       return {

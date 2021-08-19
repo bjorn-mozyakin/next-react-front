@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   signup,
@@ -10,10 +10,12 @@ import {
 } from "../../../store/actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
+import { State } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Checkbox from "../../Checkbox/Checkbox";
 import Input from "../../Input/Input";
 import Link from "../../Link/Link";
+import Loader from "../../Loader/Loader";
 
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
@@ -21,6 +23,7 @@ import FormSocials from "../Blocks/FormSocials";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state: State) => state.formSignUp.isLoading);
 
   const inputUsernameData = {
     name: "email",
@@ -51,6 +54,7 @@ export const FormLoginDesktop = () => {
   };
 
   const btnSignUpData: BtnFlatType = {
+    isLoading,
     onClick: () => {
       dispatch(signup());
     },
@@ -73,8 +77,9 @@ export const FormLoginDesktop = () => {
     <form className="form form_tight form_visible">
       <div className="form__container">
         <FormHeader
-          title="Регистрация на Woman.ru"
+          isLoading={isLoading}
           classNames="form__header_purple"
+          title="Регистрация на Woman.ru"
           onClick={closeForm}
         />
       </div>
@@ -105,7 +110,9 @@ export const FormLoginDesktop = () => {
           <div className="form__error"></div>
         </div>
         <div className="form__btns">
-          <BtnFlat {...btnSignUpData}>Зарегистрироваться</BtnFlat>
+          <Loader isVisible={isLoading}>
+            <BtnFlat {...btnSignUpData}>Зарегистрироваться</BtnFlat>
+          </Loader>
           <BtnFlat {...btnLoginData}>Войти</BtnFlat>
         </div>
         <FormReCaptchaText />

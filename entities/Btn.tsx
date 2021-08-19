@@ -9,6 +9,7 @@ export interface BtnFlatType {
   children?: React.ReactNode;
   additionalClasses?: string[];
   dataAttributes?: any;
+  isLoading?: boolean;
   styles?: {
     size?: string;
     color?: string;
@@ -25,6 +26,7 @@ export interface BtnRoundType {
   children?: React.ReactNode;
   additionalClasses?: string[];
   dataAttributes?: any;
+  isLoading?: boolean;
   styles?: {
     volume?: string;
     size?: string;

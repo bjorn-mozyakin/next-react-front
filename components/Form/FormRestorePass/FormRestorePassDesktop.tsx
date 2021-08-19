@@ -1,8 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
-  toggleLoginFormVisibility,
+  restorePass,
   toggleRestorePasswordFormVisibility,
   updateUsernameInFormLogin,
 } from "../../../store/actions";
@@ -10,13 +10,18 @@ import {
 import { BtnFlatType } from "../../../entities/Btn";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
+import Loader from "../../Loader/Loader";
 
 import FormContentSubtitle from "../Blocks/FormContentSubtitle";
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
+import { State } from "../../../entities/State";
 
 export const FormRestorePassDesktop = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(
+    (state: State) => state.formRestorePass.isLoading
+  );
 
   const inputEmailData = {
     name: "email",
@@ -28,7 +33,10 @@ export const FormRestorePassDesktop = () => {
   };
 
   const btnSendPassData: BtnFlatType = {
-    onClick: () => {},
+    isLoading,
+    onClick: () => {
+      dispatch(restorePass());
+    },
   };
 
   const closeForm = () => {
@@ -39,8 +47,9 @@ export const FormRestorePassDesktop = () => {
     <form className="form form_tight form_visible">
       <div className="form__container">
         <FormHeader
-          title="Вспомнить пароль"
           classNames="form__header_purple"
+          isLoading={isLoading}
+          title="Вспомнить пароль"
           onClick={closeForm}
         />
       </div>
@@ -55,7 +64,9 @@ export const FormRestorePassDesktop = () => {
           <Input {...inputEmailData} />
         </div>
         <div className="form__btns">
-          <BtnFlat {...btnSendPassData}>Отправить пароль</BtnFlat>
+          <Loader isVisible={isLoading}>
+            <BtnFlat {...btnSendPassData}>Отправить пароль</BtnFlat>
+          </Loader>
         </div>
         <FormReCaptchaText />
       </div>
