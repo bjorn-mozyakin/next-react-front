@@ -1,6 +1,5 @@
 import axiosInstance from "../utils/axios";
 import Fingerprint from "../utils/Fingerprint";
-import { convertObjectToFormData } from "../utils/helpers";
 import { ReCaptcha } from "../utils/ReCaptcha";
 
 import * as ACTIONS from "./actions-consts";
@@ -57,14 +56,39 @@ export const updateFingerprint = (fingerprint) => ({
   fingerprint,
 });
 
-export const updateUsernameInFormLogin = (username) => ({
-  type: ACTIONS.UPDATE_USERNAME_IN_FORM_LOGIN,
-  username,
+export const updateEmailInFormLogin = (email) => ({
+  type: ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN,
+  email,
 });
 
 export const updatePasswordInFormLogin = (password) => ({
   type: ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN,
   password,
+});
+
+export const updateUsernameInFormSignUp = (username) => ({
+  type: ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP,
+  username,
+});
+
+export const updateEmailInFormSignUp = (email) => ({
+  type: ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP,
+  email,
+});
+
+export const toggleSubscribeInFormSignUp = (subscribe) => ({
+  type: ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP,
+  subscribe,
+});
+
+export const toggleRulesInFormSignUp = (rules) => ({
+  type: ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP,
+  rules,
+});
+
+export const updateEmailInFormRestorePassword = (email) => ({
+  type: ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD,
+  email,
 });
 
 export const getThreadList = () => {
@@ -102,13 +126,11 @@ export const auth = () => {
     const fingerprint = await Fingerprint.get();
     // dispatch(updateReCaptcha(reCaptchaToken));
     // dispatch(updateFingerprint(fingerprint));
-    debugger;
-    // const fl = getState.formLogin;
-    // const fl = getState.formLogin;
+
     const authData = {
-      email: getState().formLogin.username,
+      email: getState().formLogin.email,
       password: getState().formLogin.password,
-      // reCaptchaToken: reCaptcha,
+      reCaptchaToken: reCaptcha,
       // fingerprint: fingerprint,
     };
     try {
@@ -116,10 +138,8 @@ export const auth = () => {
         `https://forum.inglorium.com/api/auth/login`,
         JSON.stringify(authData)
       );
-      debugger;
       const { data } = response;
     } catch (err) {
-      debugger;
     } finally {
       dispatch(toggleLoginFormLoading());
     }
@@ -127,20 +147,61 @@ export const auth = () => {
 };
 
 export const signup = () => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     dispatch(toggleSignUpFormLoading());
-    setTimeout(() => {
+
+    const reCaptcha = await ReCaptcha.getToken("submit_login");
+    const fingerprint = await Fingerprint.get();
+    // dispatch(updateReCaptcha(reCaptchaToken));
+    // dispatch(updateFingerprint(fingerprint));
+
+    const signUpData = {
+      email: getState().formSignUp.email,
+      username: getState().formSignUp.username,
+      subscribe: getState().formSignUp.subscribe,
+      rules: getState().formSignUp.rules,
+      reCaptchaToken: reCaptcha,
+      // fingerprint: fingerprint,
+    };
+
+    try {
+      const response = await axiosInstance.post(
+        `https://forum.inglorium.com/api/auth/signup`,
+        JSON.stringify(signUpData)
+      );
+      const { data } = response;
+    } catch (err) {
+    } finally {
       dispatch(toggleSignUpFormLoading());
-    }, 3000);
+    }
   };
 };
 
 export const restorePass = () => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     dispatch(toggleRestorePasswordFormLoading());
-    setTimeout(() => {
+
+    const reCaptcha = await ReCaptcha.getToken("submit_login");
+    const fingerprint = await Fingerprint.get();
+    // dispatch(updateReCaptcha(reCaptchaToken));
+    // dispatch(updateFingerprint(fingerprint));
+
+    const restorePassData = {
+      email: getState().formRestorePass.email,
+      reCaptchaToken: reCaptcha,
+      // fingerprint: fingerprint,
+    };
+
+    try {
+      const response = await axiosInstance.post(
+        `https://forum.inglorium.com/api/auth/forgot-password`,
+        JSON.stringify(restorePassData)
+      );
+      const { data } = response;
+    } catch (err) {
+    } finally {
       dispatch(toggleRestorePasswordFormLoading());
-    }, 3000);
+    }
   };
 };
 

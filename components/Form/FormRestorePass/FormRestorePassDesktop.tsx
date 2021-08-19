@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   restorePass,
   toggleRestorePasswordFormVisibility,
-  updateUsernameInFormLogin,
+  updateEmailInFormRestorePassword,
 } from "../../../store/actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
+import { State } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
 import Loader from "../../Loader/Loader";
@@ -15,7 +16,6 @@ import Loader from "../../Loader/Loader";
 import FormContentSubtitle from "../Blocks/FormContentSubtitle";
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
-import { State } from "../../../entities/State";
 
 export const FormRestorePassDesktop = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export const FormRestorePassDesktop = () => {
     placeholder: "Email",
     required: true,
     withError: true,
-    onChange: (username) => dispatch(updateUsernameInFormLogin(username)),
+    onChange: (email) => dispatch(updateEmailInFormRestorePassword(email)),
   };
 
   const btnSendPassData: BtnFlatType = {

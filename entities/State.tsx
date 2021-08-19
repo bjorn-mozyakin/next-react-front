@@ -14,14 +14,17 @@ export interface State {
   scrolledPageCount: number;
   reCaptcha: string | null;
   fingerprint: string | null;
-  formLogin: {
-    isVisible: boolean;
-    username: string;
+  formLogin: StateForm & {
+    email: string;
     password: string;
-    isUsingReCaptcha: boolean;
-    isValid: boolean;
-    isLoading: boolean;
   };
-  formSignUp: StateForm;
-  formRestorePass: StateForm;
+  formSignUp: StateForm & {
+    username: string;
+    email: string;
+    subscribe: boolean;
+    rules: boolean;
+  };
+  formRestorePass: StateForm & {
+    email: string;
+  };
 }

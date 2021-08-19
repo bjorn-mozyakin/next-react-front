@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   auth,
-  updateUsernameInFormLogin,
+  updateEmailInFormLogin,
   updatePasswordInFormLogin,
   toggleLoginFormVisibility,
   toggleSignUpFormVisibility,
@@ -11,6 +11,7 @@ import {
 } from "../../../store/actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
+import { State } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
 import Loader from "../../Loader/Loader";
@@ -18,19 +19,18 @@ import Loader from "../../Loader/Loader";
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
 import FormSocials from "../Blocks/FormSocials";
-import { State } from "../../../entities/State";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state: State) => state.formLogin.isLoading);
 
   const inputUsernameData = {
-    name: "username",
+    name: "email",
     placeholder: "Email",
-    autocomplete: "username",
+    autocomplete: "email",
     required: true,
     withError: true,
-    onChange: (username) => dispatch(updateUsernameInFormLogin(username)),
+    onChange: (email) => dispatch(updateEmailInFormLogin(email)),
   };
 
   const inputUPasswordData = {
@@ -81,7 +81,7 @@ export const FormLoginDesktop = () => {
   };
 
   return (
-    <form className="form form_tight form_visible" action="/forum/ajax/auth/">
+    <form className="form form_tight form_visible">
       <div className="form__container">
         <FormHeader
           classNames="form__header_purple"

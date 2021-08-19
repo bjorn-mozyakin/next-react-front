@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   signup,
-  updateUsernameInFormLogin,
-  updatePasswordInFormLogin,
+  updateEmailInFormSignUp,
+  updateUsernameInFormSignUp,
   toggleLoginFormVisibility,
   toggleSignUpFormVisibility,
+  toggleSubscribeInFormSignUp,
+  toggleRulesInFormSignUp,
 } from "../../../store/actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
@@ -25,19 +27,19 @@ export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state: State) => state.formSignUp.isLoading);
 
-  const inputUsernameData = {
+  const inputEmailData = {
     name: "email",
     placeholder: "Email",
     required: true,
     withError: true,
-    onChange: (username) => dispatch(updateUsernameInFormLogin(username)),
+    onChange: (email) => dispatch(updateEmailInFormSignUp(email)),
   };
 
-  const inputUPasswordData = {
-    name: "name",
+  const inputUsernameData = {
+    name: "username",
     placeholder: "Никнейм",
     withError: true,
-    onChange: (password) => dispatch(updatePasswordInFormLogin(password)),
+    onChange: (username) => dispatch(updateUsernameInFormSignUp(username)),
   };
 
   const btnLoginData: BtnFlatType = {
@@ -62,11 +64,17 @@ export const FormLoginDesktop = () => {
 
   const checkboxSubscriptionData = {
     name: "subscribe",
+    onClick: () => {
+      dispatch(toggleSubscribeInFormSignUp());
+    },
   };
 
   const checkboxRulesData = {
     name: "rules",
     required: true,
+    onClick: () => {
+      dispatch(toggleRulesInFormSignUp());
+    },
   };
 
   const closeForm = () => {
@@ -89,8 +97,8 @@ export const FormLoginDesktop = () => {
           Использовать свой email
         </div>
         <div className="form__line">
+          <Input {...inputEmailData} />
           <Input {...inputUsernameData} />
-          <Input {...inputUPasswordData} />
         </div>
         <div className="form__line">
           <Checkbox {...checkboxSubscriptionData}>

@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from "redux";
 import { State } from "../entities/State";
 
 import * as ACTIONS from "./actions-consts";
+import { UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD } from "./actions-consts";
 
 // import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -30,7 +31,7 @@ const initialState: State = {
     isUsingReCaptcha: true,
     isValid: true,
     isLoading: false,
-    username: "",
+    email: "",
     password: "",
   },
   formSignUp: {
@@ -38,12 +39,17 @@ const initialState: State = {
     isUsingReCaptcha: true,
     isValid: true,
     isLoading: false,
+    username: "",
+    email: "",
+    subscribe: false,
+    rules: false,
   },
   formRestorePass: {
     isVisible: false,
     isUsingReCaptcha: true,
     isValid: true,
     isLoading: false,
+    email: "",
   },
 };
 
@@ -144,13 +150,13 @@ export const reducer = (state = initialState, action) => {
         ...state,
         fingerprint: action.fingerprint,
       };
-    case ACTIONS.UPDATE_USERNAME_IN_FORM_LOGIN:
+    case ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN:
       return {
         ...state,
         formLogin: {
           ...state.formLogin,
           ...{
-            username: action.username,
+            email: action.email,
           },
         },
       };
@@ -161,6 +167,57 @@ export const reducer = (state = initialState, action) => {
           ...state.formLogin,
           ...{
             password: action.password,
+          },
+        },
+      };
+    case ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP:
+      return {
+        ...state,
+        formSignUp: {
+          ...state.formSignUp,
+          ...{
+            username: action.username,
+          },
+        },
+      };
+    case ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP:
+      return {
+        ...state,
+        formSignUp: {
+          ...state.formSignUp,
+          ...{
+            email: action.email,
+          },
+        },
+      };
+
+    case ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP:
+      return {
+        ...state,
+        formSignUp: {
+          ...state.formSignUp,
+          ...{
+            subscribe: !state.formSignUp.subscribe,
+          },
+        },
+      };
+    case ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP:
+      return {
+        ...state,
+        formSignUp: {
+          ...state.formSignUp,
+          ...{
+            rules: !state.formSignUp.rules,
+          },
+        },
+      };
+    case ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD:
+      return {
+        ...state,
+        formRestorePass: {
+          ...state.formRestorePass,
+          ...{
+            email: action.email,
           },
         },
       };
