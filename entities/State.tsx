@@ -1,10 +1,3 @@
-export interface StateForm {
-  isVisible: boolean;
-  isUsingReCaptcha: boolean;
-  isValid: boolean;
-  isLoading: boolean;
-}
-
 export interface State {
   banners?: any;
   threads?: any;
@@ -14,17 +7,31 @@ export interface State {
   scrolledPageCount: number;
   reCaptcha: string | null;
   fingerprint: string | null;
-  formLogin: StateForm & {
-    email: string;
-    password: string;
-  };
-  formSignUp: StateForm & {
-    username: string;
-    email: string;
-    subscribe: boolean;
-    rules: boolean;
-  };
-  formRestorePass: StateForm & {
-    email: string;
-  };
 }
+
+export interface StateForm {
+  isVisible: boolean;
+  isUsingReCaptcha: boolean;
+  isValid: boolean;
+  isLoading: boolean;
+}
+
+export interface StateSidebar {
+  isSidebarVisible: boolean;
+}
+
+export type StateFormLogin = StateForm & {
+  email: string;
+  password: string;
+};
+
+export type StateFormSignUp = StateForm & {
+  username: string;
+  email: string;
+  subscribe: boolean;
+  rules: boolean;
+};
+
+export type StateFormRestorePass = StateForm & {
+  email: string;
+};

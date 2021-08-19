@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { toggleLoginFormVisibility } from "../../store/actions";
+import { toggleLoginFormVisibility } from "../../store/forms/login/login.actions";
 
 import { defineAvatarClass } from "../../utils/helpers";
 

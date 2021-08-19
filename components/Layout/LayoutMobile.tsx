@@ -4,7 +4,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { State } from "../../entities/State";
+import { State, StateSidebar } from "../../entities/State";
 import SidebarMobile from "../Sidebar/SidebarMobile";
 import TopbarMobile from "../Topbar/TopbarMobile";
 
@@ -14,11 +14,11 @@ type LayoutProps = {
 
 export const LayoutMobile = ({ children }: LayoutProps) => {
   const isSidebarVisible = useSelector(
-    (state: State) => state.isSidebarVisible
+    (state: { sidebar: StateSidebar }) => state.sidebar.isSidebarVisible
   );
 
   const isSearchFormVisible = useSelector(
-    (state: State) => state.isSearchFormVisible
+    (state: { common: State }) => state.common.isSearchFormVisible
   );
 
   return (

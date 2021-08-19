@@ -1,18 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { toggleLoginFormVisibility } from "../../../store/forms/login/login.actions";
 import {
   signup,
   updateEmailInFormSignUp,
   updateUsernameInFormSignUp,
-  toggleLoginFormVisibility,
   toggleSignUpFormVisibility,
   toggleSubscribeInFormSignUp,
   toggleRulesInFormSignUp,
-} from "../../../store/actions";
+} from "../../../store/forms/signup/signup.actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
-import { State } from "../../../entities/State";
+import { StateFormSignUp } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Checkbox from "../../Checkbox/Checkbox";
 import Input from "../../Input/Input";
@@ -25,7 +25,9 @@ import FormSocials from "../Blocks/FormSocials";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state: State) => state.formSignUp.isLoading);
+  const isLoading = useSelector(
+    (state: { formSignUp: StateFormSignUp }) => state.formSignUp.isLoading
+  );
 
   const inputEmailData = {
     name: "email",

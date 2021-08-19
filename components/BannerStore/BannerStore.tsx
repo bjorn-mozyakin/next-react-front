@@ -3,7 +3,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { getBannerList } from "../../store/actions";
+import { getBannerList } from "../../store/common/common.actions";
 
 type Props = {
   children?: React.ReactNode;

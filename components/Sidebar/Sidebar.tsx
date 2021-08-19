@@ -4,7 +4,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { toggleSidebarVisibility } from "../../store/actions";
+import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.actions";
 
 export const Sidebar = () => {
   const dispatch = useDispatch();

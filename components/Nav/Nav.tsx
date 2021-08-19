@@ -3,8 +3,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
+import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.actions";
+
 import { BtnRoundType } from "../../entities/Btn";
-import { toggleSidebarVisibility } from "../../store/actions";
 import BtnRound from "../BtnRound/BtnRound";
 import Link from "../Link/Link";
 

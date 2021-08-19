@@ -5,10 +5,10 @@ import {
   restorePass,
   toggleRestorePasswordFormVisibility,
   updateEmailInFormRestorePassword,
-} from "../../../store/actions";
+} from "../../../store/forms/restorepass/restorepass.actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
-import { State } from "../../../entities/State";
+import { StateFormRestorePass } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
 import Loader from "../../Loader/Loader";
@@ -20,7 +20,8 @@ import FormReCaptchaText from "../Blocks/FormReCaptchaText";
 export const FormRestorePassDesktop = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(
-    (state: State) => state.formRestorePass.isLoading
+    (state: { formRestorePass: StateFormRestorePass }) =>
+      state.formRestorePass.isLoading
   );
 
   const inputEmailData = {

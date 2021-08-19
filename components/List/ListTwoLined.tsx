@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { State } from "../../entities/State";
-import { getThreadList } from "../../store/actions";
+import { getThreadList } from "../../store/common/common.actions";
 import ListTwoLinedItem from "../ListItem/ListTwoLinedItem";
 import Placeholder from "../Placeholder/Placeholder";
 
@@ -16,13 +16,15 @@ type ListTwoLinedProps = {
 export const ListTwoLined = ({ data }: ListTwoLinedProps) => {
   const anchor = useRef(null);
   const dispatch = useDispatch();
-  const threads = useSelector((state: State) => state.threads);
-  let banners = useSelector((state: State) => state.banners);
+  const threads = useSelector(
+    (state: { common: State }) => state.common.threads
+  );
+  let banners = useSelector((state: { common: State }) => state.common.banners);
   banners = banners.filter(
     (banner) => banner.placeholder === "forumTopBannerD"
   );
   const scrolledPageCount = useSelector(
-    (state: State) => state.scrolledPageCount
+    (state: { common: State }) => state.common.scrolledPageCount
   );
 
   let observerAnchorForInfiniteScroll;

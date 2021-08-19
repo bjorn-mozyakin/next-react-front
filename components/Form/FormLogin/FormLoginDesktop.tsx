@@ -6,12 +6,12 @@ import {
   updateEmailInFormLogin,
   updatePasswordInFormLogin,
   toggleLoginFormVisibility,
-  toggleSignUpFormVisibility,
-  toggleRestorePasswordFormVisibility,
-} from "../../../store/actions";
+} from "../../../store/forms/login/login.actions";
+import { toggleRestorePasswordFormVisibility } from "../../../store/forms/restorepass/restorepass.actions";
+import { toggleSignUpFormVisibility } from "../../../store/forms/signup/signup.actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
-import { State } from "../../../entities/State";
+import { StateFormLogin } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
 import Loader from "../../Loader/Loader";
@@ -22,7 +22,9 @@ import FormSocials from "../Blocks/FormSocials";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state: State) => state.formLogin.isLoading);
+  const isLoading = useSelector(
+    (state: { formLogin: StateFormLogin }) => state.formLogin.isLoading
+  );
 
   const inputUsernameData = {
     name: "email",
