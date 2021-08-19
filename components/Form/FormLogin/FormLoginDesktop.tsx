@@ -5,15 +5,18 @@ import {
   auth,
   updateUsernameInFormLogin,
   updatePasswordInFormLogin,
-} from "../../store/actions";
+  toggleLoginFormVisibility,
+  toggleSignUpFormVisibility,
+  toggleRestorePasswordFormVisibility,
+} from "../../../store/actions";
 
-import { BtnFlatType } from "../../entities/Btn";
-import BtnFlat from "../BtnFlat/BtnFlat";
-import Input from "../Input/Input";
+import { BtnFlatType } from "../../../entities/Btn";
+import BtnFlat from "../../BtnFlat/BtnFlat";
+import Input from "../../Input/Input";
 
-import FormHeader from "./Blocks/FormHeader";
-import FormReCaptchaText from "./Blocks/FormReCaptchaText";
-import FormSocials from "./Blocks/FormSocials";
+import FormHeader from "../Blocks/FormHeader";
+import FormReCaptchaText from "../Blocks/FormReCaptchaText";
+import FormSocials from "../Blocks/FormSocials";
 
 export const FormLoginDesktop = () => {
   const dispatch = useDispatch();
@@ -43,12 +46,16 @@ export const FormLoginDesktop = () => {
     },
   };
 
-  const btnRegistrationData: BtnFlatType = {
+  const btnSignUpData: BtnFlatType = {
     additionalClasses: ["outdent-left_small"],
     styles: {
       color: "bahamas-500",
       bg: "transparent",
       states: "crimson-100",
+    },
+    onClick: () => {
+      dispatch(toggleLoginFormVisibility());
+      dispatch(toggleSignUpFormVisibility());
     },
   };
 
@@ -58,6 +65,10 @@ export const FormLoginDesktop = () => {
       bg: "transparent",
       states: "crimson-100",
       icon: "lock-18-crimson",
+    },
+    onClick: () => {
+      dispatch(toggleLoginFormVisibility());
+      dispatch(toggleRestorePasswordFormVisibility());
     },
   };
 
@@ -77,7 +88,7 @@ export const FormLoginDesktop = () => {
           <div className="form__error"></div>
           <div className="form__btns">
             <BtnFlat {...btnLoginData}>Войти</BtnFlat>
-            <BtnFlat {...btnRegistrationData}>Зарегистрироваться</BtnFlat>
+            <BtnFlat {...btnSignUpData}>Зарегистрироваться</BtnFlat>
           </div>
           <div className="form__line">
             <BtnFlat {...btnRestorePasswordData}>Забыли пароль?</BtnFlat>

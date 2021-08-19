@@ -30,6 +30,12 @@ const initialState: State = {
     username: "",
     password: "",
   },
+  formSignUp: {
+    isVisible: false,
+  },
+  formRestorePass: {
+    isVisible: false,
+  },
 };
 
 export const reducer = (state = initialState, action) => {
@@ -44,6 +50,20 @@ export const reducer = (state = initialState, action) => {
         ...state,
         formLogin: {
           isVisible: !state.formLogin.isVisible,
+        },
+      };
+    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY:
+      return {
+        ...state,
+        formRestorePass: {
+          isVisible: !state.formRestorePass.isVisible,
+        },
+      };
+    case ACTIONS.TOGGLE_SIGN_UP_FORM_VISIBILITY:
+      return {
+        ...state,
+        formSignUp: {
+          isVisible: !state.formSignUp.isVisible,
         },
       };
     case ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY:

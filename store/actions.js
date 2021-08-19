@@ -17,6 +17,14 @@ export const toggleLoginFormVisibility = () => ({
   type: ACTIONS.TOGGLE_LOGIN_FORM_VISIBILITY,
 });
 
+export const toggleRestorePasswordFormVisibility = () => ({
+  type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY,
+});
+
+export const toggleSignUpFormVisibility = () => ({
+  type: ACTIONS.TOGGLE_SIGN_UP_FORM_VISIBILITY,
+});
+
 export const updateThreadList = (threads) => ({
   type: ACTIONS.UPDATE_THREAD_LIST,
   threads,
@@ -84,19 +92,25 @@ export const auth = () => {
     // const fl = getState.formLogin;
     // const fl = getState.formLogin;
     const authData = {
-      username: getState().formLogin.username,
+      email: getState().formLogin.username,
       password: getState().formLogin.password,
-      reCaptchaToken: reCaptcha,
-      fingerprint: fingerprint,
+      // reCaptchaToken: reCaptcha,
+      // fingerprint: fingerprint,
     };
-    const response = await axiosInstance.post(
-      `https://forum.inglorium.com/api/auth/login`,
-      convertObjectToFormData(authData)
-    );
-    debugger;
-    const { data } = response;
+    try {
+      const response = await axiosInstance.post(
+        `https://forum.inglorium.com/api/auth/login`,
+        JSON.stringify(authData)
+      );
+      debugger;
+      const { data } = response;
+    } catch (err) {
+      debugger;
+    }
   };
 };
+
+export const signup = () => {};
 
 export const getBannerList = () => {
   return async (dispatch) => {

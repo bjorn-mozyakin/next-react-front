@@ -3,8 +3,8 @@
 
 import React from "react";
 
-import FormLoginDesktop from "./FormLoginDesktop";
-import FormLoginMobile from "./FormLoginMobile";
+import FormLoginDesktop from "./FormLogin/FormLoginDesktop";
+import FormLoginMobile from "./FormLogin/FormLoginMobile";
 
 export const Form = ({ type, isMobile }) => {
   switch (type) {

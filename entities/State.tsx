@@ -12,4 +12,10 @@ export interface State {
     username: string;
     password: string;
   };
+  formSignUp: {
+    isVisible: boolean;
+  };
+  formRestorePass: {
+    isVisible: boolean;
+  };
 }
