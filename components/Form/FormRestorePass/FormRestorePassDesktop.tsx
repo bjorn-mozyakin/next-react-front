@@ -7,7 +7,7 @@ import {
   updateEmailInFormRestorePassword,
 } from "../../../store/forms/restorepass/restorepass.actions";
 
-import { BtnFlatType } from "../../../entities/Btn";
+import { BtnFlatType, ButtonType } from "../../../entities/Btn";
 import { StateFormRestorePass } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
@@ -19,10 +19,18 @@ import FormReCaptchaText from "../Blocks/FormReCaptchaText";
 
 export const FormRestorePassDesktop = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(
-    (state: { formRestorePass: StateFormRestorePass }) =>
-      state.formRestorePass.isLoading
+  const [isValid, isLoading, errorMsg] = useSelector(
+    (state: { formRestorePass: StateFormRestorePass }) => [
+      state.formRestorePass.isValid,
+      state.formRestorePass.isLoading,
+      state.formRestorePass.errorMsg,
+    ]
   );
+
+  // const isLoading = useSelector(
+  //   (state: { formRestorePass: StateFormRestorePass }) =>
+  //     state.formRestorePass.isLoading
+  // );
 
   const inputEmailData = {
     name: "email",
@@ -34,8 +42,13 @@ export const FormRestorePassDesktop = () => {
   };
 
   const btnSendPassData: BtnFlatType = {
-    isLoading,
-    onClick: () => {
+    type: ButtonType.SUBMIT,
+    isLoading: isLoading,
+    onClick: (e) => {
+      e && e.preventDefault();
+      if (isLoading) return;
+      if (!isValid) return;
+
       dispatch(restorePass());
     },
   };
@@ -64,6 +77,9 @@ export const FormRestorePassDesktop = () => {
         <div className="form__line">
           <Input {...inputEmailData} />
         </div>
+        {errorMsg && (
+          <div className="form__error form__error_visible">{errorMsg}</div>
+        )}
         <div className="form__btns">
           <Loader isVisible={isLoading}>
             <BtnFlat {...btnSendPassData}>Отправить пароль</BtnFlat>

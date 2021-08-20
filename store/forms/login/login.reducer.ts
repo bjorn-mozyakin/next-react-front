@@ -9,6 +9,7 @@ const initialState: StateFormLogin = {
   isLoading: false,
   email: "",
   password: "",
+  errorMsg: "",
 };
 
 export default (state = initialState, action) => {

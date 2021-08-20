@@ -4,10 +4,12 @@ import { StateFormRestorePass } from "../../../entities/State";
 
 const initialState: StateFormRestorePass = {
   isVisible: false,
+  isStep2Visible: false,
   isUsingReCaptcha: true,
   isValid: true,
   isLoading: false,
   email: "",
+  errorMsg: "",
 };
 
 export default (state = initialState, action) => {
@@ -16,6 +18,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isVisible: !state.isVisible,
+      };
+    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_STEP2_VISIBILITY:
+      return {
+        ...state,
+        isStepVisible: !state.isStep2Visible,
       };
     case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING:
       return {
@@ -26,6 +33,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         email: action.email,
+      };
+    case ACTIONS.UPDATE_ERROR_MSG:
+      debugger;
+      return {
+        ...state,
+        errorMsg: action.msg,
       };
 
     default:

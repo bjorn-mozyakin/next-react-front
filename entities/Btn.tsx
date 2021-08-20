@@ -19,7 +19,7 @@ export interface BtnFlatType {
   };
   title?: string;
   type?: ButtonType;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
 }
 
 export interface BtnRoundType {

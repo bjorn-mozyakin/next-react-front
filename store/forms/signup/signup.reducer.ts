@@ -11,6 +11,7 @@ const initialState: StateFormSignUp = {
   email: "",
   subscribe: false,
   rules: false,
+  errorMsg: "",
 };
 
 export default (state = initialState, action) => {

@@ -19,7 +19,7 @@ const FormHeader = ({
 }: Props) => {
   const closeBtnData: BtnRoundType = {
     additionalClasses: ["form__close"],
-    isLoading,
+    isLoading: isLoading,
     styles: {
       size: "tiny",
       bg: "transparent",

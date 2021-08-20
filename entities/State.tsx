@@ -14,6 +14,7 @@ export interface StateForm {
   isUsingReCaptcha: boolean;
   isValid: boolean;
   isLoading: boolean;
+  errorMsg: string;
 }
 
 export interface StateSidebar {
@@ -33,5 +34,6 @@ export type StateFormSignUp = StateForm & {
 };
 
 export type StateFormRestorePass = StateForm & {
+  isStep2Visible: boolean;
   email: string;
 };
