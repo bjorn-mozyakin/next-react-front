@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-  auth,
+  login,
   updateEmailInFormLogin,
   updatePasswordInFormLogin,
   toggleLoginFormVisibility,
@@ -48,7 +48,7 @@ export const FormLoginDesktop = () => {
   const btnLoginData: BtnFlatType = {
     isLoading,
     onClick: () => {
-      dispatch(auth());
+      dispatch(login());
     },
   };
 

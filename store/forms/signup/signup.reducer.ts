@@ -5,6 +5,7 @@ import * as ACTIONS from "./signup.actions-consts";
 const initialState: StateFormSignUp = {
   isVisible: false,
   isUsingReCaptcha: true,
+  reCaptchaAction: "submit_registration",
   isValid: true,
   isLoading: false,
   username: "",

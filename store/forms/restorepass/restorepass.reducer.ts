@@ -6,6 +6,7 @@ const initialState: StateFormRestorePass = {
   isVisible: false,
   isStep2Visible: false,
   isUsingReCaptcha: true,
+  reCaptchaAction: "submit_reset_pass",
   isValid: true,
   isLoading: false,
   email: "",

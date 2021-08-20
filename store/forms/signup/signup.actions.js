@@ -36,10 +36,8 @@ export const signup = () => {
   return async (dispatch, getState) => {
     dispatch(toggleSignUpFormLoading());
 
-    const reCaptcha = await ReCaptcha.getToken("submit_login");
-    const fingerprint = await Fingerprint.get();
-    // dispatch(updateReCaptcha(reCaptchaToken));
-    // dispatch(updateFingerprint(fingerprint));
+    const reCaptcha = await ReCaptcha.getToken(getState().reCaptchaAction);
+    await Fingerprint.get();
 
     const signUpData = {
       email: getState().formSignUp.email,
@@ -47,7 +45,6 @@ export const signup = () => {
       subscribe: getState().formSignUp.subscribe,
       rules: getState().formSignUp.rules,
       reCaptchaToken: reCaptcha,
-      // fingerprint: fingerprint,
     };
 
     try {

@@ -12,6 +12,7 @@ export interface State {
 export interface StateForm {
   isVisible: boolean;
   isUsingReCaptcha: boolean;
+  reCaptchaAction?: string;
   isValid: boolean;
   isLoading: boolean;
   errorMsg: string;

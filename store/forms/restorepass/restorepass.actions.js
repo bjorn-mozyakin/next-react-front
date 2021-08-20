@@ -25,20 +25,17 @@ export const restorePass = () => {
   return async (dispatch, getState) => {
     dispatch(toggleRestorePasswordFormLoading());
 
-    const reCaptcha = await ReCaptcha.getToken("submit_login");
-    const fingerprint = await Fingerprint.get();
-    // dispatch(updateReCaptcha(reCaptchaToken));
-    // dispatch(updateFingerprint(fingerprint));
+    const reCaptcha = await ReCaptcha.getToken(getState().reCaptchaAction);
+    await Fingerprint.get();
 
     const restorePassData = {
       email: getState().formRestorePass.email,
       reCaptchaToken: reCaptcha,
-      // fingerprint: fingerprint,
     };
 
     try {
       const response = await axiosInstance.post(
-        `https://forum.inglorium.com/api/auth/forgot-password`,
+        `https://forum.inglorium.com/api/auth/forget-password`,
         JSON.stringify(restorePassData)
       );
       dispatch(toggleRestorePasswordFormStep2Visibility());

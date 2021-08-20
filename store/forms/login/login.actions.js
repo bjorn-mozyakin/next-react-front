@@ -22,22 +22,19 @@ export const updatePasswordInFormLogin = (password) => ({
   password,
 });
 
-// todo переимновать в login
-export const auth = () => {
+export const login = () => {
   return async (dispatch, getState) => {
     dispatch(toggleLoginFormLoading());
 
-    const reCaptcha = await ReCaptcha.getToken("submit_login");
-    const fingerprint = await Fingerprint.get();
-    // dispatch(updateReCaptcha(reCaptchaToken));
-    // dispatch(updateFingerprint(fingerprint));
+    const reCaptcha = await ReCaptcha.getToken(getState().reCaptchaAction);
+    await Fingerprint.get();
 
     const authData = {
       email: getState().formLogin.email,
       password: getState().formLogin.password,
       reCaptchaToken: reCaptcha,
-      // fingerprint: fingerprint,
     };
+
     try {
       const response = await axiosInstance.post(
         `https://forum.inglorium.com/api/auth/login`,

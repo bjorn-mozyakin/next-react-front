@@ -5,6 +5,7 @@ import * as ACTIONS from "./login.actions-consts";
 const initialState: StateFormLogin = {
   isVisible: false,
   isUsingReCaptcha: true,
+  reCaptchaAction: "submit_login",
   isValid: true,
   isLoading: false,
   email: "",
