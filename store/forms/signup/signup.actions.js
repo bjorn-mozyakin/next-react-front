@@ -13,22 +13,22 @@ export const toggleSignUpFormLoading = () => ({
 });
 
 export const updateUsernameInFormSignUp = (username) => ({
-  type: ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP,
+  type: ACTIONS.UPDATE_USERNAME,
   username,
 });
 
 export const updateEmailInFormSignUp = (email) => ({
-  type: ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP,
+  type: ACTIONS.UPDATE_EMAIL,
   email,
 });
 
 export const toggleSubscribeInFormSignUp = (subscribe) => ({
-  type: ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP,
+  type: ACTIONS.TOGGLE_SUBSCRIBE,
   subscribe,
 });
 
 export const toggleRulesInFormSignUp = (rules) => ({
-  type: ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP,
+  type: ACTIONS.TOGGLE_RULES,
   rules,
 });
 

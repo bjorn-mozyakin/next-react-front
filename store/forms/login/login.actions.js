@@ -13,12 +13,12 @@ export const toggleLoginFormLoading = () => ({
 });
 
 export const updateEmailInFormLogin = (email) => ({
-  type: ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN,
+  type: ACTIONS.UPDATE_EMAIL,
   email,
 });
 
 export const updatePasswordInFormLogin = (password) => ({
-  type: ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN,
+  type: ACTIONS.UPDATE_PASSWORD,
   password,
 });
 

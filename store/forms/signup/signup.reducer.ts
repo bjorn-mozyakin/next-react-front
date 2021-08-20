@@ -27,23 +27,23 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: !state.isLoading,
       };
-    case ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP:
+    case ACTIONS.UPDATE_USERNAME:
       return {
         ...state,
         username: action.username,
       };
-    case ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP:
+    case ACTIONS.UPDATE_EMAIL:
       return {
         ...state,
         email: action.email,
       };
 
-    case ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP:
+    case ACTIONS.TOGGLE_SUBSCRIBE:
       return {
         ...state,
         subscribe: !state.subscribe,
       };
-    case ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP:
+    case ACTIONS.TOGGLE_RULES:
       return {
         ...state,
         rules: !state.rules,

@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { toggleRestorePasswordFormStep2Visibility } from "../../../store/forms/restorepass/restorepass.actions";
+import {
+  toggleFormStep2Visibility,
+  toggleFormVisibility,
+} from "../../../store/forms/restorepass/restorepass.actions";
 
 import FormFinalStep from "../Blocks/FormFinalStep";
 
@@ -15,11 +18,14 @@ export const FormRestorePassDesktopStep2 = () => {
     iconBg: "form__wait-icon_approved",
     firstBtn: {
       text: "Закрыть",
-      onClick: () => dispatch(toggleRestorePasswordFormStep2Visibility()),
+      onClick: () => {
+        dispatch(toggleFormStep2Visibility());
+        dispatch(toggleFormVisibility());
+      },
     },
   };
   return (
-    <section className="form">
+    <section className="form form_tight form_visible">
       <div className="form__container">
         <div className="form__content">
           <FormFinalStep {...finalStepData} />

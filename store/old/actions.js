@@ -16,8 +16,8 @@
 //   type: ACTIONS.TOGGLE_LOGIN_FORM_VISIBILITY,
 // });
 //
-// export const toggleRestorePasswordFormVisibility = () => ({
-//   type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY,
+// export const toggleFormVisibility = () => ({
+//   type: ACTIONS.TOGGLE_FORM_VISIBILITY,
 // });
 //
 // export const toggleSignUpFormVisibility = () => ({
@@ -29,7 +29,7 @@
 // });
 //
 // export const toggleRestorePasswordFormLoading = () => ({
-//   type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING,
+//   type: ACTIONS.TOGGLE_FORM_LOADING,
 // });
 //
 // export const toggleSignUpFormLoading = () => ({
@@ -57,37 +57,37 @@
 // });
 //
 // export const updateEmailInFormLogin = (email) => ({
-//   type: ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN,
+//   type: ACTIONS.UPDATE_EMAIL,
 //   email,
 // });
 //
 // export const updatePasswordInFormLogin = (password) => ({
-//   type: ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN,
+//   type: ACTIONS.UPDATE_PASSWORD,
 //   password,
 // });
 //
 // export const updateUsernameInFormSignUp = (username) => ({
-//   type: ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP,
+//   type: ACTIONS.UPDATE_USERNAME,
 //   username,
 // });
 //
 // export const updateEmailInFormSignUp = (email) => ({
-//   type: ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP,
+//   type: ACTIONS.UPDATE_EMAIL,
 //   email,
 // });
 //
 // export const toggleSubscribeInFormSignUp = (subscribe) => ({
-//   type: ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP,
+//   type: ACTIONS.TOGGLE_SUBSCRIBE,
 //   subscribe,
 // });
 //
 // export const toggleRulesInFormSignUp = (rules) => ({
-//   type: ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP,
+//   type: ACTIONS.TOGGLE_RULES,
 //   rules,
 // });
 //
 // export const updateEmailInFormRestorePassword = (email) => ({
-//   type: ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD,
+//   type: ACTIONS.UPDATE_EMAIL,
 //   email,
 // });
 //

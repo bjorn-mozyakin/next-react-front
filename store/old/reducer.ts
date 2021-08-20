@@ -4,7 +4,7 @@
 // import { State } from "../entities/State";
 //
 // import * as ACTIONS from "./actions-consts";
-// import { UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD } from "./actions-consts";
+// import { UPDATE_EMAIL } from "./actions-consts";
 //
 // // import { composeWithDevTools } from 'redux-devtools-extension'
 //
@@ -70,7 +70,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY:
+//     case ACTIONS.TOGGLE_FORM_VISIBILITY:
 //       return {
 //         ...state,
 //         formRestorePass: {
@@ -105,7 +105,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING:
+//     case ACTIONS.TOGGLE_FORM_LOADING:
 //       return {
 //         ...state,
 //         formRestorePass: {
@@ -150,7 +150,7 @@
 //         ...state,
 //         fingerprint: action.fingerprint,
 //       };
-//     case ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN:
+//     case ACTIONS.UPDATE_EMAIL:
 //       return {
 //         ...state,
 //         formLogin: {
@@ -160,7 +160,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN:
+//     case ACTIONS.UPDATE_PASSWORD:
 //       return {
 //         ...state,
 //         formLogin: {
@@ -170,7 +170,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.UPDATE_USERNAME_IN_FORM_SIGN_UP:
+//     case ACTIONS.UPDATE_USERNAME:
 //       return {
 //         ...state,
 //         formSignUp: {
@@ -180,7 +180,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.UPDATE_EMAIL_IN_FORM_SIGN_UP:
+//     case ACTIONS.UPDATE_EMAIL:
 //       return {
 //         ...state,
 //         formSignUp: {
@@ -191,7 +191,7 @@
 //         },
 //       };
 //
-//     case ACTIONS.TOGGLE_SUBSCRIBE_IN_FORM_SIGN_UP:
+//     case ACTIONS.TOGGLE_SUBSCRIBE:
 //       return {
 //         ...state,
 //         formSignUp: {
@@ -201,7 +201,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.TOGGLE_RULES_IN_FORM_SIGN_UP:
+//     case ACTIONS.TOGGLE_RULES:
 //       return {
 //         ...state,
 //         formSignUp: {
@@ -211,7 +211,7 @@
 //           },
 //         },
 //       };
-//     case ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD:
+//     case ACTIONS.UPDATE_EMAIL:
 //       return {
 //         ...state,
 //         formRestorePass: {

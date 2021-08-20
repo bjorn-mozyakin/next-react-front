@@ -7,7 +7,10 @@ import {
   updatePasswordInFormLogin,
   toggleLoginFormVisibility,
 } from "../../../store/forms/login/login.actions";
-import { toggleRestorePasswordFormVisibility } from "../../../store/forms/restorepass/restorepass.actions";
+import {
+  toggleFormVisibility,
+  toggleFormStep1Visibility,
+} from "../../../store/forms/restorepass/restorepass.actions";
 import { toggleSignUpFormVisibility } from "../../../store/forms/signup/signup.actions";
 
 import { BtnFlatType } from "../../../entities/Btn";
@@ -74,7 +77,8 @@ export const FormLoginDesktop = () => {
     },
     onClick: () => {
       dispatch(toggleLoginFormVisibility());
-      dispatch(toggleRestorePasswordFormVisibility());
+      dispatch(toggleFormVisibility());
+      dispatch(toggleFormStep1Visibility());
     },
   };
 

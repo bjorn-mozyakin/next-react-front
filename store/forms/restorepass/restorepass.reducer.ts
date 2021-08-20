@@ -4,6 +4,7 @@ import { StateFormRestorePass } from "../../../entities/State";
 
 const initialState: StateFormRestorePass = {
   isVisible: false,
+  isStep1Visible: false,
   isStep2Visible: false,
   isUsingReCaptcha: true,
   reCaptchaAction: "submit_reset_pass",
@@ -15,22 +16,27 @@ const initialState: StateFormRestorePass = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY:
+    case ACTIONS.TOGGLE_FORM_VISIBILITY:
       return {
         ...state,
         isVisible: !state.isVisible,
       };
-    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_STEP2_VISIBILITY:
+    case ACTIONS.TOGGLE_FORM_STEP1_VISIBILITY:
       return {
         ...state,
-        isStepVisible: !state.isStep2Visible,
+        isStep1Visible: !state.isStep1Visible,
       };
-    case ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING:
+    case ACTIONS.TOGGLE_FORM_STEP2_VISIBILITY:
+      return {
+        ...state,
+        isStep2Visible: !state.isStep2Visible,
+      };
+    case ACTIONS.TOGGLE_FORM_LOADING:
       return {
         ...state,
         isLoading: !state.isLoading,
       };
-    case ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD:
+    case ACTIONS.UPDATE_EMAIL:
       return {
         ...state,
         email: action.email,

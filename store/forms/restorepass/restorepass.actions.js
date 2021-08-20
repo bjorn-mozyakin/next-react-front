@@ -4,20 +4,24 @@ import { ReCaptcha } from "../../../utils/ReCaptcha";
 
 import * as ACTIONS from "./restorepass.actions-consts";
 
-export const toggleRestorePasswordFormVisibility = () => ({
-  type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_VISIBILITY,
+export const toggleFormVisibility = () => ({
+  type: ACTIONS.TOGGLE_FORM_VISIBILITY,
 });
 
-export const toggleRestorePasswordFormStep2Visibility = () => ({
-  type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_STEP2_VISIBILITY,
+export const toggleFormStep1Visibility = () => ({
+  type: ACTIONS.TOGGLE_FORM_STEP1_VISIBILITY,
+});
+
+export const toggleFormStep2Visibility = () => ({
+  type: ACTIONS.TOGGLE_FORM_STEP2_VISIBILITY,
 });
 
 export const toggleRestorePasswordFormLoading = () => ({
-  type: ACTIONS.TOGGLE_RESTORE_PASSWORD_FORM_LOADING,
+  type: ACTIONS.TOGGLE_FORM_LOADING,
 });
 
 export const updateEmailInFormRestorePassword = (email) => ({
-  type: ACTIONS.UPDATE_EMAIL_IN_FORM_RESTORE_PASSWORD,
+  type: ACTIONS.UPDATE_EMAIL,
   email,
 });
 
@@ -39,7 +43,7 @@ export const restorePass = () => {
 
     const restorePassData = {
       email: getState().formRestorePass.email,
-      reCaptchaToken: reCaptcha,
+      // reCaptchaToken: reCaptcha,
     };
 
     try {
@@ -47,10 +51,10 @@ export const restorePass = () => {
         `https://forum.inglorium.com/api/auth/forget-password`,
         JSON.stringify(restorePassData)
       );
-      dispatch(toggleRestorePasswordFormStep2Visibility());
+      dispatch(toggleFormStep1Visibility());
+      dispatch(toggleFormStep2Visibility());
     } catch (err) {
-      console.log("crab", err);
-      const msg = (err && err.detail) || err.title || "Произошла ошибка";
+      const msg = err?.detail || err?.title || err + "" || "Произошла ошибка";
       dispatch(updateErrorMsg(msg));
     } finally {
       dispatch(toggleRestorePasswordFormLoading());

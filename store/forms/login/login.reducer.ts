@@ -25,12 +25,12 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: !state.isLoading,
       };
-    case ACTIONS.UPDATE_EMAIL_IN_FORM_LOGIN:
+    case ACTIONS.UPDATE_EMAIL:
       return {
         ...state,
         email: action.email,
       };
-    case ACTIONS.UPDATE_PASSWORD_IN_FORM_LOGIN:
+    case ACTIONS.UPDATE_PASSWORD:
       return {
         ...state,
         password: action.password,

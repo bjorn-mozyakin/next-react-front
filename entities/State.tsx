@@ -35,6 +35,7 @@ export type StateFormSignUp = StateForm & {
 };
 
 export type StateFormRestorePass = StateForm & {
+  isStep1Visible: boolean;
   isStep2Visible: boolean;
   email: string;
 };
