@@ -21,6 +21,15 @@ export const updateEmailInFormRestorePassword = (email) => ({
   email,
 });
 
+export const changeEmail = (email) => {
+  return async (dispatch, getState) => {
+    if (getState().formRestorePass.errorMsg) {
+      dispatch(updateErrorMsg(null));
+    }
+    dispatch(updateEmailInFormRestorePassword(email));
+  };
+};
+
 export const restorePass = () => {
   return async (dispatch, getState) => {
     dispatch(toggleRestorePasswordFormLoading());

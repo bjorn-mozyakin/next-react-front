@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   restorePass,
   toggleRestorePasswordFormVisibility,
-  updateEmailInFormRestorePassword,
+  changeEmail,
 } from "../../../store/forms/restorepass/restorepass.actions";
 
 import { BtnFlatType, ButtonType } from "../../../entities/Btn";
@@ -38,7 +38,7 @@ export const FormRestorePassDesktop = () => {
     placeholder: "Email",
     required: true,
     withError: true,
-    onChange: (email) => dispatch(updateEmailInFormRestorePassword(email)),
+    onChange: (email) => dispatch(changeEmail(email)),
   };
 
   const btnSendPassData: BtnFlatType = {

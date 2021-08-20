@@ -36,7 +36,6 @@ export default (state = initialState, action) => {
         email: action.email,
       };
     case ACTIONS.UPDATE_ERROR_MSG:
-      debugger;
       return {
         ...state,
         errorMsg: action.msg,
