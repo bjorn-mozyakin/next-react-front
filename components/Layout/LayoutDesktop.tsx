@@ -13,7 +13,7 @@ import {
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Modal from "../Modal/Modal";
-import Sidebar from "../Sidebar/Sidebar";
+import SidebarDesktop from "../Sidebar/SidebarDesktop";
 import TopbarDesktop from "../Topbar/TopbarDesktop";
 import FormLoginDesktop from "../Form/FormLogin/FormLoginDesktop";
 import FormRestorePassDesktop from "../Form/FormRestorePass/FormRestorePassDesktop";
@@ -50,7 +50,7 @@ export const LayoutDesktop = ({ children }: LayoutProps) => {
       <TopbarDesktop />
       {children}
       <Footer />
-      {isSidebarVisible && <Sidebar />}
+      {isSidebarVisible && <SidebarDesktop />}
       {isLoginFormVisible && (
         <Modal>
           <FormLoginDesktop />
