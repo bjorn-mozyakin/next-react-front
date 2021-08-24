@@ -1,7 +1,8 @@
 // import "../styles/_vars.scss";
 // import "../styles/desktop/_vars.scss";
 // import "../styles/globals.css";
-import "../styles/main/_desktop.css";
+import "../styles/main/_mobile.css";
+// import "../styles/main/_desktop.css";
 
 import React from "react";
 import { Provider } from "react-redux";
@@ -12,6 +13,7 @@ import thunk from "redux-thunk";
 import { reducer } from "../store/rootReducer";
 
 import BannerStore from "../components/BannerStore/BannerStore";
+import StoreInitial from "../components/StoreInitial/StoreInitial";
 
 type Props = {
   Component: any;
@@ -26,7 +28,9 @@ function MyApp({ Component, pageProps }: Props) {
   return (
     <Provider store={store}>
       <BannerStore>
-        <Component {...pageProps} />
+        <StoreInitial>
+          <Component {...pageProps} />
+        </StoreInitial>
       </BannerStore>
     </Provider>
   );

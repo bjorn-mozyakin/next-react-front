@@ -1,8 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.actions";
 
+import { devideArrays } from "../../utils/helpers";
+
+import { State } from "../../entities/State";
 import BtnFlat from "../BtnFlat/BtnFlat";
 import BtnRound from "../BtnRound/BtnRound";
 import User from "../User/User";
@@ -23,6 +26,14 @@ export const SidebarDesktop = () => {
     onClick: () => dispatch(toggleSidebarVisibility()),
   };
 
+  const [myRubrics, allRubrics] = useSelector((state: { common: State }) => [
+    state.common.myRubrics,
+    state.common.allRubrics,
+  ]);
+
+  const myRubricsDivided = devideArrays({ initialArr: myRubrics, parts: 2 });
+  const allRubricsDivided = devideArrays({ initialArr: allRubrics, parts: 2 });
+
   const btnAddThreadData = {
     styles: {
       color: "crimson-500",
@@ -32,6 +43,24 @@ export const SidebarDesktop = () => {
     },
     onClick: () => {},
   };
+
+  const actionbarData = [
+    {
+      icon: "script-18-crimson",
+      href: "/pages/forum_rules/",
+      text: "Правила форума",
+    },
+    {
+      icon: "info-18-crimson",
+      href: "/pages/forum_help/",
+      text: "Помощь",
+    },
+    {
+      icon: "mail-18-crimson",
+      href: "mailto:admin@woman.ru",
+      text: "Для связи: admin@woman.ru",
+    },
+  ];
 
   return (
     <div className="sidebar">
@@ -46,9 +75,9 @@ export const SidebarDesktop = () => {
             </div>
             <BtnFlat {...btnAddThreadData}>Добавить новую тему</BtnFlat>
           </div>
-          <SidebarMyRubrics />
-          <SidebarAllRubrics />
-          <SidebarActionbar />
+          <SidebarMyRubrics myRubrics={myRubricsDivided} />
+          <SidebarAllRubrics allRubrics={allRubricsDivided} />
+          <SidebarActionbar actionbarData={actionbarData} />
         </div>
       </div>
     </div>

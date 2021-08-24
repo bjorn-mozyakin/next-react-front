@@ -1,24 +1,15 @@
 import React from "react";
 
-export const SidebarActionbar = () => {
-  const actionbarData = [
-    {
-      icon: "script-18-crimson",
-      href: "/pages/forum_rules/",
-      text: "Правила форума",
-    },
-    {
-      icon: "info-18-crimson",
-      href: "/pages/forum_help/",
-      text: "Помощь",
-    },
-    {
-      icon: "mail-18-crimson",
-      href: "mailto:admin@woman.ru",
-      text: "Для связи: admin@woman.ru",
-    },
-  ];
+type actionbarData = {
+  icon: string;
+  href: string;
+  text: string;
+};
+type Props = {
+  actionbarData: actionbarData[];
+};
 
+export const SidebarActionbar = ({ actionbarData }: Props) => {
   return (
     <div className="sidebar__actionbar actionbar actionbar_left">
       {actionbarData.map(({ icon, href, text }, idx) => (

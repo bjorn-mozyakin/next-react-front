@@ -26,6 +26,142 @@ export const updateFingerprint = (fingerprint) => ({
   fingerprint,
 });
 
+export const updateMyRubrics = (myRubrics) => ({
+  type: ACTIONS.UPDATE_MY_RUBRICS,
+  myRubrics,
+});
+
+export const updateAllRubrics = (allRubrics) => ({
+  type: ACTIONS.UPDATE_ALL_RUBRICS,
+  allRubrics,
+});
+
+export const getMyRubrics = () => {
+  return async (dispatch, getState) => {
+    if (getState().common.myRubrics.length) return;
+    const myRubrics = [
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+      {
+        href: "/living/entertainment/forum/",
+        section: "Жизнь форума",
+        subSection: "Развлекательный портал",
+      },
+    ];
+    dispatch(updateMyRubrics(myRubrics));
+  };
+};
+
+export const getAllRubrics = () => {
+  return async (dispatch, getState) => {
+    if (getState().common.allRubrics.length) return;
+    const allRubrics = [
+      {
+        href: "/relations/forum/",
+        text: "Отношения",
+        subSections: [
+          {
+            href: "/relations/men/forum/",
+            text: "Мы и мужчины",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Секс",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Свадьба",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Брак",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Обо всем",
+          },
+        ],
+      },
+      {
+        href: "/relations/forum/",
+        text: "Отношения",
+        subSections: [
+          {
+            href: "/relations/men/forum/",
+            text: "Мы и мужчины",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Секс",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Свадьба",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Брак",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Обо всем",
+          },
+        ],
+      },
+      {
+        href: "/relations/forum/",
+        text: "Отношения",
+        subSections: [
+          {
+            href: "/relations/men/forum/",
+            text: "Мы и мужчины",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Секс",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Свадьба",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Брак",
+          },
+          {
+            href: "/relations/men/forum/",
+            text: "Обо всем",
+          },
+        ],
+      },
+    ];
+    dispatch(updateAllRubrics(allRubrics));
+  };
+};
+
 export const getThreadList = () => {
   return async (dispatch, getState) => {
     const response = await axiosInstance.get(

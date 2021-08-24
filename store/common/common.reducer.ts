@@ -18,6 +18,8 @@ const initialState: State = {
   isSearchFormVisible: false,
   reCaptcha: null,
   fingerprint: null,
+  myRubrics: [],
+  allRubrics: [],
 };
 
 export default (state = initialState, action) => {
@@ -51,6 +53,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         fingerprint: action.fingerprint,
+      };
+    case ACTIONS.UPDATE_MY_RUBRICS:
+      return {
+        ...state,
+        myRubrics: action.myRubrics,
+      };
+    case ACTIONS.UPDATE_ALL_RUBRICS:
+      return {
+        ...state,
+        allRubrics: action.allRubrics,
       };
 
     default:

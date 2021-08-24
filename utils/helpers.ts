@@ -3,10 +3,18 @@ export const isObject = (value) => {
   return value && typeof value === "object" && value.constructor === Object;
 };
 
-export const devideArrays = (threads, size = 30) => {
-  const arr = [];
-  while (threads.length > 0) arr.push(threads.splice(0, size));
-  return arr;
+export const devideArrays = ({ initialArr, size = null, parts = null }) => {
+  const clonedArr = initialArr.slice(); // важно скопировать, иначе очиститсяисходный массив
+  const newArr = [];
+  if (parts) {
+    size = Math.ceil(clonedArr.length / parts);
+  }
+  if (size) {
+    while (clonedArr.length > 0) newArr.push(clonedArr.splice(0, size));
+  } else {
+    newArr.push(clonedArr);
+  }
+  return newArr;
 };
 
 export const defineDeviceType = (UA: string, cookies: any) => {

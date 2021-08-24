@@ -1,3 +1,4 @@
+// TODO Когда начнем получать реальные рубрики - добавить им типы
 export interface State {
   banners?: any;
   threads?: any;
@@ -7,6 +8,8 @@ export interface State {
   scrolledPageCount: number;
   reCaptcha: string | null;
   fingerprint: string | null;
+  myRubrics: any[];
+  allRubrics: any[];
 }
 
 export interface StateForm {

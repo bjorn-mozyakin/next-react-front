@@ -1,44 +1,16 @@
 import React from "react";
+
 import SidebarMyRubricsItem from "./SidebarMyRubricsItem";
 
-export const SidebarMyRubrics = () => {
-  const myRubrics = [
-    [
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-    ],
-    [
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-      {
-        href: "/living/entertainment/forum/",
-        section: "Жизнь форума",
-        subSection: "Развлекательный портал",
-      },
-    ],
-  ];
+type Props = {
+  myRubrics: any[];
+};
 
+export const SidebarMyRubrics = ({ myRubrics }: Props) => {
+  // TODO
+  // 1. Нужен ли класс relative??
+  // 2. Откуда появляется маркер на Мобайле
+  // 3. Может не вставлять _half на Мобайле?
   return (
     <div className="sidebar__my-rubrics-block">
       <h3 className="sidebar__title">Мои рубрики</h3>
