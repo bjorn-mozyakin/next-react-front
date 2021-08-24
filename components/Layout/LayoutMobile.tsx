@@ -5,6 +5,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { State, StateSidebar } from "../../entities/State";
+import FooterMobile from "../Footer/FooterMobile";
 import SidebarMobile from "../Sidebar/SidebarMobile";
 import TopbarMobile from "../Topbar/TopbarMobile";
 
@@ -26,6 +27,7 @@ export const LayoutMobile = ({ children }: LayoutProps) => {
       Mobile
       <TopbarMobile />
       {children}
+      <FooterMobile />
       {isSidebarVisible && <SidebarMobile />}
       {isSearchFormVisible && <div>Форма поиска на мобайле</div>}
     </>

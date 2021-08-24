@@ -3,17 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.actions";
 
-import { devideArrays } from "../../utils/helpers";
+import { devideArrays, goTo } from "../../utils/helpers";
 
 import { State } from "../../entities/State";
 import BtnFlat from "../BtnFlat/BtnFlat";
 import BtnRound from "../BtnRound/BtnRound";
 import User from "../User/User";
 
+import SidebarActionbar from "./SidebarActionbar";
 import SidebarAllRubrics from "./SidebarAllRubrics";
 import SidebarMenu from "./SidebarMenu";
 import SidebarMyRubrics from "./SidebarMyRubrics";
-import SidebarActionbar from "./SidebarActionbar";
+import { BtnFlatType, BtnRoundType } from "../../entities/Btn";
 
 export const SidebarMobile = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export const SidebarMobile = () => {
   const myRubricsDivided = devideArrays({ initialArr: myRubrics });
   const allRubricsDivided = devideArrays({ initialArr: allRubrics });
 
-  const btnCloseData = {
+  const btnCloseData: BtnRoundType = {
     styles: {
       bg: "transparent",
       states: "crimson-100",
@@ -34,7 +35,7 @@ export const SidebarMobile = () => {
     onClick: () => dispatch(toggleSidebarVisibility()),
   };
 
-  const btnAddThreadData = {
+  const btnAddThreadData: BtnFlatType = {
     styles: {
       color: "crimson-500",
       bg: "transparent",
@@ -53,8 +54,13 @@ export const SidebarMobile = () => {
     },
     {
       icon: "laptop-18-blue",
-      href: "",
+      href: "/",
       text: "Полная версия",
+      onCLick: (e) => {
+        e && e.preventDefault();
+        debugger;
+        goTo({ type: "mobile" });
+      },
     },
   ];
 
