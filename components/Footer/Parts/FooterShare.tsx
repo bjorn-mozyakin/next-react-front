@@ -2,9 +2,9 @@
 // import styles from './Footer.module.scss';
 import React from "react";
 
-import { BtnRoundType } from "../../entities/Btn";
-import BtnRound from "../BtnRound/BtnRound";
-import Link from "../Link/Link";
+import { BtnRoundType } from "../../../entities/Btn";
+import BtnRound from "../../BtnRound/BtnRound";
+import Link from "../../Link/Link";
 
 type BtnShare = {
   href: string;
@@ -12,15 +12,22 @@ type BtnShare = {
   icon: string;
 };
 
-export const FooterShare = () => {
+type Props = {
+  className: string;
+  wrapperClassName: string;
+};
+
+// TODO сделать общие классы className и wrapperClassName
+export const FooterShare = ({ className, wrapperClassName }: Props) => {
   // TODO зачем редиректы?
+
+  // TODO Почему гдето есть nofollow, а где-то нет?
   const btnsShareData: BtnShare[] = [
     {
       href: "/redirect/aHR0cHM6Ly96ZW4ueWFuZGV4LnJ1L3dvbWFu/",
       title: "zen.yandex.ru",
       icon: "zen-24-carbon",
     },
-
     {
       href: "/redirect/aHR0cHM6Ly96ZW4ueWFuZGV4LnJ1L3dvbWFu/",
       title: "fb.com",
@@ -71,10 +78,10 @@ export const FooterShare = () => {
   ];
 
   return (
-    <div className="footer__share">
+    <div className={wrapperClassName}>
       {btnsShareData.map(({ href, title, icon }, idx) => {
         const btnShareData: BtnRoundType = {
-          additionalClasses: ["footer__share-btn"],
+          additionalClasses: [className],
           styles: {
             size: "full",
             bg: "white-500",
@@ -85,6 +92,7 @@ export const FooterShare = () => {
           <Link
             href={href}
             title={title}
+            target="_blank"
             rel="nofollow"
             key={`footerShare${idx}`}
           >

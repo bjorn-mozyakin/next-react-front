@@ -1,8 +1,8 @@
 // import "../styles/_vars.scss";
 // import "../styles/desktop/_vars.scss";
 // import "../styles/globals.css";
-import "../styles/main/_mobile.css";
-// import "../styles/main/_desktop.css";
+// import "../styles/main/_mobile.css";
+import "../styles/main/_desktop.css";
 
 import React from "react";
 import { Provider } from "react-redux";

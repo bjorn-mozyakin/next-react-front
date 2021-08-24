@@ -1,18 +1,31 @@
 import React from "react";
 
-import FooterActions from "./FooterActions";
-import FooterCopyright from "./FooterCopyright";
-import FooterShare from "./FooterShare";
+import Link from "../Link/Link";
+
+import FooterActions from "./Parts/FooterActions";
+import FooterCopyright from "./Parts/FooterCopyright";
+import FooterShare from "./Parts/FooterShare";
+import Footer16plus from "./Parts/Footer16plus";
 
 export const FooterMobile = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__logo"></div>
-        <FooterShare />
+        <FooterShare
+          className="footer__share-btn"
+          wrapperClassName="footer__share"
+        />
         <FooterActions />
+        <Link
+          href="/womanru/guestbook/article/45915/"
+          classNames="footer__link"
+        >
+          Правила пользования сайтом
+        </Link>
+        <p>Copyright (с) 2016-2021 ООО «Хёрст Шкулёв Паблишинг»</p>
         <FooterCopyright />
-        <aside className="footer__16plus">&nbsp;16+</aside>
+        <Footer16plus />
       </div>
     </footer>
   );

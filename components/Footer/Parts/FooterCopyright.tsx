@@ -1,14 +1,10 @@
 import React from "react";
 
-import Link from "../Link/Link";
+import Link from "../../Link/Link";
 
 export const FooterCopyright = () => {
   return (
     <div className="footer__copyright">
-      <Link href="/womanru/guestbook/article/45915/" classNames="footer__link">
-        Правила пользования сайтом
-      </Link>
-      <p>Copyright (с) 2016-2021 ООО «Хёрст Шкулёв Паблишинг»</p>
       <p>Сетевое издание «WOMAN.RU» (Женщина.РУ)</p>
       <p>
         Свидетельство о регистрации СМИ ЭЛ №ФС77-65950, выдано Федеральной

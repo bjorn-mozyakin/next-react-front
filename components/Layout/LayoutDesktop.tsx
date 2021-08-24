@@ -10,7 +10,7 @@ import {
   StateFormSignUp,
   StateFormRestorePass,
 } from "../../entities/State";
-import Footer from "../Footer/Footer";
+import FooterDesktop from "../Footer/FooterDesktop";
 import Header from "../Header/Header";
 import Modal from "../Modal/Modal";
 import SidebarDesktop from "../Sidebar/SidebarDesktop";
@@ -49,7 +49,7 @@ export const LayoutDesktop = ({ children }: LayoutProps) => {
       <Header />
       <TopbarDesktop />
       {children}
-      <Footer />
+      <FooterDesktop />
       {isSidebarVisible && <SidebarDesktop />}
       {isLoginFormVisible && (
         <Modal>

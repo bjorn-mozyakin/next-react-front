@@ -1,8 +1,8 @@
 import React from "react";
 
-import { goTo } from "../../utils/helpers";
+import { goTo } from "../../../utils/helpers";
 
-import Link from "../Link/Link";
+import Link from "../../Link/Link";
 
 export const FooterAtions = () => {
   return (
