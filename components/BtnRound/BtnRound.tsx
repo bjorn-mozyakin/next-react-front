@@ -1,10 +1,8 @@
-// Styles
-// import styles from "./BtnRound.module.scss";
-
 import React from "react";
 
-import { ButtonType, BtnRoundType } from "../../entities/Btn";
 import { renameDataAttributes } from "../../utils/helpers";
+
+import { ButtonType, BtnRoundType } from "../../entities/Btn";
 
 export const BtnRound = ({
   children,
@@ -43,7 +41,7 @@ export const BtnRound = ({
     <button
       className={classNames}
       {...(attrs || "")}
-      {...(title ? `title=${title}` : "")}
+      {...(title ? { title } : "")}
       type={type}
       onClick={onClick}
     >

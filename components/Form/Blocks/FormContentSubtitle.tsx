@@ -1,6 +1,9 @@
 import React from "react";
 
-const FormContentSubtitle = ({ children }) => {
+type Props = {
+  children?: React.ReactNode;
+};
+const FormContentSubtitle = ({ children }: Props) => {
   return <div className="form__content-subtitle">{children}</div>;
 };
 

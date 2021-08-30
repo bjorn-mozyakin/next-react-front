@@ -27,19 +27,19 @@ export const Head = ({
       {needAdScripts && <HeadAdScripts />}
       {needAdfoxScript && <HeadAdfoxScript />}
 
-      {/*{isMobile ? (*/}
-      {/*  <link*/}
-      {/*    rel="stylesheet"*/}
-      {/*    href="https://i42-cdn.woman.ru/static/forum/mobile/css/_mobile.css?36-1610"*/}
-      {/*    media="all"*/}
-      {/*  />*/}
-      {/*) : (*/}
-      {/*  <link*/}
-      {/*    rel="stylesheet"*/}
-      {/*    href="https://i42-cdn.woman.ru/static/forum/desktop/css/_desktop.css?36-1601"*/}
-      {/*    media="all"*/}
-      {/*  />*/}
-      {/*)}*/}
+      {/* {isMobile ? (
+        <link
+          rel="stylesheet"
+          href="https://i42-cdn.woman.ru/static/forum/mobile/css/_mobile.css?36-1610"
+          media="all"
+        />
+      ) : (
+        <link
+          rel="stylesheet"
+          href="https://i42-cdn.woman.ru/static/forum/desktop/css/_desktop.css?36-1601"
+          media="all"
+        />
+      )} */}
 
       {isMobile ? (
         <link rel="stylesheet" href="/static/main/_mobile.css" media="all" />

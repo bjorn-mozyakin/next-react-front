@@ -1,7 +1,8 @@
 import React from "react";
 
-import Link from "../Link/Link";
 import { renameDataAttributes } from "../../utils/helpers";
+
+import Link from "../Link/Link";
 
 export const SidebarMenu = () => {
   const menuData = [
@@ -39,7 +40,6 @@ export const SidebarMenu = () => {
       href: "/forum/all/",
       text: "Прямой эфир",
     },
-
     {
       icon: "info-24-crimson",
       href: "/pages/forum_help/",

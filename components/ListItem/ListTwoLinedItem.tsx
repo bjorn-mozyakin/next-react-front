@@ -1,7 +1,5 @@
 import React from "react";
 
-// Styles
-// import styles from "./ListItem.module.scss";
 import Link from "../Link/Link";
 
 type ListTwoLinedItemProps = {
@@ -22,7 +20,7 @@ export const ListTwoLinedItem = ({
   return (
     <li className="list-item ">
       <div id="topic_0" className="list-item__anchor"></div>
-      <Link className="list-item__link" href={href}>
+      <Link classNames="list-item__link" href={href}>
         <div className="list-item__container">
           <div className="list-item__first-line">
             <h3 className="list-item__title list-item__title_visited text_weight_medium">

@@ -191,19 +191,17 @@ export const getThreadList = () => {
 
 export const getBannerList = () => {
   return async (dispatch) => {
-    const response = await axiosInstance.get(
-      "http://localhost:3000/api/banners/",
-      // "threads?page=1&order[publishedAt]=desc",
-      { withCredentials: true }
-    );
-    const { data } = response;
-    // const banners = JSON.parse(data);
-    const banners = data;
-    console.log("crabus", banners);
     try {
+      const response = await axiosInstance.get(
+        "http://localhost:3000/api/banners/",
+        { withCredentials: true }
+      );
+      const { data } = response;
+      // const banners = JSON.parse(data);
+      const banners = data;
       dispatch(updateBannerList(banners));
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
     }
   };
 };

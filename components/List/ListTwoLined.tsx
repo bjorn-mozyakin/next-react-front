@@ -4,8 +4,9 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { State } from "../../entities/State";
 import { getThreadList } from "../../store/common/common.actions";
+
+import { State } from "../../entities/State";
 import ListTwoLinedItem from "../ListItem/ListTwoLinedItem";
 import Placeholder from "../Placeholder/Placeholder";
 
@@ -32,7 +33,7 @@ export const ListTwoLined = ({ data }: ListTwoLinedProps) => {
   const intersectionAnchorForInfiniteScroll = async (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        dispatch(getThreadList(scrolledPageCount));
+        dispatch(getThreadList());
         if (scrolledPageCount >= 5)
           observerAnchorForInfiniteScroll.unobserve(anchor.current);
       }

@@ -5,6 +5,7 @@ import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.
 
 import { devideArrays, goTo } from "../../utils/helpers";
 
+import { BtnFlatType, BtnRoundType } from "../../entities/Btn";
 import { State } from "../../entities/State";
 import BtnFlat from "../BtnFlat/BtnFlat";
 import BtnRound from "../BtnRound/BtnRound";
@@ -14,7 +15,6 @@ import SidebarActionbar from "./SidebarActionbar";
 import SidebarAllRubrics from "./SidebarAllRubrics";
 import SidebarMenu from "./SidebarMenu";
 import SidebarMyRubrics from "./SidebarMyRubrics";
-import { BtnFlatType, BtnRoundType } from "../../entities/Btn";
 
 export const SidebarMobile = () => {
   const dispatch = useDispatch();
@@ -58,7 +58,6 @@ export const SidebarMobile = () => {
       text: "Полная версия",
       onCLick: (e) => {
         e && e.preventDefault();
-        debugger;
         goTo({ type: "mobile" });
       },
     },

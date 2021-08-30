@@ -565,7 +565,7 @@ export function getServerSideProps({ req }) {
   return {
     props: {
       // initialReduxState: reduxStore.getState(),
-      deviceType: defineDeviceType(req.headers["user-agent"])
+      deviceType: defineDeviceType(req.headers["user-agent"], req.cookies)
         ? "mobile"
         : "desktop",
     },

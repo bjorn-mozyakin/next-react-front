@@ -5,7 +5,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import { toggleSearchFormVisibility } from "../../store/common/common.actions";
-
 import { toggleSidebarVisibility } from "../../store/components/sidebar/sidebar.actions";
 
 import { BtnRoundType } from "../../entities/Btn";

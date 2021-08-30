@@ -63,11 +63,9 @@ export const Nav = () => {
     <nav className="nav">
       <BtnRound {...btnData} />
       <div className="nav__menu">
-        {items.map((item, idx) => {
-          const { name, href } = item;
-          console.log("crab", name, href);
+        {items.map(({ name, href }, idx) => {
           return (
-            <div key={`nav__item_${idx}`} className="nav__item">
+            <div key={`navItem${idx}`} className="nav__item">
               <Link
                 href={href}
                 classNames="nav__link interactive"

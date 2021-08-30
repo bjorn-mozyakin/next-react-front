@@ -19,7 +19,7 @@ export const Tabs = ({ data }: any) => {
             <Link
               key={idx}
               href={`/forum/?sort=${href}`}
-              className="tabs__tab"
+              classNames="tabs__tab"
               aria-label={name}
             >
               {name}

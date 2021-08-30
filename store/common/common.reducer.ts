@@ -22,7 +22,7 @@ const initialState: State = {
   allRubrics: [],
 };
 
-export default (state = initialState, action) => {
+const reducerCommon = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.TOGGLE_SEARCH_FORM_VISIBILITY:
       return {
@@ -69,3 +69,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducerCommon;

@@ -13,20 +13,18 @@ import { StateFormRestorePass } from "../../../entities/State";
 import BtnFlat from "../../BtnFlat/BtnFlat";
 import Input from "../../Input/Input";
 import Loader from "../../Loader/Loader";
-
 import FormContentSubtitle from "../Blocks/FormContentSubtitle";
 import FormHeader from "../Blocks/FormHeader";
 import FormReCaptchaText from "../Blocks/FormReCaptchaText";
 
 export const FormRestorePassDesktopStep1 = () => {
   const dispatch = useDispatch();
-  const [isValid, isLoading, errorMsg] = useSelector(
-    (state: { formRestorePass: StateFormRestorePass }) => [
+  const [isValid, isLoading, errorMsg]: [boolean, boolean, string] =
+    useSelector((state: { formRestorePass: StateFormRestorePass }) => [
       state.formRestorePass.isValid,
       state.formRestorePass.isLoading,
       state.formRestorePass.errorMsg,
-    ]
-  );
+    ]);
 
   // const isLoading = useSelector(
   //   (state: { formRestorePass: StateFormRestorePass }) =>

@@ -4,6 +4,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+// TODO разобраться, почему линтер требует такую полседовательность
+import FormRestorePassDesktop from "../Form/FormRestorePass/FormRestorePassDesktop";
+
 import {
   StateSidebar,
   StateFormLogin,
@@ -11,13 +14,12 @@ import {
   StateFormRestorePass,
 } from "../../entities/State";
 import FooterDesktop from "../Footer/FooterDesktop";
+import FormLoginDesktop from "../Form/FormLogin/FormLoginDesktop";
+import FormSignUpDesktop from "../Form/FormSignUp/FormSighUpDesktop";
 import Header from "../Header/Header";
 import Modal from "../Modal/Modal";
 import SidebarDesktop from "../Sidebar/SidebarDesktop";
 import TopbarDesktop from "../Topbar/TopbarDesktop";
-import FormLoginDesktop from "../Form/FormLogin/FormLoginDesktop";
-import FormRestorePassDesktop from "../Form/FormRestorePass/FormRestorePassDesktop";
-import FormSignUpDesktop from "../Form/FormSignUp/FormSighUpDesktop";
 
 type LayoutProps = {
   children?: React.ReactNode;

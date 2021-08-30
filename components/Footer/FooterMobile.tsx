@@ -2,10 +2,10 @@ import React from "react";
 
 import Link from "../Link/Link";
 
+import Footer16plus from "./Parts/Footer16plus";
 import FooterActions from "./Parts/FooterActions";
 import FooterCopyright from "./Parts/FooterCopyright";
 import FooterShare from "./Parts/FooterShare";
-import Footer16plus from "./Parts/Footer16plus";
 
 export const FooterMobile = () => {
   return (

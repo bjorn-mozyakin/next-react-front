@@ -1,6 +1,9 @@
 import React from "react";
 
-const Modal = ({ children }) => {
+type Props = {
+  children?: React.ReactNode;
+};
+const Modal = ({ children }: Props) => {
   return <div className="modal">{children}</div>;
 };
 
